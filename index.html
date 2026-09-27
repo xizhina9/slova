@@ -54,6 +54,12 @@ p.lead{font-family:var(--serif);font-size:20px;line-height:1.45;margin:0 0 30px;
 .mode:disabled{opacity:.45;cursor:default}
 .links{display:flex;gap:22px;margin-top:22px}
 .links button{background:none;border:0;padding:0;color:var(--muted);font-size:16px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.packs{display:flex;gap:8px;overflow-x:auto;margin:0 -20px 22px;padding:0 20px 4px;scrollbar-width:none}
+.packs::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:none;border-radius:999px;padding:8px 14px;font-size:15px;cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .c{opacity:.6;margin-left:6px;font-variant-numeric:tabular-nums}
+.chip.lvl{font-variant-numeric:tabular-nums}
 
 /* session */
 .stage{flex:1;display:flex;flex-direction:column;justify-content:center;padding:8px 0 16px}
@@ -151,10 +157,12 @@ const store = {
 };
 const DAY = 86400000;
 const INTERVALS = [0, 1, 3, 7, 14, 30]; // days until next review, by box
+const TOPICS = {build:'Архитектура и строительство', acad:'Академическая лексика', sci:'Наука и технологии', edu:'Образование', soc:'Общество и культура', eco:'Экология', health:'Здоровье', work:'Работа и бизнес', city:'Города и жильё', travel:'Путешествия', talk:'Разговорное'};
+const LEVELS = ['B1','B2','C1'];
 
 let words = [], source = '';
 let progress = safeJSON(store.get('ew_progress'), {});
-let settings = Object.assign({dir:'en-ru', size:20}, safeJSON(store.get('ew_settings'), {}));
+let settings = Object.assign({dir:'en-ru', size:20, pack:'all'}, safeJSON(store.get('ew_settings'), {}));
 let session = null;
 
 function safeJSON(s, d){ try { const v = JSON.parse(s); return v && typeof v==='object' ? v : d; } catch(e) { return d; } }
@@ -191,6 +199,12 @@ function grade(val, target){
   return 'no';
 }
 
+// ---------- packs (filters by topic or level) ----------
+function inPack(w){ const p=settings.pack||'all'; if(p==='all') return true; const [t,k]=p.split(':'); return t==='topic' ? w.topic===k : w.level===k; }
+function pool(){ return words.filter(inPack); }
+function packLabel(){ const p=settings.pack||'all'; if(p==='all') return ''; const [t,k]=p.split(':'); return t==='topic' ? (TOPICS[k]||k) : k; }
+function meta(w){ return [w.pos, w.level].filter(Boolean).join(', '); }
+
 // ---------- progress ----------
 function rec(id){ return progress[id] || (progress[id] = {box:0,due:0,seen:0,ok:0,bad:0,last:0}); }
 function status(w){ const r=progress[w.id]; if(!r||!r.seen) return 'new'; return r.box>=4 ? 'done' : 'learn'; }
@@ -202,9 +216,9 @@ function mark(id, ok){
   else { r.bad++; r.box=0; r.due=Date.now(); }
   saveP();
 }
-function stats(){
-  const s={total:words.length,fresh:0,due:0,done:0,err:0};
-  for(const w of words){ const st=status(w); if(st==='new') s.fresh++; if(st==='done') s.done++; if(isDue(w)) s.due++; if(isError(w)) s.err++; }
+function stats(arr=pool()){
+  const s={total:arr.length,fresh:0,due:0,done:0,err:0};
+  for(const w of arr){ const st=status(w); if(st==='new') s.fresh++; if(st==='done') s.done++; if(isDue(w)) s.due++; if(isError(w)) s.err++; }
   return s;
 }
 
@@ -218,6 +232,7 @@ async function loadWords(){
     words = j; source = 'words.json';
   } catch(e){ words = WORDS_FALLBACK; source = 'встроенный список (words.json не найден)'; }
   words.forEach((w,i)=>{ if(!w.id) w.id='w'+i; });
+  if(settings.pack!=='all' && !pool().length){ settings.pack='all'; saveS(); }
 }
 
 // ---------- rendering ----------
@@ -233,13 +248,21 @@ function render(html, {title='', back=null, right='', header=true}={}){
 function home(){
   session=null;
   const s=stats();
+  const lbl=packLabel();
   const lead = !words.length
     ? 'Список слов пока пуст. Пришли первые слова — и они появятся здесь.'
-    : `Всего ${s.total} ${plural(s.total,'слово','слова','слов')}: ${s.fresh} ещё не ${plural(s.fresh,'открывал','открывал','открывал')}, ${s.due} ${plural(s.due,'ждёт','ждут','ждут')} повторения сегодня, ${s.done} выучено.`;
+    : `${lbl ? `«${lbl}»` : 'Всего'} ${s.total} ${plural(s.total,'слово','слова','слов')}: ${s.fresh} ещё не открывал, ${s.due} ${plural(s.due,'ждёт','ждут','ждут')} повторения сегодня, ${s.done} выучено.`;
+  const tc={}, lc={};
+  for(const w of words){ if(w.topic) tc[w.topic]=(tc[w.topic]||0)+1; if(w.level) lc[w.level]=(lc[w.level]||0)+1; }
+  const chip=(v,l,n,cls='')=>`<button class="chip ${cls} ${settings.pack===v?'on':''}" data-p="${v}">${l}${n!=null?`<span class="c">${n}</span>`:''}</button>`;
+  const chips = [chip('all','Все слова',words.length)]
+    .concat(Object.keys(TOPICS).filter(k=>tc[k]).map(k=>chip('topic:'+k,TOPICS[k],tc[k])))
+    .concat(LEVELS.filter(l=>lc[l]).map(l=>chip('level:'+l,l,lc[l],'lvl')));
   const row=(k,t,d,n,dis)=>`<button class="mode" data-m="${k}" ${dis?'disabled':''}><span><span class="t">${t}</span><br><span class="d">${d}</span></span>${n!=null?`<span class="n">${n}</span>`:''}</button>`;
   render(`
     <h1 class="brand">Слова</h1>
     <p class="lead">${lead}</p>
+    ${words.length ? `<div class="packs">${chips.join('')}</div>` : ''}
     <div class="modes">
       ${row('cards','Карточки','смотри слово, вспоминай перевод')}
       ${row('test','Выбор из четырёх','узнай перевод среди вариантов')}
@@ -249,6 +272,7 @@ function home(){
     <div class="links"><button id="lnk-list">Все слова</button><button id="lnk-set">Настройки</button></div>
   `, {header:false});
   document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>start(b.dataset.m));
+  document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{ settings.pack=b.dataset.p; saveS(); home(); });
   $('#lnk-list').onclick=list; $('#lnk-set').onclick=settingsScreen;
 }
 
@@ -256,16 +280,17 @@ const TITLES = {cards:'Карточки', test:'Выбор из четырёх',
 function sessionOpts(){ return {title:TITLES[session.mode], back:home, right:`${Math.min(session.i+1,session.queue.length)} / ${session.queue.length}`}; }
 
 function start(mode){
-  if(!words.length){ toast('Слов пока нет'); return; }
-  let pool, errorsOnly=false;
-  if(mode==='errors'){ pool=shuffle(words.filter(isError)); mode='test'; errorsOnly=true; if(!pool.length){ toast('Ошибок пока нет'); return; } }
+  const P=pool();
+  if(!P.length){ toast('Слов пока нет'); return; }
+  let list_, errorsOnly=false;
+  if(mode==='errors'){ list_=shuffle(P.filter(isError)); mode='test'; errorsOnly=true; if(!list_.length){ toast('Ошибок пока нет'); return; } }
   else {
-    const due=shuffle(words.filter(isDue));
-    const fresh=shuffle(words.filter(w=>status(w)==='new'));
-    const rest=shuffle(words.filter(w=>!isDue(w)&&status(w)!=='new'));
-    pool=[...due,...fresh,...rest];
+    const due=shuffle(P.filter(isDue));
+    const fresh=shuffle(P.filter(w=>status(w)==='new'));
+    const rest=shuffle(P.filter(w=>!isDue(w)&&status(w)!=='new'));
+    list_=[...due,...fresh,...rest];
   }
-  const queue=shuffle(pool.slice(0, errorsOnly ? pool.length : settings.size));
+  const queue=shuffle(list_.slice(0, errorsOnly ? list_.length : settings.size));
   session={mode, queue, i:0, first:{}, wrong:[], retried:new Set()};
   next();
 }
@@ -288,7 +313,7 @@ function nextButton(){ $('#acts').innerHTML=`<button class="btn primary" id="nxt
 function cardScreen(w){
   render(`
     <div class="stage tapzone" id="stage">
-      ${w.pos?`<p class="pos">${esc(w.pos)}</p>`:''}
+      ${meta(w)?`<p class="pos">${esc(meta(w))}</p>`:''}
       <h2 class="word"><mark>${esc(w.en)}</mark></h2>
       <button class="speak" id="speak" aria-label="Произнести">🔊</button>
       <div id="back-side" hidden>
@@ -317,13 +342,14 @@ function testScreen(w){
   const key = dir==='en-ru' ? 'ru' : 'en';
   const q = dir==='en-ru' ? w.en : w.ru;
   const pool = words.filter(x=>x.id!==w.id && x[key]!==w[key]);
-  const same = pool.filter(x=>x.pos && x.pos===w.pos);
+  const same = pool.filter(x=>x.pos && x.pos===w.pos && (!w.topic || x.topic===w.topic));
   let ds = shuffle(same).slice(0,3);
+  if(ds.length<3) ds = ds.concat(shuffle(pool.filter(x=>!ds.includes(x) && x.pos && x.pos===w.pos)).slice(0,3-ds.length));
   if(ds.length<3) ds = ds.concat(shuffle(pool.filter(x=>!ds.includes(x))).slice(0,3-ds.length));
   const opts = shuffle([w,...ds]);
   render(`
     <div class="stage">
-      ${dir==='en-ru'&&w.pos?`<p class="pos">${esc(w.pos)}</p>`:''}
+      ${dir==='en-ru'&&meta(w)?`<p class="pos">${esc(meta(w))}</p>`:''}
       <h2 class="word ${dir==='ru-en'?'ruq':''}"><mark>${esc(q)}</mark></h2>
       ${dir==='en-ru'?`<button class="speak" id="speak" aria-label="Произнести">🔊</button>`:''}
       <div class="opts">${opts.map(o=>`<button class="opt" data-id="${o.id}">${esc(o[key])}</button>`).join('')}</div>
@@ -346,7 +372,7 @@ function testScreen(w){
 function writeScreen(w){
   render(`
     <div class="stage">
-      ${w.pos?`<p class="pos">${esc(w.pos)}</p>`:''}
+      ${meta(w)?`<p class="pos">${esc(meta(w))}</p>`:''}
       <h2 class="word ruq">${esc(w.ru)}</h2>
       ${w.ex?`<p class="ex" style="margin-top:14px">${blank(w.ex,w.en)}</p>`:''}
       <input class="input" id="inp" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="по-английски" enterkeyhint="done">
@@ -393,11 +419,11 @@ function list(){
     <input class="input search" id="q" type="search" placeholder="Поиск по слову или переводу" autocomplete="off">
     <div class="legend"><span><i class="dot"></i>новые</span><span><i class="dot learn"></i>в процессе</span><span><i class="dot done"></i>выучены</span></div>
     <ul class="wl" id="wl"></ul>
-  `, {title:'Все слова', back:home, right:String(words.length)});
+  `, {title:packLabel()||'Все слова', back:home, right:String(pool().length)});
   const draw=(q='')=>{
     q=q.trim().toLowerCase();
-    const arr=words.filter(w=>!q||w.en.toLowerCase().includes(q)||w.ru.toLowerCase().includes(q)).slice().reverse();
-    $('#wl').innerHTML = arr.map(w=>`<li><div class="e"><i class="dot ${status(w)}"></i>${esc(w.en)}${w.pos?` <span class="small">${esc(w.pos)}</span>`:''}</div><div class="r">${esc(w.ru)}</div>${w.ex?`<div class="r x">${esc(w.ex)}</div>`:''}</li>`).join('')
+    const arr=pool().filter(w=>!q||w.en.toLowerCase().includes(q)||w.ru.toLowerCase().includes(q)).slice().reverse();
+    $('#wl').innerHTML = arr.map(w=>`<li><div class="e"><i class="dot ${status(w)}"></i>${esc(w.en)}${meta(w)?` <span class="small">${esc(meta(w))}</span>`:''}</div><div class="r">${esc(w.ru)}</div>${w.ex?`<div class="r x">${esc(w.ex)}</div>`:''}${w.topic&&!packLabel()?`<div class="r">${esc(TOPICS[w.topic]||w.topic)}</div>`:''}</li>`).join('')
       || '<li class="small">Ничего не найдено</li>';
   };
   draw(); $('#q').oninput=e=>draw(e.target.value);
