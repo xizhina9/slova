@@ -1,0 +1,17 @@
+[
+  {"id":"w0001","en":"elaborate","pos":"verb","ru":"подробно объяснять, развивать мысль","ex":"Could you elaborate on your plan?","src":"пример","added":"2026-09-15"},
+  {"id":"w0002","en":"reluctant","pos":"adjective","ru":"неохотный; делающий что-то без желания","ex":"She was reluctant to sign the contract.","src":"пример","added":"2026-09-15"},
+  {"id":"w0003","en":"overwhelming","pos":"adjective","ru":"подавляющий, ошеломляющий","ex":"The support we received was overwhelming.","src":"пример","added":"2026-09-15"},
+  {"id":"w0004","en":"come across","pos":"phrasal verb","ru":"случайно наткнуться, встретить","ex":"I came across an old photo yesterday.","src":"пример","added":"2026-09-15"},
+  {"id":"w0005","en":"figure out","pos":"phrasal verb","ru":"понять, разобраться","ex":"I can't figure out how this works.","src":"пример","added":"2026-09-15"},
+  {"id":"w0006","en":"deadline","pos":"noun","ru":"крайний срок","ex":"The deadline is on Friday.","src":"пример","added":"2026-09-15"},
+  {"id":"w0007","en":"thorough","pos":"adjective","ru":"тщательный, доскональный","ex":"They did a thorough check of the engine.","src":"пример","added":"2026-09-15"},
+  {"id":"w0008","en":"put off","pos":"phrasal verb","ru":"откладывать","ex":"Don't put off the visit to the dentist.","src":"пример","added":"2026-09-15"},
+  {"id":"w0009","en":"eventually","pos":"adverb","ru":"в конечном счёте, со временем","ex":"He eventually agreed to help.","src":"пример","added":"2026-09-15"},
+  {"id":"w0010","en":"genuine","pos":"adjective","ru":"подлинный, искренний","ex":"It was a genuine mistake.","src":"пример","added":"2026-09-15"},
+  {"id":"w0011","en":"take for granted","pos":"idiom","ru":"принимать как должное","ex":"We take clean water for granted.","src":"пример","added":"2026-09-15"},
+  {"id":"w0012","en":"commute","pos":"verb / noun","ru":"ездить на работу и обратно; такая поездка","ex":"My commute takes forty minutes.","src":"пример","added":"2026-09-15"},
+  {"id":"w0013","en":"subtle","pos":"adjective","ru":"едва заметный, тонкий","ex":"There's a subtle difference between the two.","src":"пример","added":"2026-09-15"},
+  {"id":"w0014","en":"keep up with","pos":"phrasal verb","ru":"поспевать, не отставать","ex":"It's hard to keep up with the news.","src":"пример","added":"2026-09-15"},
+  {"id":"w0015","en":"bargain","pos":"noun / verb","ru":"выгодная покупка; торговаться","ex":"That jacket was a real bargain.","src":"пример","added":"2026-09-15"}
+]
