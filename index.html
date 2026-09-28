@@ -253,11 +253,12 @@ function grade(val, target){
 
 // ---------- packs (filters by topic or level) ----------
 const LESSON_TAG = 'уроки';
+const SPECIAL = {'уроки':'Из уроков', 'Тетрадь':'Из тетради'};
 function conds(p=settings.pack){ return (!p||p==='all') ? [] : p.split('|').map(c=>{ const i=c.indexOf(':'); return [c.slice(0,i), c.slice(i+1)]; }); }
 function matches(w, [t,k]){ return t==='topic' ? w.topic===k : t==='level' ? w.level===k : t==='tag' ? (w.tags||[]).includes(k) : true; }
 function inPack(w){ return conds().every(c=>matches(w,c)); }
 function pool(){ return words.filter(inPack); }
-function condLabel([t,k]){ return t==='topic' ? (TOPICS[k]||k) : (t==='tag' && k===LESSON_TAG) ? 'Из уроков' : k; }
+function condLabel([t,k]){ return t==='topic' ? (TOPICS[k]||k) : (t==='tag' && SPECIAL[k]) ? SPECIAL[k] : k; }
 function packLabel(){ return conds().map(condLabel).join(' · '); }
 function meta(w){ return [w.pos, w.level].filter(Boolean).join(', '); }
 
@@ -314,18 +315,18 @@ function home(){
   const lead = !words.length
     ? 'Список слов пока пуст. Пришли первые слова — и они появятся здесь.'
     : `${lbl ? `«${lbl}»` : 'Всего'} ${s.total} ${plural(s.total,'слово','слова','слов')}: ${s.fresh} ещё не открывал, ${s.due} ${plural(s.due,'ждёт','ждут','ждут')} повторения сегодня, ${s.done} выучено.`;
-  const tc={}, lc={}; let lessons=0;
-  for(const w of words){ if(w.topic) tc[w.topic]=(tc[w.topic]||0)+1; if(w.level) lc[w.level]=(lc[w.level]||0)+1; if((w.tags||[]).includes(LESSON_TAG)) lessons++; }
+  const tc={}, lc={}, sc={};
+  for(const w of words){ if(w.topic) tc[w.topic]=(tc[w.topic]||0)+1; if(w.level) lc[w.level]=(lc[w.level]||0)+1; for(const t of (w.tags||[])) if(SPECIAL[t]) sc[t]=(sc[t]||0)+1; }
   const cs=conds(), base = cs.length ? cs[0].join(':') : 'all';
   const chip=(v,l,n,on,cls='')=>`<button class="chip ${cls} ${on?'on':''}" data-p="${esc(v)}">${esc(l)}${n!=null?`<span class="c">${n}</span>`:''}</button>`;
   const chips = [chip('all','Все слова',words.length,base==='all')]
-    .concat(lessons ? [chip('tag:'+LESSON_TAG,'Из уроков',lessons,base==='tag:'+LESSON_TAG)] : [])
+    .concat(Object.keys(SPECIAL).filter(t=>sc[t]).map(t=>chip('tag:'+t,SPECIAL[t],sc[t],base==='tag:'+t)))
     .concat(Object.keys(TOPICS).filter(k=>tc[k]).map(k=>chip('topic:'+k,TOPICS[k],tc[k],base==='topic:'+k)))
     .concat(LEVELS.filter(l=>lc[l]).map(l=>chip('level:'+l,l,lc[l],base==='level:'+l,'lvl')));
   let sub=[];
   if(cs.length && cs[0][0]!=='level'){
     const inBase = words.filter(w=>matches(w,cs[0])), cnt={};
-    for(const w of inBase) for(const t of (w.tags||[])) if(t!==LESSON_TAG && t!==cs[0][1]) cnt[t]=(cnt[t]||0)+1;
+    for(const w of inBase) for(const t of (w.tags||[])) if(!SPECIAL[t] && t!==cs[0][1]) cnt[t]=(cnt[t]||0)+1;
     const tags=Object.keys(cnt);
     if(tags.length>1) sub=[chip(base,'Все',inBase.length,cs.length===1)].concat(tags.map(t=>chip(base+'|tag:'+t,t,cnt[t],settings.pack===base+'|tag:'+t)));
   }
