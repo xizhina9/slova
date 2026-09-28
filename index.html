@@ -60,6 +60,22 @@ p.lead{font-family:var(--serif);font-size:20px;line-height:1.45;margin:0 0 30px;
 .chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .chip .c{opacity:.6;margin-left:6px;font-variant-numeric:tabular-nums}
 .chip.lvl{font-variant-numeric:tabular-nums}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:22px;margin:30px 0 0}
+.sent{font-family:var(--serif);font-size:clamp(21px,5.6vw,26px);line-height:1.45;margin:0;text-align:center;overflow-wrap:anywhere}
+.sent .blank{display:inline-block;min-width:3em;border-bottom:2px solid var(--ink);height:1em;vertical-align:baseline}
+.sent .hint{color:var(--muted);font-style:italic;font-size:.78em}
+.sent mark{background:var(--hl);color:inherit;padding:0 .15em;border-radius:2px}
+.why{color:var(--muted);text-align:center;font-size:16px;line-height:1.5;margin:12px 0 0}
+.task{color:var(--muted);text-align:center;font-size:15px;margin:0 0 6px}
+.answer{min-height:60px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;padding:10px;border:1.5px dashed var(--line);border-radius:14px;margin-top:18px}
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
+.tok{border:1.5px solid var(--line);background:var(--panel);border-radius:10px;padding:8px 12px;font-family:var(--serif);font-size:19px;cursor:pointer}
+.answer .tok{background:var(--bg)}
+.intro{margin:22px 0 0;padding:0;list-style:none}
+.intro li{padding:9px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.45}
+.intro li b{font-family:var(--serif);font-weight:600;font-size:17px}
+.intro li i{font-family:var(--serif)}
+textarea.input{resize:none;text-align:left;font-size:19px;line-height:1.4;padding:12px 14px;font-family:var(--serif)}
 
 /* session */
 .stage{flex:1;display:flex;flex-direction:column;justify-content:center;padding:8px 0 16px}
@@ -160,7 +176,7 @@ const INTERVALS = [0, 1, 3, 7, 14, 30]; // days until next review, by box
 const TOPICS = {build:'Архитектура и строительство', acad:'Академическая лексика', sci:'Наука и технологии', edu:'Образование', soc:'Общество и культура', eco:'Экология', health:'Здоровье', work:'Работа и бизнес', city:'Города и жильё', travel:'Путешествия', talk:'Разговорное'};
 const LEVELS = ['B1','B2','C1'];
 
-let words = [], source = '';
+let words = [], source = '', sets = [];
 let progress = safeJSON(store.get('ew_progress'), {});
 let settings = Object.assign({dir:'en-ru', size:20, pack:'all'}, safeJSON(store.get('ew_settings'), {}));
 let session = null;
@@ -233,6 +249,12 @@ async function loadWords(){
   } catch(e){ words = WORDS_FALLBACK; source = 'встроенный список (words.json не найден)'; }
   words.forEach((w,i)=>{ if(!w.id) w.id='w'+i; });
   if(settings.pack!=='all' && !pool().length){ settings.pack='all'; saveS(); }
+  try{
+    const r = await fetch('exercises.json?v='+Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error(r.status);
+    const j = await r.json(); sets = Array.isArray(j) ? j : [];
+  } catch(e){ sets = []; }
+  sets.forEach(st=>st.items.forEach((it,i)=>{ if(!it.id) it.id=st.id+'-'+i; }));
 }
 
 // ---------- rendering ----------
@@ -269,15 +291,20 @@ function home(){
       ${row('write','Письмо','напиши слово по переводу')}
       ${row('errors','Ошибки','только слова, где ошибался', s.err, !s.err)}
     </div>
+    ${setsHtml()}
     <div class="links"><button id="lnk-list">Все слова</button><button id="lnk-set">Настройки</button></div>
   `, {header:false});
-  document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>start(b.dataset.m));
+  document.querySelectorAll('.mode[data-set]').forEach(b=>b.onclick=()=>{ const st=sets.find(x=>x.id===b.dataset.set); if(st) openSet(st); });
+  document.querySelectorAll('.mode[data-m]').forEach(b=>b.onclick=()=>start(b.dataset.m));
   document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{ settings.pack=b.dataset.p; saveS(); home(); });
   $('#lnk-list').onclick=list; $('#lnk-set').onclick=settingsScreen;
 }
 
 const TITLES = {cards:'Карточки', test:'Выбор из четырёх', write:'Письмо'};
-function sessionOpts(){ return {title:TITLES[session.mode], back:home, right:`${Math.min(session.i+1,session.queue.length)} / ${session.queue.length}`}; }
+function sessionOpts(){
+  const ex = session.kind==='ex';
+  return {title: ex ? (session.set.short||session.set.title) : TITLES[session.mode], back: ex ? ()=>openSet(session.set) : home, right:`${Math.min(session.i+1,session.queue.length)} / ${session.queue.length}`};
+}
 
 function start(mode){
   const P=pool();
@@ -291,12 +318,13 @@ function start(mode){
     list_=[...due,...fresh,...rest];
   }
   const queue=shuffle(list_.slice(0, errorsOnly ? list_.length : settings.size));
-  session={mode, queue, i:0, first:{}, wrong:[], retried:new Set()};
+  session={kind:'words', mode, queue, i:0, first:{}, wrong:[], retried:new Set()};
   next();
 }
 function next(){
   if(session.i>=session.queue.length) return summary();
   const w=session.queue[session.i];
+  if(session.kind==='ex') return exScreen(w);
   ({cards:cardScreen, test:testScreen, write:writeScreen})[session.mode](w);
 }
 function record(w, ok){
@@ -398,19 +426,22 @@ function writeScreen(w){
 
 function summary(){
   const ids=Object.keys(session.first), total=ids.length, ok=ids.filter(i=>session.first[i]).length;
-  const wrong=session.wrong, mode=session.mode;
+  const wrong=session.wrong, mode=session.mode, kind=session.kind, set=session.set;
+  const li = w => w.en
+    ? `<li><div class="e">${esc(w.en)}</div><div class="r">${esc(w.ru)}</div></li>`
+    : `<li><div class="e"><span>${(w.type==='order'||w.type==='fix') ? esc(firstA(w)) : sentHtml(w.q, firstA(w))}</span></div>${w.x?`<div class="r">${esc(w.x)}</div>`:''}</li>`;
   render(`
     <div class="summary">
       <h2>${ok} из ${total}</h2>
-      <p class="small" style="margin:0">${wrong.length ? 'Слова с ошибками вернутся в следующее повторение.' : 'Без ошибок.'}</p>
-      ${wrong.length?`<ul class="wrongs">${wrong.map(w=>`<li><div class="e">${esc(w.en)}</div><div class="r">${esc(w.ru)}</div></li>`).join('')}</ul>`:''}
+      <p class="small" style="margin:0">${wrong.length ? 'Ошибки вернутся в следующее повторение.' : 'Без ошибок.'}</p>
+      ${wrong.length?`<ul class="wrongs">${wrong.map(li).join('')}</ul>`:''}
       <div class="actions" style="margin-top:28px">
         ${wrong.length?`<button class="btn" id="again">Ещё раз ошибки</button>`:''}
         <button class="btn primary" id="hm">На главную</button>
       </div>
     </div>
   `, {title:'Готово', back:home, right:''});
-  const ag=$('#again'); if(ag) ag.onclick=()=>{ session={mode, queue:shuffle(wrong), i:0, first:{}, wrong:[], retried:new Set()}; next(); };
+  const ag=$('#again'); if(ag) ag.onclick=()=>{ session={kind, set, mode, queue:shuffle(wrong), i:0, first:{}, wrong:[], retried:new Set()}; next(); };
   $('#hm').onclick=home;
 }
 
@@ -456,6 +487,145 @@ function settingsScreen(){
     };
   };
   $('#reset').onclick=()=>{ if(confirm('Сбросить весь прогресс? Слова останутся.')){ progress={}; saveP(); toast('Прогресс сброшен'); settingsScreen(); } };
+}
+
+// ---------- exercise engine: gap / choice / fix / order ----------
+const TYPE_LABEL = {gap:'Раскрой скобки', choice:'Выбери форму', fix:'Исправь ошибку', order:'Собери предложение'};
+function normAns(s){
+  return String(s||'').toLowerCase().replace(/[’‘`]/g,"'").replace(/n't\b/g,' not').replace(/'ll\b/g,' will').replace(/'ve\b/g,' have').replace(/'re\b/g,' are')
+    .replace(/[.,!?;:"]/g,'').replace(/\s+/g,' ').trim();
+}
+function firstA(it){ return Array.isArray(it.a) ? it.a[0] : it.a; }
+function isOk(it, val){
+  const acc = (Array.isArray(it.a) ? it.a : [it.a]).map(normAns);
+  const v = normAns(val);
+  const cands = [v, v.replace(/'s\b/g,' has'), v.replace(/'s\b/g,' is'), v.replace(/'d\b/g,' had'), v.replace(/'d\b/g,' would')];
+  return cands.some(c=>acc.includes(c));
+}
+function sentHtml(q, fill){
+  let s = esc(q).replace(/\((.*?)\)/g,'<span class="hint">($1)</span>');
+  if(fill){ s = s.replace('___', `<mark>${esc(fill)}</mark>`).replace(/\s?<span class="hint">.*?<\/span>/,''); }
+  else s = s.replace('___','<span class="blank"></span>');
+  return s;
+}
+function fmt(l){ return esc(l).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/_(.+?)_/g,'<i>$1</i>'); }
+function setsHtml(){
+  if(!sets.length) return '';
+  const groups = {};
+  for(const st of sets){ (groups[st.group||'Упражнения'] ||= []).push(st); }
+  return Object.entries(groups).map(([g, arr]) => `<h2 class="sec">${esc(g)}</h2><div class="modes">${arr.map(st=>{
+    const s=stats(st.items), n=st.items.length;
+    const sub = s.fresh===n ? `${n} ${plural(n,'задание','задания','заданий')}${st.level?', '+esc(st.level):''}` : `${s.due} к повторению, ${s.done} выучено из ${n}`;
+    return `<button class="mode" data-set="${esc(st.id)}"><span><span class="t">${esc(st.title)}</span><br><span class="d">${sub}</span></span>${s.err?`<span class="n">${s.err} ${plural(s.err,'ошибка','ошибки','ошибок')}</span>`:''}</button>`;
+  }).join('')}</div>`).join('');
+}
+function openSet(set){
+  session=null;
+  const s=stats(set.items), n=set.items.length;
+  render(`
+    <h1 class="brand" style="font-size:28px;margin-top:16px">${esc(set.title)}</h1>
+    <p class="small" style="margin:0">${n} ${plural(n,'задание','задания','заданий')}${set.level?', уровень '+esc(set.level):''}: ${s.fresh} новых, ${s.due} к повторению, ${s.done} выучено.</p>
+    <ul class="intro">${(set.intro||[]).map(l=>`<li>${fmt(l)}</li>`).join('')}</ul>
+    <div class="actions" style="margin-top:24px">${s.err?`<button class="btn" id="errs">Только ошибки</button>`:''}<button class="btn primary" id="go">Начать</button></div>
+  `, {title:set.group||'Упражнения', back:home});
+  $('#go').onclick=()=>startSet(set,false);
+  const e=$('#errs'); if(e) e.onclick=()=>startSet(set,true);
+}
+function startSet(set, errorsOnly){
+  const P=set.items; let list_;
+  if(errorsOnly) list_=shuffle(P.filter(isError));
+  else list_=[...shuffle(P.filter(isDue)), ...shuffle(P.filter(w=>status(w)==='new')), ...shuffle(P.filter(w=>!isDue(w)&&status(w)!=='new'))];
+  const queue=shuffle(list_.slice(0, errorsOnly ? list_.length : settings.size));
+  if(!queue.length){ toast('Нечего повторять'); return; }
+  session={kind:'ex', set, queue, i:0, first:{}, wrong:[], retried:new Set()};
+  next();
+}
+function exScreen(it){ ({gap:gapScreen, choice:choiceScreen, fix:fixScreen, order:orderScreen})[it.type](it); }
+function finishEx(it, ok, correct){
+  record(it, ok);
+  const v=$('#verdict');
+  if(ok){ v.textContent='Верно'; v.className='verdict ok'; }
+  else { v.innerHTML = correct ? `Правильно: <b>${esc(correct)}</b>` : 'Ошибка'; v.className='verdict no'; }
+  if(it.x) $('#why').textContent=it.x;
+  nextButton();
+}
+function gapScreen(it){
+  render(`
+    <div class="stage">
+      <p class="pos">${TYPE_LABEL.gap}</p>
+      <p class="sent" id="sent">${sentHtml(it.q)}</p>
+      <input class="input" id="inp" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="твой вариант" enterkeyhint="done">
+      <p class="verdict" id="verdict"></p><p class="why" id="why"></p>
+    </div>
+    <div class="actions" id="acts"><button class="btn primary" id="chk">Проверить</button></div>
+  `, sessionOpts());
+  const inp=$('#inp'); setTimeout(()=>inp.focus(),50); let done=false;
+  const check=()=>{ if(done||!inp.value.trim()) return; done=true; inp.disabled=true;
+    const ok=isOk(it, inp.value); $('#sent').innerHTML=sentHtml(it.q, firstA(it)); finishEx(it, ok, null); $('#nxt').focus(); };
+  $('#chk').onclick=check; inp.onkeydown=e=>{ if(e.key==='Enter'){ e.preventDefault(); check(); } };
+}
+function choiceScreen(it){
+  const opts=shuffle(it.opts);
+  render(`
+    <div class="stage">
+      <p class="pos">${TYPE_LABEL.choice}</p>
+      <p class="sent" id="sent">${sentHtml(it.q)}</p>
+      <div class="opts">${opts.map((o,i)=>`<button class="opt" data-i="${i}">${esc(o)}</button>`).join('')}</div>
+      <p class="verdict" id="verdict"></p><p class="why" id="why"></p>
+    </div>
+    <div class="actions" id="acts"></div>
+  `, sessionOpts());
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const val=opts[+b.dataset.i], ok=isOk(it,val);
+    document.querySelectorAll('.opt').forEach(x=>{ x.disabled=true; if(isOk(it,opts[+x.dataset.i])) x.classList.add('correct'); });
+    if(!ok) b.classList.add('wrong');
+    $('#sent').innerHTML=sentHtml(it.q, firstA(it));
+    finishEx(it, ok, null);
+  });
+}
+function fixScreen(it){
+  render(`
+    <div class="stage">
+      <p class="pos">${TYPE_LABEL.fix}</p>
+      <p class="task">В предложении одна ошибка. Исправь её прямо в тексте.</p>
+      <textarea class="input" id="inp" rows="3" autocorrect="off" autocapitalize="off" spellcheck="false">${esc(it.q)}</textarea>
+      <p class="verdict" id="verdict"></p><p class="why" id="why"></p>
+    </div>
+    <div class="actions" id="acts"><button class="btn primary" id="chk">Проверить</button></div>
+  `, sessionOpts());
+  const inp=$('#inp'); let done=false;
+  $('#chk').onclick=()=>{ if(done) return; done=true; inp.disabled=true;
+    if(isOk(it, inp.value)) return finishEx(it, true);
+    $('#verdict').innerHTML=`Образец: <b>${esc(firstA(it))}</b>`; $('#verdict').className='verdict no';
+    if(it.x) $('#why').textContent=it.x;
+    $('#acts').innerHTML=`<button class="btn bad" id="no">Ошибка</button><button class="btn good" id="yes">Засчитать</button>`;
+    $('#no').onclick=()=>{record(it,false);advance();}; $('#yes').onclick=()=>{record(it,true);advance();};
+  };
+}
+function orderScreen(it){
+  const raw = firstA(it).split(' ');
+  const toks = raw.map((w,i)=>({w: i===0 && !/^I('|$)/.test(w) ? w[0].toLowerCase()+w.slice(1) : w, i}));
+  const bank=shuffle(toks); let ans=[]; let done=false;
+  render(`
+    <div class="stage">
+      <p class="pos">${TYPE_LABEL.order}</p>
+      <p class="task">Нажимай слова по порядку.</p>
+      <div class="answer" id="ans"></div>
+      <div class="bank" id="bank"></div>
+      <p class="verdict" id="verdict"></p><p class="why" id="why"></p>
+    </div>
+    <div class="actions" id="acts"><button class="btn primary" id="chk" disabled>Проверить</button></div>
+  `, sessionOpts());
+  const draw=()=>{
+    $('#ans').innerHTML=ans.map(t=>`<button class="tok" data-i="${t.i}">${esc(t.w)}</button>`).join('');
+    $('#bank').innerHTML=bank.filter(t=>!ans.includes(t)).map(t=>`<button class="tok" data-i="${t.i}">${esc(t.w)}</button>`).join('');
+    $('#chk').disabled = ans.length!==bank.length;
+    $('#ans').querySelectorAll('.tok').forEach(b=>b.onclick=()=>{ if(done) return; ans=ans.filter(t=>t.i!==+b.dataset.i); draw(); });
+    $('#bank').querySelectorAll('.tok').forEach(b=>b.onclick=()=>{ if(done) return; ans.push(bank.find(t=>t.i===+b.dataset.i)); draw(); });
+  };
+  draw();
+  $('#chk').onclick=()=>{ if(done||ans.length!==bank.length) return; done=true;
+    const ok=isOk(it, ans.map(t=>t.w).join(' ')); finishEx(it, ok, ok?null:firstA(it)); };
 }
 
 (async()=>{ await loadWords(); home(); })();

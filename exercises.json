@@ -1,0 +1,724 @@
+[
+ {
+  "id": "t-pp-ps",
+  "title": "Present Perfect vs Past Simple",
+  "short": "Perfect vs Simple",
+  "group": "Времена",
+  "level": "B1–B2",
+  "intro": [
+   "**Past Simple** — действие закончилось в закрытом времени: _yesterday, last week, in 2019, two years ago, when I was a child_.",
+   "**Present Perfect** — результат важен сейчас или опыт без даты: _just, already, yet, ever, never, so far, recently_.",
+   "**Present Perfect** с _for / since_ — началось в прошлом и продолжается: _I've lived here since 2019_.",
+   "**Present Perfect Continuous** — подчёркивает процесс и длительность: _How long have you been waiting?_",
+   "Вопрос с **when** — всегда Past Simple: _When did you arrive?_"
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "I ___ (live) here since 2019.",
+    "a": [
+     "have lived",
+     "have been living"
+    ],
+    "x": "since + продолжается до сих пор → Present Perfect.",
+    "id": "t-pp-ps-01"
+   },
+   {
+    "type": "choice",
+    "q": "She ___ to London twice.",
+    "opts": [
+     "went",
+     "has been",
+     "has gone",
+     "was going"
+    ],
+    "a": "has been",
+    "x": "Опыт без указания времени → Present Perfect. has been = ездила и вернулась; has gone = уехала и ещё там.",
+    "id": "t-pp-ps-02"
+   },
+   {
+    "type": "fix",
+    "q": "I have seen him yesterday.",
+    "a": [
+     "I saw him yesterday."
+    ],
+    "x": "yesterday закрывает время → Past Simple.",
+    "id": "t-pp-ps-03"
+   },
+   {
+    "type": "choice",
+    "q": "When ___ the report?",
+    "opts": [
+     "did you finish",
+     "have you finished",
+     "you finished",
+     "have you finish"
+    ],
+    "a": "did you finish",
+    "x": "Вопрос when спрашивает о моменте в прошлом → Past Simple.",
+    "id": "t-pp-ps-04"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (not / see) each other for ages.",
+    "a": [
+     "have not seen"
+    ],
+    "x": "for ages — период, который тянется до сейчас → Present Perfect.",
+    "id": "t-pp-ps-05"
+   },
+   {
+    "type": "order",
+    "a": [
+     "Have you ever been to Japan?"
+    ],
+    "x": "ever ставится между have и причастием.",
+    "id": "t-pp-ps-06"
+   },
+   {
+    "type": "choice",
+    "q": "Shakespeare ___ many plays.",
+    "opts": [
+     "has written",
+     "wrote",
+     "has been writing",
+     "writes"
+    ],
+    "a": "wrote",
+    "x": "Человек умер — его период закрыт → Past Simple.",
+    "id": "t-pp-ps-07"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (just / hear) the news — it's terrible!",
+    "a": [
+     "have just heard"
+    ],
+    "x": "just + результат сейчас → Present Perfect.",
+    "id": "t-pp-ps-08"
+   },
+   {
+    "type": "fix",
+    "q": "I live in this flat for three years.",
+    "a": [
+     "I have lived in this flat for three years.",
+     "I have been living in this flat for three years."
+    ],
+    "x": "for + до сих пор → Present Perfect, не Present Simple.",
+    "id": "t-pp-ps-09"
+   },
+   {
+    "type": "gap",
+    "q": "How long have you ___ (wait)?",
+    "a": [
+     "been waiting"
+    ],
+    "x": "Длительность процесса до сейчас → Present Perfect Continuous.",
+    "id": "t-pp-ps-10"
+   },
+   {
+    "type": "choice",
+    "q": "Look! Somebody ___ the window.",
+    "opts": [
+     "broke",
+     "has broken",
+     "has been breaking",
+     "breaks"
+    ],
+    "a": "has broken",
+    "x": "Результат виден сейчас → Present Perfect.",
+    "id": "t-pp-ps-11"
+   },
+   {
+    "type": "gap",
+    "q": "The company ___ (open) three new offices last year.",
+    "a": [
+     "opened"
+    ],
+    "x": "last year → закрытый период → Past Simple.",
+    "id": "t-pp-ps-12"
+   },
+   {
+    "type": "order",
+    "a": [
+     "I haven't finished the report yet."
+    ],
+    "x": "yet ставится в конец отрицания.",
+    "id": "t-pp-ps-13"
+   },
+   {
+    "type": "choice",
+    "q": "This is the first time I ___ sushi.",
+    "opts": [
+     "eat",
+     "ate",
+     "have eaten",
+     "am eating"
+    ],
+    "a": "have eaten",
+    "x": "It's the first time + Present Perfect.",
+    "id": "t-pp-ps-14"
+   },
+   {
+    "type": "fix",
+    "q": "When have you arrived?",
+    "a": [
+     "When did you arrive?"
+    ],
+    "x": "С when используется Past Simple.",
+    "id": "t-pp-ps-15"
+   },
+   {
+    "type": "gap",
+    "q": "He ___ (work) here for ten years and still enjoys it.",
+    "a": [
+     "has worked",
+     "has been working"
+    ],
+    "x": "Продолжается до сих пор → Present Perfect (Continuous).",
+    "id": "t-pp-ps-16"
+   },
+   {
+    "type": "gap",
+    "q": "She ___ (be) very busy lately.",
+    "a": [
+     "has been"
+    ],
+    "x": "lately / recently — период до сейчас → Present Perfect.",
+    "id": "t-pp-ps-17"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ my keys. I can't get in.",
+    "opts": [
+     "lost",
+     "have lost",
+     "was losing",
+     "have been losing"
+    ],
+    "a": "have lost",
+    "x": "Результат сейчас (не могу войти) → Present Perfect.",
+    "id": "t-pp-ps-18"
+   },
+   {
+    "type": "fix",
+    "q": "My grandfather has died in 1998.",
+    "a": [
+     "My grandfather died in 1998."
+    ],
+    "x": "Дата закрывает время → Past Simple.",
+    "id": "t-pp-ps-19"
+   },
+   {
+    "type": "order",
+    "a": [
+     "She has been studying English since January."
+    ],
+    "x": "since + точка отсчёта; процесс → Present Perfect Continuous.",
+    "id": "t-pp-ps-20"
+   },
+   {
+    "type": "choice",
+    "q": "___ Thai food?",
+    "opts": [
+     "Did you ever try",
+     "Have you ever tried",
+     "Have you ever try",
+     "Were you ever trying"
+    ],
+    "a": "Have you ever tried",
+    "x": "ever + опыт без даты → Present Perfect; после have — третья форма.",
+    "id": "t-pp-ps-21"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (read) this book twice, so I know it well.",
+    "a": [
+     "have read"
+    ],
+    "x": "Опыт с результатом сейчас → Present Perfect.",
+    "id": "t-pp-ps-22"
+   }
+  ]
+ },
+ {
+  "id": "t-past",
+  "title": "Прошедшие времена в повествовании",
+  "short": "Прошедшие времена",
+  "group": "Времена",
+  "level": "B2",
+  "intro": [
+   "**Past Simple** — цепочка событий по порядку: _He came in, sat down and opened the letter_.",
+   "**Past Continuous** — фон или процесс, который прервали: _I was watching TV when the phone rang_.",
+   "**Past Perfect** — случилось раньше другого события в прошлом; маркеры _by the time, after, before, already_: _The film had started by the time we arrived_.",
+   "**Past Perfect Continuous** — процесс до момента в прошлом, часто как причина: _She was tired because she had been working all day_.",
+   "**used to** — прошлая привычка или состояние, которых больше нет."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "By the time we arrived, the film ___ (start).",
+    "a": [
+     "had started",
+     "had already started"
+    ],
+    "x": "by the time → раньше другого прошлого события → Past Perfect.",
+    "id": "t-past-01"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ TV when the phone rang.",
+    "opts": [
+     "watched",
+     "was watching",
+     "had watched",
+     "have watched"
+    ],
+    "a": "was watching",
+    "x": "Процесс-фон, который прервало событие → Past Continuous.",
+    "id": "t-past-02"
+   },
+   {
+    "type": "fix",
+    "q": "When I got home, I saw that someone broke the window.",
+    "a": [
+     "When I got home, I saw that someone had broken the window."
+    ],
+    "x": "Окно разбили раньше, чем я пришёл → Past Perfect.",
+    "id": "t-past-03"
+   },
+   {
+    "type": "order",
+    "a": [
+     "She had never seen snow before."
+    ],
+    "x": "never между had и причастием; before отсылает к моменту в прошлом.",
+    "id": "t-past-04"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (walk) for two hours when it started to rain.",
+    "a": [
+     "had been walking"
+    ],
+    "x": "Длительный процесс до момента в прошлом → Past Perfect Continuous.",
+    "id": "t-past-05"
+   },
+   {
+    "type": "choice",
+    "q": "He ___ his leg while he was skiing.",
+    "opts": [
+     "was breaking",
+     "broke",
+     "had broken",
+     "has broken"
+    ],
+    "a": "broke",
+    "x": "Короткое событие на фоне процесса → Past Simple.",
+    "id": "t-past-06"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ football every weekend when I was a kid.",
+    "opts": [
+     "used to play",
+     "was used to play",
+     "use to play",
+     "would to play"
+    ],
+    "a": "used to play",
+    "x": "Прошлая привычка → used to + инфинитив.",
+    "id": "t-past-07"
+   },
+   {
+    "type": "gap",
+    "q": "After she ___ (finish) her degree, she moved to Berlin.",
+    "a": [
+     "had finished",
+     "finished"
+    ],
+    "x": "after делает порядок ясным, поэтому возможны и Past Perfect, и Past Simple.",
+    "id": "t-past-08"
+   },
+   {
+    "type": "fix",
+    "q": "While I was cooking dinner, the lights had gone out.",
+    "a": [
+     "While I was cooking dinner, the lights went out."
+    ],
+    "x": "Событие на фоне процесса → Past Simple, не Past Perfect.",
+    "id": "t-past-09"
+   },
+   {
+    "type": "choice",
+    "q": "She was tired because she ___ all day.",
+    "opts": [
+     "worked",
+     "was working",
+     "had been working",
+     "has worked"
+    ],
+    "a": "had been working",
+    "x": "Причина — процесс до момента в прошлом → Past Perfect Continuous.",
+    "id": "t-past-10"
+   },
+   {
+    "type": "gap",
+    "q": "The train ___ (leave) by the time I got to the station.",
+    "a": [
+     "had left",
+     "had already left"
+    ],
+    "x": "by the time + Past Simple → раньше → Past Perfect.",
+    "id": "t-past-11"
+   },
+   {
+    "type": "order",
+    "a": [
+     "What were you doing at 8 last night?"
+    ],
+    "x": "Вопрос о процессе в момент прошлого → Past Continuous.",
+    "id": "t-past-12"
+   },
+   {
+    "type": "gap",
+    "q": "It was the best meal I ___ (ever / eat).",
+    "a": [
+     "had ever eaten"
+    ],
+    "x": "Превосходная степень в прошлом + опыт до того момента → Past Perfect.",
+    "id": "t-past-13"
+   },
+   {
+    "type": "fix",
+    "q": "As soon as he was opening the door, the dog ran out.",
+    "a": [
+     "As soon as he opened the door, the dog ran out.",
+     "As soon as he had opened the door, the dog ran out."
+    ],
+    "x": "as soon as — последовательность событий, а не процесс.",
+    "id": "t-past-14"
+   },
+   {
+    "type": "gap",
+    "q": "They ___ (not / know) each other long when they got married.",
+    "a": [
+     "had not known"
+    ],
+    "x": "Состояние до момента в прошлом → Past Perfect.",
+    "id": "t-past-15"
+   },
+   {
+    "type": "choice",
+    "q": "When I ___ the room, everyone stopped talking.",
+    "opts": [
+     "was entering",
+     "entered",
+     "had entered",
+     "have entered"
+    ],
+    "a": "entered",
+    "x": "Событие, после которого произошло другое → Past Simple.",
+    "id": "t-past-16"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (drive) home when I realised I had left my phone at work.",
+    "a": [
+     "was driving"
+    ],
+    "x": "Процесс в момент, когда что-то произошло → Past Continuous.",
+    "id": "t-past-17"
+   },
+   {
+    "type": "fix",
+    "q": "I didn't went to school yesterday.",
+    "a": [
+     "I didn't go to school yesterday."
+    ],
+    "x": "После didn't — начальная форма глагола.",
+    "id": "t-past-18"
+   },
+   {
+    "type": "order",
+    "a": [
+     "He had been waiting for an hour before she came."
+    ],
+    "x": "Длительность до события в прошлом → Past Perfect Continuous.",
+    "id": "t-past-19"
+   },
+   {
+    "type": "gap",
+    "q": "She looked familiar — I was sure I ___ (meet) her somewhere before.",
+    "a": [
+     "had met"
+    ],
+    "x": "Раньше момента в прошлом → Past Perfect.",
+    "id": "t-past-20"
+   },
+   {
+    "type": "choice",
+    "q": "In those days people ___ letters, not emails.",
+    "opts": [
+     "used to write",
+     "would to write",
+     "were writing",
+     "had written"
+    ],
+    "a": "used to write",
+    "x": "Прошлая привычка, которой больше нет → used to.",
+    "id": "t-past-21"
+   },
+   {
+    "type": "gap",
+    "q": "The streets were wet. It ___ (rain).",
+    "a": [
+     "had been raining",
+     "had rained"
+    ],
+    "x": "Результат в прошлом от предшествующего процесса → Past Perfect (Continuous).",
+    "id": "t-past-22"
+   }
+  ]
+ },
+ {
+  "id": "t-future",
+  "title": "Способы говорить о будущем",
+  "short": "Будущее",
+  "group": "Времена",
+  "level": "B1–B2",
+  "intro": [
+   "**will** — решение в момент речи, обещание, прогноз-мнение: _I'll get it. I think it will rain_.",
+   "**going to** — намерение (решение уже принято) или прогноз по видимым признакам: _Look at the clouds — it's going to rain_.",
+   "**Present Continuous** — договорённость с временем и местом: _I'm meeting Tom at 5_.",
+   "**Present Simple** — расписание: _The train leaves at 6.45_.",
+   "После **when, if, as soon as, until, before** — настоящее время, не will: _I'll call you when I arrive_.",
+   "**Future Continuous** — процесс в момент в будущем; **Future Perfect** — завершится к сроку: _by Friday, by 2030_."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "Look at those clouds! It ___.",
+    "opts": [
+     "will rain",
+     "is going to rain",
+     "rains",
+     "is raining"
+    ],
+    "a": "is going to rain",
+    "x": "Прогноз по видимым признакам → going to.",
+    "id": "t-future-01"
+   },
+   {
+    "type": "gap",
+    "q": "I'll call you when I ___ (arrive).",
+    "a": [
+     "arrive"
+    ],
+    "x": "После when — Present Simple, не will.",
+    "id": "t-future-02"
+   },
+   {
+    "type": "fix",
+    "q": "If it will rain tomorrow, we will stay at home.",
+    "a": [
+     "If it rains tomorrow, we will stay at home."
+    ],
+    "x": "После if — настоящее время.",
+    "id": "t-future-03"
+   },
+   {
+    "type": "choice",
+    "q": "— The phone's ringing. — I ___ get it.",
+    "opts": [
+     "am going to",
+     "will",
+     "am getting",
+     "get"
+    ],
+    "a": "will",
+    "x": "Спонтанное решение в момент речи → will.",
+    "id": "t-future-04"
+   },
+   {
+    "type": "order",
+    "a": [
+     "We're having dinner with Anna on Friday."
+    ],
+    "x": "Договорённость с датой → Present Continuous.",
+    "id": "t-future-05"
+   },
+   {
+    "type": "gap",
+    "q": "The train ___ (leave) at 6.45 tomorrow morning.",
+    "a": [
+     "leaves"
+    ],
+    "x": "Расписание → Present Simple.",
+    "id": "t-future-06"
+   },
+   {
+    "type": "choice",
+    "q": "By 2030 the company ___ 50 offices.",
+    "opts": [
+     "will open",
+     "will have opened",
+     "is opening",
+     "opens"
+    ],
+    "a": "will have opened",
+    "x": "by + момент в будущем → Future Perfect.",
+    "id": "t-future-07"
+   },
+   {
+    "type": "gap",
+    "q": "This time next week I ___ (lie) on a beach.",
+    "a": [
+     "will be lying"
+    ],
+    "x": "Процесс в конкретный момент будущего → Future Continuous.",
+    "id": "t-future-08"
+   },
+   {
+    "type": "fix",
+    "q": "Don't leave until I will come back.",
+    "a": [
+     "Don't leave until I come back."
+    ],
+    "x": "После until — настоящее время.",
+    "id": "t-future-09"
+   },
+   {
+    "type": "choice",
+    "q": "We ___ a new house. We've already found one we like.",
+    "opts": [
+     "will buy",
+     "are going to buy",
+     "buy",
+     "will have bought"
+    ],
+    "a": "are going to buy",
+    "x": "Намерение, решение уже принято → going to.",
+    "id": "t-future-10"
+   },
+   {
+    "type": "gap",
+    "q": "I promise I ___ (not / tell) anyone.",
+    "a": [
+     "will not tell"
+    ],
+    "x": "Обещание → will.",
+    "id": "t-future-11"
+   },
+   {
+    "type": "order",
+    "a": [
+     "She is going to start a new job in May."
+    ],
+    "x": "Намерение / план → going to.",
+    "id": "t-future-12"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ Tom at the airport at 5. He's expecting me.",
+    "opts": [
+     "will meet",
+     "am meeting",
+     "meet",
+     "will have met"
+    ],
+    "a": "am meeting",
+    "x": "Договорённость с временем и местом → Present Continuous.",
+    "id": "t-future-13"
+   },
+   {
+    "type": "gap",
+    "q": "As soon as the report ___ (be) ready, I'll send it to you.",
+    "a": [
+     "is"
+    ],
+    "x": "После as soon as — Present Simple.",
+    "id": "t-future-14"
+   },
+   {
+    "type": "fix",
+    "q": "We will have finish the project by Friday.",
+    "a": [
+     "We will have finished the project by Friday."
+    ],
+    "x": "Future Perfect = will have + третья форма.",
+    "id": "t-future-15"
+   },
+   {
+    "type": "gap",
+    "q": "Don't worry, I ___ (help) you with the boxes.",
+    "a": [
+     "will help"
+    ],
+    "x": "Предложение помощи, решение сейчас → will.",
+    "id": "t-future-16"
+   },
+   {
+    "type": "choice",
+    "q": "What time ___ tomorrow?",
+    "opts": [
+     "does the meeting start",
+     "will the meeting starting",
+     "is the meeting start",
+     "the meeting starts"
+    ],
+    "a": "does the meeting start",
+    "x": "Расписание → вопрос в Present Simple.",
+    "id": "t-future-17"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (finish) the essay by Sunday, so we can meet on Monday.",
+    "a": [
+     "will have finished"
+    ],
+    "x": "by Sunday → Future Perfect.",
+    "id": "t-future-18"
+   },
+   {
+    "type": "order",
+    "a": [
+     "I'll let you know as soon as I hear anything."
+    ],
+    "x": "После as soon as — настоящее время.",
+    "id": "t-future-19"
+   },
+   {
+    "type": "choice",
+    "q": "— Have you decided? — Yes, we ___ to Spain in July.",
+    "opts": [
+     "go",
+     "will go",
+     "are going",
+     "will have gone"
+    ],
+    "a": "are going",
+    "x": "Решённый план с датой → Present Continuous.",
+    "id": "t-future-20"
+   },
+   {
+    "type": "gap",
+    "q": "He ___ (probably / be) late — he always is.",
+    "a": [
+     "will probably be"
+    ],
+    "x": "Прогноз-мнение → will; probably ставится после will.",
+    "id": "t-future-21"
+   },
+   {
+    "type": "fix",
+    "q": "Wait here until the doctor will call your name.",
+    "a": [
+     "Wait here until the doctor calls your name."
+    ],
+    "x": "После until — настоящее время.",
+    "id": "t-future-22"
+   }
+  ]
+ }
+]
