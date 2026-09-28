@@ -1,9 +1,725 @@
 [
  {
+  "id": "err-stop",
+  "title": "Стоп-лист: мои ошибки",
+  "short": "Стоп-лист",
+  "group": "Мои ошибки",
+  "level": "B1–B2",
+  "fixTask": "Фраза из твоего текста. Найди ошибку и исправь её прямо в тексте.",
+  "intro": [
+   "Здесь твои реальные ошибки из уроков — фразы из твоих текстов. Сюда же будут попадать ошибки из эссе и надиктовок.",
+   "**actual** — ложный друг: увидел — остановись и проверь. «Нынешний, актуальный» = **current**.",
+   "**I** — всегда с заглавной. **Опечатки** — главная зона потерь на письменном IELTS: вычитывай перед отправкой.",
+   "Простой рассказ по порядку — **Past Simple** в активе: _we drove_, а не _we had been driven_.",
+   "**on time** — вовремя, по графику; **in time** — успеть впритык."
+  ],
+  "items": [
+   {
+    "type": "fix",
+    "q": "Last year i took a road trip to Abkhazia.",
+    "a": [
+     "Last year I took a road trip to Abkhazia."
+    ],
+    "x": "I всегда с заглавной — в любом месте предложения.",
+    "cs": true,
+    "id": "err-stop-01"
+   },
+   {
+    "type": "fix",
+    "q": "I joined the team in April, and i have been working on the project ever since.",
+    "a": [
+     "I joined the team in April, and I have been working on the project ever since."
+    ],
+    "x": "Проверяй каждое i, даже в середине фразы.",
+    "cs": true,
+    "id": "err-stop-02"
+   },
+   {
+    "type": "choice",
+    "q": "In my ___ job, I'm a lead concept architect.",
+    "opts": [
+     "actual",
+     "current",
+     "real",
+     "factual"
+    ],
+    "a": "current",
+    "x": "actual = реальный, фактический. Нынешний = current.",
+    "id": "err-stop-03"
+   },
+   {
+    "type": "fix",
+    "q": "It was hard to catch up on the actual progress of my team.",
+    "a": [
+     "It was hard to catch up on my team's progress.",
+     "It was hard to catch up on the progress of my team."
+    ],
+    "x": "actual здесь лишнее: без него смысл тот же.",
+    "id": "err-stop-04"
+   },
+   {
+    "type": "fix",
+    "q": "The next country, the actual final destination, was Switzerland.",
+    "a": [
+     "The next country, our final destination, was Switzerland.",
+     "The next country, the final destination, was Switzerland."
+    ],
+    "x": "И снова actual лишнее → our final destination.",
+    "id": "err-stop-05"
+   },
+   {
+    "type": "gap",
+    "q": "Oh no, I ___ (lose) my passport again!",
+    "a": [
+     "have lost"
+    ],
+    "x": "lose — lost — lost, формы losed нет. Результат сейчас → Present Perfect.",
+    "id": "err-stop-06"
+   },
+   {
+    "type": "fix",
+    "q": "We had been droven through Italy.",
+    "a": [
+     "We drove through Italy."
+    ],
+    "x": "Три ошибки в одной: droven нет (drive — drove — driven); ты вёл сам — актив; события по порядку — Past Simple.",
+    "id": "err-stop-07"
+   },
+   {
+    "type": "choice",
+    "q": "I was at the wheel the whole way. We ___ through Italy and Switzerland.",
+    "opts": [
+     "drove",
+     "were driven",
+     "had been driven",
+     "have been driven"
+    ],
+    "a": "drove",
+    "x": "Вёл сам → актив. we were driven = нас везли.",
+    "id": "err-stop-08"
+   },
+   {
+    "type": "gap",
+    "q": "The manager said the team ___ (complete) the design already.",
+    "a": [
+     "had completed",
+     "had already completed"
+    ],
+    "x": "После said — сдвиг назад: has completed → had completed.",
+    "id": "err-stop-09"
+   },
+   {
+    "type": "gap",
+    "q": "The report had been finished before the meeting. → I ___ the report before the meeting.",
+    "a": [
+     "had finished"
+    ],
+    "x": "При смене залога время сохраняется: had been finished → had finished.",
+    "id": "err-stop-10"
+   },
+   {
+    "type": "choice",
+    "q": "The design was created by our team. Как это будет в активе?",
+    "opts": [
+     "We created the design.",
+     "We created the design by ourselves.",
+     "We have created the design.",
+     "We were creating the design."
+    ],
+    "a": "We created the design.",
+    "x": "Исполнитель из by… становится подлежащим. by ourselves = «сами, без помощи» — меняет смысл.",
+    "id": "err-stop-11"
+   },
+   {
+    "type": "fix",
+    "q": "We visited a several off-the-beaten-track spots.",
+    "a": [
+     "We visited several off-the-beaten-track spots."
+    ],
+    "x": "several — без артикля.",
+    "id": "err-stop-12"
+   },
+   {
+    "type": "gap",
+    "q": "Last year we went ___ road trip to Abkhazia.",
+    "a": [
+     "on a"
+    ],
+    "x": "on a road trip — предлог on и артикль.",
+    "id": "err-stop-13"
+   },
+   {
+    "type": "fix",
+    "q": "Gagra has lots of places off the beaten tracks.",
+    "a": [
+     "Gagra has lots of places off the beaten track."
+    ],
+    "x": "Идиома не меняется: off the beaten track.",
+    "id": "err-stop-14"
+   },
+   {
+    "type": "fix",
+    "q": "Our destination was the Gagra city.",
+    "a": [
+     "Our destination was the city of Gagra."
+    ],
+    "x": "the city of + название.",
+    "id": "err-stop-15"
+   },
+   {
+    "type": "choice",
+    "q": "I can't recommend Abkhazia because of the ___ locals.",
+    "opts": [
+     "non-friendly",
+     "unfriendly",
+     "unfriend",
+     "disfriendly"
+    ],
+    "a": "unfriendly",
+    "x": "Прилагательные отрицаются через un-. non- — для существительных и категорий: non-smoker.",
+    "id": "err-stop-16"
+   },
+   {
+    "type": "gap",
+    "q": "The BIM model had disconnected walls and ___ (несуществующие) windows.",
+    "a": [
+     "non-existent"
+    ],
+    "x": "non-existent, не non-existing.",
+    "id": "err-stop-17"
+   },
+   {
+    "type": "choice",
+    "q": "The roads were bad, and the ___ weren't friendly either.",
+    "opts": [
+     "natives",
+     "locals",
+     "aborigines",
+     "indigenous"
+    ],
+    "a": "locals",
+    "x": "locals — нейтрально. natives звучит устаревше и может задеть.",
+    "id": "err-stop-18"
+   },
+   {
+    "type": "fix",
+    "q": "Abkhazia has bad-quality roads.",
+    "a": [
+     "Abkhazia has poor-quality roads.",
+     "Abkhazia has poor quality roads."
+    ],
+    "x": "О качестве естественнее poor: poor-quality roads.",
+    "id": "err-stop-19"
+   },
+   {
+    "type": "fix",
+    "q": "Switzerland was our main destination point.",
+    "a": [
+     "Switzerland was our main destination."
+    ],
+    "x": "destination уже значит конечную точку — point лишнее.",
+    "id": "err-stop-20"
+   },
+   {
+    "type": "choice",
+    "q": "___ my current job, I'm in charge of the whole design.",
+    "opts": [
+     "On",
+     "In",
+     "By",
+     "For"
+    ],
+    "a": "In",
+    "x": "in / at my job, не on.",
+    "id": "err-stop-21"
+   },
+   {
+    "type": "fix",
+    "q": "Now I use to be a lead concept architect.",
+    "a": [
+     "Now I am a lead concept architect.",
+     "Now I'm a lead concept architect."
+    ],
+    "x": "used to = было раньше, а теперь нет. О настоящем — Present Simple.",
+    "id": "err-stop-22"
+   },
+   {
+    "type": "choice",
+    "q": "I'm the architect ___ responsibility is the concept design.",
+    "opts": [
+     "who's",
+     "whose",
+     "who",
+     "whom"
+    ],
+    "a": "whose",
+    "x": "whose — чей (притяжательное). who's = who is.",
+    "id": "err-stop-23"
+   },
+   {
+    "type": "fix",
+    "q": "I have been working on Tbilisi apartment project since April.",
+    "a": [
+     "I have been working on the Tbilisi apartment project since April."
+    ],
+    "x": "Конкретный проект → the.",
+    "id": "err-stop-24"
+   },
+   {
+    "type": "fix",
+    "q": "I'm in charge of the design of an apartments block.",
+    "a": [
+     "I'm in charge of the design of an apartment block."
+    ],
+    "x": "Существительное-определение — в ед. числе: apartment block, sports centre.",
+    "id": "err-stop-25"
+   },
+   {
+    "type": "fix",
+    "q": "Before that, I worked at an educationary campus.",
+    "a": [
+     "Before that, I worked at an educational campus."
+    ],
+    "x": "educational — образовательный. educationary нет.",
+    "id": "err-stop-26"
+   },
+   {
+    "type": "gap",
+    "q": "Before I joined the company, I had worked at ___ educational campus.",
+    "a": [
+     "an"
+    ],
+    "x": "Исчисляемое в ед. числе — нужен артикль; перед гласным звуком — an.",
+    "id": "err-stop-27"
+   },
+   {
+    "type": "choice",
+    "q": "It's an apartment block ___ «Monaco».",
+    "opts": [
+     "called",
+     "calling",
+     "titled",
+     "said"
+    ],
+    "a": "called",
+    "x": "О здании или проекте — called «Monaco».",
+    "id": "err-stop-28"
+   },
+   {
+    "type": "fix",
+    "q": "I had to deal with a new way of work.",
+    "a": [
+     "I had to deal with a new way of working."
+    ],
+    "x": "way of + -ing: a new way of working.",
+    "id": "err-stop-29"
+   },
+   {
+    "type": "fix",
+    "q": "It was hard for me to catch up, and had to deal with a new approach.",
+    "a": [
+     "It was hard for me to catch up, and I had to deal with a new approach."
+    ],
+    "x": "Во второй части другое подлежащее — его нужно назвать: and I had to.",
+    "id": "err-stop-30"
+   },
+   {
+    "type": "gap",
+    "q": "The new intern is quickly ___ (gain) experience.",
+    "a": [
+     "gaining"
+    ],
+    "x": "is + -ing — Present Continuous.",
+    "id": "err-stop-31"
+   },
+   {
+    "type": "fix",
+    "q": "No setbacks did stop me from meeting the deadline.",
+    "a": [
+     "No setbacks stopped me from meeting the deadline."
+    ],
+    "x": "Отрицание уже в no — did не нужен.",
+    "id": "err-stop-32"
+   },
+   {
+    "type": "choice",
+    "q": "We delivered the Tomsk project ___ — exactly by the deadline.",
+    "opts": [
+     "in time",
+     "on time",
+     "at time",
+     "by time"
+    ],
+    "a": "on time",
+    "x": "on time = вовремя, по графику.",
+    "id": "err-stop-33"
+   },
+   {
+    "type": "choice",
+    "q": "We got to the station just ___ to catch the last train.",
+    "opts": [
+     "on time",
+     "in time",
+     "at time",
+     "for time"
+    ],
+    "a": "in time",
+    "x": "in time = успеть впритык, до того как стало поздно.",
+    "id": "err-stop-34"
+   },
+   {
+    "type": "fix",
+    "q": "The major achievement I do remember the most was the Tomsk project.",
+    "a": [
+     "The major achievement I remember most was the Tomsk project."
+    ],
+    "x": "Без лишней эмфазы do и the: I remember most.",
+    "id": "err-stop-35"
+   },
+   {
+    "type": "fix",
+    "q": "It was a health and sports centre for student.",
+    "a": [
+     "It was a health and sports centre for students."
+    ],
+    "x": "Для кого — во мн. числе: for students.",
+    "id": "err-stop-36"
+   },
+   {
+    "type": "fix",
+    "q": "I clearly remember our road trip through europe countries.",
+    "a": [
+     "I clearly remember our road trip through European countries.",
+     "I clearly remember our road trip through Europe."
+    ],
+    "x": "Europe — с заглавной; «европейские страны» = European countries.",
+    "cs": true,
+    "id": "err-stop-37"
+   },
+   {
+    "type": "choice",
+    "q": "We ___ early in the morning, before the city woke up.",
+    "opts": [
+     "set off",
+     "stepped over",
+     "stopped over",
+     "put off"
+    ],
+    "a": "set off",
+    "x": "set off — отправиться в путь. В уроке ты выбрал head off — это «двинуться в направлении».",
+    "id": "err-stop-38"
+   },
+   {
+    "type": "choice",
+    "q": "On the way to Switzerland, we ___ in San Marino for a day.",
+    "opts": [
+     "stepped over",
+     "stopped over",
+     "set off",
+     "ran out"
+    ],
+    "a": "stopped over",
+    "x": "stop over — остановиться в пути. step over — перешагнуть.",
+    "id": "err-stop-39"
+   },
+   {
+    "type": "gap",
+    "q": "I'd like to ___ the material from the blocks in my head.",
+    "a": [
+     "consolidate"
+    ],
+    "x": "consolidate the material — закрепить материал. settle information in my mind так не говорят.",
+    "id": "err-stop-40"
+   },
+   {
+    "type": "fix",
+    "q": "Could you please merge it in one document?",
+    "a": [
+     "Could you please merge it into one document?"
+    ],
+    "x": "merge into — объединить во что-то.",
+    "id": "err-stop-41"
+   },
+   {
+    "type": "fix",
+    "q": "It was really hars to deliver the project on time.",
+    "a": [
+     "It was really hard to deliver the project on time."
+    ],
+    "x": "Опечатка: hard. Вычитывай перед отправкой.",
+    "id": "err-stop-42"
+   },
+   {
+    "type": "fix",
+    "q": "The model was poor quality, wiyh a real mess in the design.",
+    "a": [
+     "The model was poor quality, with a real mess in the design."
+    ],
+    "x": "Опечатка: with.",
+    "id": "err-stop-43"
+   },
+   {
+    "type": "fix",
+    "q": "We drove throgh Italy and stopped in San Marino.",
+    "a": [
+     "We drove through Italy and stopped in San Marino."
+    ],
+    "x": "through — через. Не путать: though — хотя, thorough — тщательный.",
+    "id": "err-stop-44"
+   },
+   {
+    "type": "fix",
+    "q": "Nothing stopped me from acomplishing the work.",
+    "a": [
+     "Nothing stopped me from accomplishing the work."
+    ],
+    "x": "accomplish — две c.",
+    "id": "err-stop-45"
+   },
+   {
+    "type": "fix",
+    "q": "Before I joined the compay, I had worked at a campus.",
+    "a": [
+     "Before I joined the company, I had worked at a campus."
+    ],
+    "x": "Опечатка: company.",
+    "id": "err-stop-46"
+   },
+   {
+    "type": "fix",
+    "q": "It's my responosobility to check the drawings.",
+    "a": [
+     "It's my responsibility to check the drawings."
+    ],
+    "x": "responsibility: re-spon-si-bi-li-ty.",
+    "id": "err-stop-47"
+   },
+   {
+    "type": "fix",
+    "q": "I was proficient in Revit, thats why I finished on time.",
+    "a": [
+     "I was proficient in Revit, that's why I finished on time.",
+     "I was proficient in Revit, so I finished on time."
+    ],
+    "x": "that's = that is — с апострофом. Ещё проще: so.",
+    "id": "err-stop-48"
+   }
+  ]
+ },
+ {
+  "id": "err-ff",
+  "title": "Ложные друзья",
+  "short": "Ложные друзья",
+  "group": "Мои ошибки",
+  "level": "B1–B2",
+  "intro": [
+   "**actual** — реальный, фактический. «Актуальный, нынешний» = **current**. **actually** — «на самом деле» — у тебя верно.",
+   "**sympathetic** — сочувствующий (симпатичный = _nice, attractive_). **accurate** — точный (аккуратный = _neat, tidy_). **magazine** — журнал (магазин = _shop, store_).",
+   "Добавил для архитектора: «объект» = _site, building, project_; «эксплуатация» = _operation_; «экспертиза» = _design review_; «кабинет» = _office_."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "The ___ cost was much higher than the estimate.",
+    "opts": [
+     "actual",
+     "current",
+     "topical",
+     "present"
+    ],
+    "a": "actual",
+    "x": "actual = фактический — здесь как раз верно.",
+    "id": "err-ff-01"
+   },
+   {
+    "type": "choice",
+    "q": "Please send me the ___ version of the drawings.",
+    "opts": [
+     "actual",
+     "current",
+     "factual",
+     "real"
+    ],
+    "a": "current",
+    "x": "Последняя, актуальная версия — current (или latest).",
+    "id": "err-ff-02"
+   },
+   {
+    "type": "choice",
+    "q": "Is this information still ___?",
+    "opts": [
+     "actual",
+     "relevant",
+     "factual",
+     "real"
+    ],
+    "a": "relevant",
+    "x": "Актуальный = relevant (уместный) или up to date.",
+    "id": "err-ff-03"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ left my old job later than I wanted.",
+    "opts": [
+     "actually",
+     "actual",
+     "currently",
+     "presently"
+    ],
+    "a": "actually",
+    "x": "actually = на самом деле.",
+    "id": "err-ff-04"
+   },
+   {
+    "type": "choice",
+    "q": "She was very ___ when I told her about my problems.",
+    "opts": [
+     "sympathetic",
+     "nice-looking",
+     "sympathy",
+     "attractive"
+    ],
+    "a": "sympathetic",
+    "x": "sympathetic = сочувствующий, понимающий.",
+    "id": "err-ff-05"
+   },
+   {
+    "type": "choice",
+    "q": "He's a really ___ guy — everyone likes him.",
+    "opts": [
+     "nice",
+     "sympathetic",
+     "accurate",
+     "actual"
+    ],
+    "a": "nice",
+    "x": "Симпатичный = nice, attractive, pleasant.",
+    "id": "err-ff-06"
+   },
+   {
+    "type": "choice",
+    "q": "The measurements must be ___ to the millimetre.",
+    "opts": [
+     "accurate",
+     "neat",
+     "tidy",
+     "actual"
+    ],
+    "a": "accurate",
+    "x": "accurate = точный.",
+    "id": "err-ff-07"
+   },
+   {
+    "type": "choice",
+    "q": "Her drawings are always very ___ — clean lines, no smudges.",
+    "opts": [
+     "neat",
+     "accurate",
+     "actual",
+     "sympathetic"
+    ],
+    "a": "neat",
+    "x": "Аккуратный = neat, tidy.",
+    "id": "err-ff-08"
+   },
+   {
+    "type": "choice",
+    "q": "I bought an architecture ___ at the airport.",
+    "opts": [
+     "magazine",
+     "shop",
+     "store",
+     "journal"
+    ],
+    "a": "magazine",
+    "x": "magazine = журнал. Магазин = shop, store.",
+    "id": "err-ff-09"
+   },
+   {
+    "type": "choice",
+    "q": "We visited the ___ to check the foundation works.",
+    "opts": [
+     "site",
+     "object",
+     "subject",
+     "objective"
+    ],
+    "a": "site",
+    "x": "Объект строительства = site, building, project. object — предмет.",
+    "id": "err-ff-10"
+   },
+   {
+    "type": "choice",
+    "q": "The building will be ready for ___ in December.",
+    "opts": [
+     "operation",
+     "exploitation",
+     "exploration",
+     "explanation"
+    ],
+    "a": "operation",
+    "x": "Эксплуатация здания = operation, use. exploitation — эксплуатация людей или ресурсов, негативно.",
+    "id": "err-ff-11"
+   },
+   {
+    "type": "choice",
+    "q": "The project has passed the state ___.",
+    "opts": [
+     "design review",
+     "expertise",
+     "expert",
+     "examination room"
+    ],
+    "a": "design review",
+    "x": "Экспертиза проекта = design review. expertise = компетентность.",
+    "id": "err-ff-12"
+   },
+   {
+    "type": "choice",
+    "q": "The director's ___ is on the fifth floor.",
+    "opts": [
+     "office",
+     "cabinet",
+     "cupboard",
+     "closet"
+    ],
+    "a": "office",
+    "x": "Кабинет = office. cabinet — шкаф или кабинет министров.",
+    "id": "err-ff-13"
+   },
+   {
+    "type": "choice",
+    "q": "This ___ is made of cotton.",
+    "opts": [
+     "fabric",
+     "factory",
+     "plant",
+     "fabrication"
+    ],
+    "a": "fabric",
+    "x": "fabric = ткань. Фабрика = factory.",
+    "id": "err-ff-14"
+   },
+   {
+    "type": "choice",
+    "q": "That's a ___ decision — well thought out.",
+    "opts": [
+     "sensible",
+     "sensitive",
+     "sensual",
+     "sense"
+    ],
+    "a": "sensible",
+    "x": "sensible = разумный. Чувствительный = sensitive.",
+    "id": "err-ff-15"
+   }
+  ]
+ },
+ {
   "id": "t-pp-ps",
   "title": "Present Perfect vs Past Simple",
   "short": "Perfect vs Simple",
-  "group": "Времена",
+  "group": "Грамматика",
   "level": "B1–B2",
   "intro": [
    "**Past Simple** — действие закончилось в закрытом времени: _yesterday, last week, in 2019, two years ago, when I was a child_.",
@@ -238,6 +954,92 @@
     ],
     "x": "Опыт с результатом сейчас → Present Perfect.",
     "id": "t-pp-ps-22"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (never / be) to Australia, but I'd love to go.",
+    "a": [
+     "have never been"
+    ],
+    "x": "Опыт без даты, never → Present Perfect.",
+    "id": "t-pp-ps-23"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (visit) Abkhazia last summer.",
+    "a": [
+     "visited"
+    ],
+    "x": "last summer — закрытый период → Past Simple.",
+    "id": "t-pp-ps-24"
+   },
+   {
+    "type": "gap",
+    "q": "She ___ (work) at this company since 2019.",
+    "a": [
+     "has worked",
+     "has been working"
+    ],
+    "x": "since + до сих пор. Обе формы верны: has worked — факт, has been working — процесс.",
+    "id": "t-pp-ps-25"
+   },
+   {
+    "type": "order",
+    "a": [
+     "Have you finished the report yet?"
+    ],
+    "x": "Вопрос в Present Perfect: Have + подлежащее + V3; yet — в конце.",
+    "id": "t-pp-ps-26"
+   },
+   {
+    "type": "gap",
+    "q": "He ___ (send) me three emails so far today.",
+    "a": [
+     "has sent"
+    ],
+    "x": "so far today — период ещё идёт → Present Perfect.",
+    "id": "t-pp-ps-27"
+   },
+   {
+    "type": "gap",
+    "q": "They ___ (move) to a new office two weeks ago.",
+    "a": [
+     "moved"
+    ],
+    "x": "…ago → Past Simple.",
+    "id": "t-pp-ps-28"
+   },
+   {
+    "type": "gap",
+    "q": "When I was a student, I ___ (travel) around Europe.",
+    "a": [
+     "travelled",
+     "traveled"
+    ],
+    "x": "when I was a student — закрытый период → Past Simple. UK travelled, US traveled.",
+    "id": "t-pp-ps-29"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (join) the team in April, and I have been working on the project ever since.",
+    "a": [
+     "joined"
+    ],
+    "x": "Твоя фраза из урока: joined in April — Past Simple, have been working since then — Present Perfect Continuous.",
+    "id": "t-pp-ps-30"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ on the Tbilisi apartment project since April.",
+    "opts": [
+     "work",
+     "worked",
+     "have been working",
+     "am working"
+    ],
+    "a": "have been working",
+    "x": "since April и до сих пор → Present Perfect Continuous. Русское «работаю с апреля» толкает к am working — это ловушка.",
+    "id": "t-pp-ps-31"
    }
   ]
  },
@@ -245,7 +1047,7 @@
   "id": "t-past",
   "title": "Прошедшие времена в повествовании",
   "short": "Прошедшие времена",
-  "group": "Времена",
+  "group": "Грамматика",
   "level": "B2",
   "intro": [
    "**Past Simple** — цепочка событий по порядку: _He came in, sat down and opened the letter_.",
@@ -478,6 +1280,388 @@
     ],
     "x": "Результат в прошлом от предшествующего процесса → Past Perfect (Continuous).",
     "id": "t-past-22"
+   },
+   {
+    "type": "gap",
+    "q": "He suddenly realised he ___ (leave) his passport at home.",
+    "a": [
+     "had left"
+    ],
+    "x": "Оставил раньше, чем понял → Past Perfect.",
+    "id": "t-past-23"
+   },
+   {
+    "type": "gap",
+    "q": "After she ___ (send) the report, she went home.",
+    "a": [
+     "had sent",
+     "sent"
+    ],
+    "x": "after и так показывает порядок, поэтому возможны оба; had sent подчёркивает, что сначала отправила.",
+    "id": "t-past-24"
+   },
+   {
+    "type": "fix",
+    "q": "We had driven through Italy and then had stopped over in San Marino.",
+    "a": [
+     "We drove through Italy and then stopped over in San Marino."
+    ],
+    "x": "События просто по порядку — перфект не нужен, только Past Simple.",
+    "id": "t-past-25"
+   },
+   {
+    "type": "choice",
+    "q": "By the time I got to the office, the meeting ___.",
+    "opts": [
+     "already started",
+     "had already started",
+     "has already started",
+     "was already starting"
+    ],
+    "a": "had already started",
+    "x": "by the time → раньше другого прошлого события → Past Perfect.",
+    "id": "t-past-26"
+   }
+  ]
+ },
+ {
+  "id": "t-reported",
+  "title": "Косвенная речь и wish",
+  "short": "Косвенная речь, wish",
+  "group": "Грамматика",
+  "level": "B2",
+  "intro": [
+   "**Косвенная речь**: после _said / told_ время сдвигается назад: Present Simple → Past Simple, Present Perfect и Past Simple → **Past Perfect**, will → **would**, can → **could**.",
+   "_«I sent it»_ → _He said he **had sent** it._ _«I'll call»_ → _She said she **would** call._",
+   "Слова времени тоже сдвигаются: _yesterday → the day before, last week → the previous week, tomorrow → the next day_.",
+   "**wish о прошлом** (жалею, что было или не было): _wish + Past Perfect_ — _I wish I **had studied** harder._",
+   "**wish о настоящем** (хочу, чтобы сейчас было иначе): _wish + Past Simple_ — _I wish I **had** more time. I wish I **were** taller._"
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "She told me she ___ (finish) the project the previous week.",
+    "a": [
+     "had finished"
+    ],
+    "x": "finished → had finished; last week → the previous week.",
+    "id": "t-reported-01"
+   },
+   {
+    "type": "gap",
+    "q": "I wish I ___ (not / spend) so much money on that trip.",
+    "a": [
+     "had not spent"
+    ],
+    "x": "Сожаление о прошлом → wish + Past Perfect.",
+    "id": "t-reported-02"
+   },
+   {
+    "type": "gap",
+    "q": "They said they ___ (never / be) to Georgia before.",
+    "a": [
+     "had never been"
+    ],
+    "x": "have never been → had never been.",
+    "id": "t-reported-03"
+   },
+   {
+    "type": "gap",
+    "q": "I wish I ___ (study) English earlier in my life.",
+    "a": [
+     "had studied"
+    ],
+    "x": "О прошлом → Past Perfect.",
+    "id": "t-reported-04"
+   },
+   {
+    "type": "gap",
+    "q": "The manager said the client ___ (approve) the concept.",
+    "a": [
+     "had approved"
+    ],
+    "x": "approved / has approved → had approved.",
+    "id": "t-reported-05"
+   },
+   {
+    "type": "gap",
+    "q": "«I'll send the drawings tomorrow.» → He said he ___ send the drawings the next day.",
+    "a": [
+     "would"
+    ],
+    "x": "will → would; tomorrow → the next day.",
+    "id": "t-reported-06"
+   },
+   {
+    "type": "gap",
+    "q": "«I can finish the model by Friday.» → She said she ___ finish the model by Friday.",
+    "a": [
+     "could"
+    ],
+    "x": "can → could.",
+    "id": "t-reported-07"
+   },
+   {
+    "type": "gap",
+    "q": "«I work in Tbilisi.» → He said he ___ (work) in Tbilisi.",
+    "a": [
+     "worked"
+    ],
+    "x": "Present Simple → Past Simple.",
+    "id": "t-reported-08"
+   },
+   {
+    "type": "gap",
+    "q": "«We are designing a new school.» → They said they ___ (design) a new school.",
+    "a": [
+     "were designing"
+    ],
+    "x": "Present Continuous → Past Continuous.",
+    "id": "t-reported-09"
+   },
+   {
+    "type": "choice",
+    "q": "She told us she ___ the contract the day before.",
+    "opts": [
+     "signed",
+     "has signed",
+     "had signed",
+     "signs"
+    ],
+    "a": "had signed",
+    "x": "the day before — событие раньше момента, когда она говорила → Past Perfect.",
+    "id": "t-reported-10"
+   },
+   {
+    "type": "choice",
+    "q": "I wish I ___ that job offer two years ago.",
+    "opts": [
+     "accepted",
+     "had accepted",
+     "have accepted",
+     "would accept"
+    ],
+    "a": "had accepted",
+    "x": "two years ago — о прошлом → wish + Past Perfect. have accepted — частая ошибка.",
+    "id": "t-reported-11"
+   },
+   {
+    "type": "choice",
+    "q": "I wish I ___ more free time these days.",
+    "opts": [
+     "have",
+     "had",
+     "had had",
+     "will have"
+    ],
+    "a": "had",
+    "x": "О настоящем → wish + Past Simple.",
+    "id": "t-reported-12"
+   },
+   {
+    "type": "choice",
+    "q": "I wish I ___ better at public speaking.",
+    "opts": [
+     "am",
+     "were",
+     "have been",
+     "will be"
+    ],
+    "a": "were",
+    "x": "wish о настоящем: were для всех лиц (в разговоре допустимо was).",
+    "id": "t-reported-13"
+   },
+   {
+    "type": "fix",
+    "q": "She said she will call me later.",
+    "a": [
+     "She said she would call me later."
+    ],
+    "x": "will → would.",
+    "id": "t-reported-14"
+   },
+   {
+    "type": "fix",
+    "q": "I wish I have left my previous job earlier.",
+    "a": [
+     "I wish I had left my previous job earlier."
+    ],
+    "x": "Твоя фраза из урока: wish о прошлом → had left.",
+    "id": "t-reported-15"
+   },
+   {
+    "type": "gap",
+    "q": "«I have never seen such a mess in a BIM model.» → He said he ___ (never / see) such a mess.",
+    "a": [
+     "had never seen"
+    ],
+    "x": "Present Perfect → Past Perfect.",
+    "id": "t-reported-16"
+   },
+   {
+    "type": "order",
+    "a": [
+     "She said she had already sent the report."
+    ],
+    "x": "said + she + had already sent.",
+    "id": "t-reported-17"
+   }
+  ]
+ },
+ {
+  "id": "t-passive",
+  "title": "Пассив и актив",
+  "short": "Пассив и актив",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "**Пассив → актив**: исполнитель из _by…_ становится подлежащим, **время сохраняется** как было.",
+   "_The report **had been finished** by me_ → _I **had finished** the report._",
+   "_we drove_ — вели сами; _we were driven_ — нас везли. Когда рассказываешь о себе, обычно нужен актив.",
+   "Зато в IELTS Writing Task 1 (описание процесса) пассив — основной: _The concrete **is poured** into the formwork._"
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "The design was created by our team. → Our team ___ the design.",
+    "a": [
+     "created"
+    ],
+    "x": "was created → created: время то же, Past Simple.",
+    "id": "t-passive-01"
+   },
+   {
+    "type": "gap",
+    "q": "The car was driven by my brother the whole way. → My brother ___ the car the whole way.",
+    "a": [
+     "drove"
+    ],
+    "x": "drive — drove — driven.",
+    "id": "t-passive-02"
+   },
+   {
+    "type": "gap",
+    "q": "The drawings had been checked before the deadline. → The engineer ___ the drawings before the deadline.",
+    "a": [
+     "had checked"
+    ],
+    "x": "had been checked → had checked.",
+    "id": "t-passive-03"
+   },
+   {
+    "type": "gap",
+    "q": "The walls are being built by the contractor. → The contractor ___ the walls.",
+    "a": [
+     "is building"
+    ],
+    "x": "Present Continuous сохраняется.",
+    "id": "t-passive-04"
+   },
+   {
+    "type": "gap",
+    "q": "The model has been updated by Anna. → Anna ___ the model.",
+    "a": [
+     "has updated"
+    ],
+    "x": "Present Perfect сохраняется.",
+    "id": "t-passive-05"
+   },
+   {
+    "type": "gap",
+    "q": "The facade will be approved by the city. → The city ___ the facade.",
+    "a": [
+     "will approve"
+    ],
+    "x": "Future Simple сохраняется.",
+    "id": "t-passive-06"
+   },
+   {
+    "type": "gap",
+    "q": "The site is cleaned by the workers every evening. → The workers ___ the site every evening.",
+    "a": [
+     "clean"
+    ],
+    "x": "Present Simple сохраняется.",
+    "id": "t-passive-07"
+   },
+   {
+    "type": "choice",
+    "q": "I didn't drive — my brother did. I ___ all the way to Switzerland.",
+    "opts": [
+     "drove",
+     "was driven",
+     "had driven",
+     "have driven"
+    ],
+    "a": "was driven",
+    "x": "Меня везли → пассив: was driven.",
+    "id": "t-passive-08"
+   },
+   {
+    "type": "gap",
+    "q": "Process: the concrete ___ (pour) into the formwork.",
+    "a": [
+     "is poured"
+    ],
+    "x": "Описание процесса в IELTS Task 1 — Present Simple Passive.",
+    "id": "t-passive-09"
+   },
+   {
+    "type": "gap",
+    "q": "Then the formwork ___ (remove) after seven days.",
+    "a": [
+     "is removed"
+    ],
+    "x": "is + V3.",
+    "id": "t-passive-10"
+   },
+   {
+    "type": "gap",
+    "q": "Bricks ___ (make) by hand until the 19th century.",
+    "a": [
+     "were made"
+    ],
+    "x": "Прошлое → was / were + V3.",
+    "id": "t-passive-11"
+   },
+   {
+    "type": "gap",
+    "q": "The Tomsk centre ___ (deliver) on time despite all the problems.",
+    "a": [
+     "was delivered"
+    ],
+    "x": "Past Simple Passive: was + V3.",
+    "id": "t-passive-12"
+   },
+   {
+    "type": "fix",
+    "q": "The new school was build in 2020.",
+    "a": [
+     "The new school was built in 2020."
+    ],
+    "x": "В пассиве нужна третья форма: build — built — built.",
+    "id": "t-passive-13"
+   },
+   {
+    "type": "order",
+    "a": [
+     "The drawings will be sent to the client tomorrow."
+    ],
+    "x": "Future Passive: will be + V3.",
+    "id": "t-passive-14"
+   },
+   {
+    "type": "choice",
+    "q": "When the inspectors arrived, the foundation ___.",
+    "opts": [
+     "had already been poured",
+     "had already poured",
+     "has already been poured",
+     "already poured"
+    ],
+    "a": "had already been poured",
+    "x": "Раньше их прихода + фундамент сам себя не заливает → Past Perfect Passive.",
+    "id": "t-passive-15"
    }
   ]
  },
@@ -485,7 +1669,7 @@
   "id": "t-future",
   "title": "Способы говорить о будущем",
   "short": "Будущее",
-  "group": "Времена",
+  "group": "Грамматика",
   "level": "B1–B2",
   "intro": [
    "**will** — решение в момент речи, обещание, прогноз-мнение: _I'll get it. I think it will rain_.",
@@ -718,6 +1902,1804 @@
     ],
     "x": "После until — настоящее время.",
     "id": "t-future-22"
+   }
+  ]
+ },
+ {
+  "id": "t-details",
+  "title": "Мелкие правила: предлоги, артикли, формы",
+  "short": "Мелкие правила",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "**on time** — вовремя; **in time** — успеть впритык.",
+   "**look forward to + -ing**: _to_ здесь предлог — _looking forward to seeing you_. Так же **way of + -ing**, **responsible for + -ing**, **proud of + -ing**.",
+   "Отрицание прилагательных — **un-**: _unfriendly, unhappy_; **non-** — для существительных и категорий: _non-smoker, non-fiction_; но _non-existent_.",
+   "Существительное-определение — в **ед. числе**: _apartment block, three-bedroom flat, five-star hotel, ten-minute walk_.",
+   "После **no** не нужен _did_: _No setbacks stopped me_.",
+   "Предлоги из диагностики: _arrive **at** the airport / **in** a city, married **to**, responsible **for**, depend **on**, good **at**_."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "The train left exactly ___ — at 8:00 sharp.",
+    "opts": [
+     "on time",
+     "in time",
+     "at time",
+     "by time"
+    ],
+    "a": "on time",
+    "x": "on time = точно по графику.",
+    "id": "t-details-01"
+   },
+   {
+    "type": "choice",
+    "q": "We finished the model just ___ for the client meeting.",
+    "opts": [
+     "in time",
+     "on time",
+     "at time",
+     "by time"
+    ],
+    "a": "in time",
+    "x": "Успели до встречи, впритык → in time.",
+    "id": "t-details-02"
+   },
+   {
+    "type": "gap",
+    "q": "I'm looking forward to ___ (see) you in Tbilisi.",
+    "a": [
+     "seeing"
+    ],
+    "x": "to — предлог, после него -ing.",
+    "id": "t-details-03"
+   },
+   {
+    "type": "choice",
+    "q": "We look forward ___ from you.",
+    "opts": [
+     "to hearing",
+     "to hear",
+     "hearing",
+     "for hearing"
+    ],
+    "a": "to hearing",
+    "x": "Стандартная концовка письма: We look forward to hearing from you.",
+    "id": "t-details-04"
+   },
+   {
+    "type": "gap",
+    "q": "Remote work is a completely new way of ___ (work) for us.",
+    "a": [
+     "working"
+    ],
+    "x": "way of + -ing.",
+    "id": "t-details-05"
+   },
+   {
+    "type": "gap",
+    "q": "I'm responsible for ___ (coordinate) the design team.",
+    "a": [
+     "coordinating"
+    ],
+    "x": "for + -ing.",
+    "id": "t-details-06"
+   },
+   {
+    "type": "gap",
+    "q": "I'm proud of ___ (deliver) the project on time.",
+    "a": [
+     "delivering",
+     "having delivered"
+    ],
+    "x": "of + -ing; having delivered подчёркивает, что уже сделано.",
+    "id": "t-details-07"
+   },
+   {
+    "type": "choice",
+    "q": "The staff at the hotel were ___ and rude.",
+    "opts": [
+     "unhelpful",
+     "nonhelpful",
+     "dishelpful",
+     "inhelpful"
+    ],
+    "a": "unhelpful",
+    "x": "Прилагательные — через un-.",
+    "id": "t-details-08"
+   },
+   {
+    "type": "choice",
+    "q": "This is a ___ area — you can't smoke here.",
+    "opts": [
+     "non-smoking",
+     "unsmoking",
+     "dissmoking",
+     "no-smoking's"
+    ],
+    "a": "non-smoking",
+    "x": "Категория → non-.",
+    "id": "t-details-09"
+   },
+   {
+    "type": "choice",
+    "q": "We stayed in a ___ hotel near the sea.",
+    "opts": [
+     "five-star",
+     "five-stars",
+     "five stars",
+     "five-star's"
+    ],
+    "a": "five-star",
+    "x": "Существительное-определение — в ед. числе, через дефис.",
+    "id": "t-details-10"
+   },
+   {
+    "type": "choice",
+    "q": "It's a ___ flat with a big balcony.",
+    "opts": [
+     "three-bedroom",
+     "three-bedrooms",
+     "three bedrooms",
+     "three-bedroom's"
+    ],
+    "a": "three-bedroom",
+    "x": "Так же: a ten-minute walk, a two-storey house.",
+    "id": "t-details-11"
+   },
+   {
+    "type": "gap",
+    "q": "The office is a ten-___ (minute) walk from my home.",
+    "a": [
+     "minute"
+    ],
+    "x": "ten-minute walk — без s.",
+    "id": "t-details-12"
+   },
+   {
+    "type": "fix",
+    "q": "No one did help me with the model.",
+    "a": [
+     "No one helped me with the model."
+    ],
+    "x": "Отрицание уже в no one — did не нужен.",
+    "id": "t-details-13"
+   },
+   {
+    "type": "choice",
+    "q": "We arrived ___ Tbilisi late at night.",
+    "opts": [
+     "to",
+     "in",
+     "at",
+     "on"
+    ],
+    "a": "in",
+    "x": "arrive in + город, страна; arrive at + здание, аэропорт. arrive to — ошибка.",
+    "id": "t-details-14"
+   },
+   {
+    "type": "choice",
+    "q": "What time did you arrive ___ the hotel?",
+    "opts": [
+     "at",
+     "to",
+     "in",
+     "on"
+    ],
+    "a": "at",
+    "x": "Здание, конкретное место → at.",
+    "id": "t-details-15"
+   },
+   {
+    "type": "choice",
+    "q": "Whether we build it depends ___ the budget.",
+    "opts": [
+     "on",
+     "of",
+     "from",
+     "in"
+    ],
+    "a": "on",
+    "x": "depend on.",
+    "id": "t-details-16"
+   },
+   {
+    "type": "choice",
+    "q": "She's married ___ a structural engineer.",
+    "opts": [
+     "to",
+     "with",
+     "on",
+     "by"
+    ],
+    "a": "to",
+    "x": "married to, не with.",
+    "id": "t-details-17"
+   },
+   {
+    "type": "choice",
+    "q": "I'm quite good ___ sketching by hand.",
+    "opts": [
+     "at",
+     "in",
+     "on",
+     "with"
+    ],
+    "a": "at",
+    "x": "good at + -ing.",
+    "id": "t-details-18"
+   },
+   {
+    "type": "choice",
+    "q": "The lead architect is responsible ___ the whole concept.",
+    "opts": [
+     "for",
+     "of",
+     "to",
+     "with"
+    ],
+    "a": "for",
+    "x": "responsible for.",
+    "id": "t-details-19"
+   },
+   {
+    "type": "choice",
+    "q": "We need ___ architect with experience in housing.",
+    "opts": [
+     "an",
+     "a",
+     "the",
+     "—"
+    ],
+    "a": "an",
+    "x": "Перед гласным звуком — an.",
+    "id": "t-details-20"
+   },
+   {
+    "type": "choice",
+    "q": "___ Tbilisi apartment project is my main task this year.",
+    "opts": [
+     "The",
+     "A",
+     "An",
+     "—"
+    ],
+    "a": "The",
+    "x": "Конкретный, известный проект → the.",
+    "id": "t-details-21"
+   }
+  ]
+ },
+ {
+  "id": "t-irregular",
+  "title": "Неправильные глаголы",
+  "short": "Неправильные глаголы",
+  "group": "Грамматика",
+  "level": "A2–B1",
+  "intro": [
+   "Из уроков: **lose — lost — lost, drive — drove — driven, find — found — found, buy — bought — bought, take — took — taken, go — went — gone, see — saw — seen**. _lose_ (терять) ≠ _loose_ (свободный).",
+   "Для архитектора добавил: **build — built — built, draw — drew — drawn, lead — led — led, choose — chose — chosen, write — wrote — written, oversee — oversaw — overseen, overcome — overcame — overcome**.",
+   "Вторая форма — Past Simple (_yesterday I **drove**_), третья — Perfect и пассив (_I have **driven**, it was **built**_)."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "Yesterday I ___ (lose) my keys.",
+    "a": [
+     "lost"
+    ],
+    "x": "lose — lost — lost.",
+    "id": "t-irregular-01"
+   },
+   {
+    "type": "gap",
+    "q": "I have ___ (lose) my passport.",
+    "a": [
+     "lost"
+    ],
+    "x": "Третья форма та же: lost.",
+    "id": "t-irregular-02"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (drive) through Italy last year.",
+    "a": [
+     "drove"
+    ],
+    "x": "drive — drove — driven.",
+    "id": "t-irregular-03"
+   },
+   {
+    "type": "gap",
+    "q": "I have ___ (drive) this route many times.",
+    "a": [
+     "driven"
+    ],
+    "x": "Present Perfect → третья форма.",
+    "id": "t-irregular-04"
+   },
+   {
+    "type": "gap",
+    "q": "I finally ___ (find) the mistake in the model.",
+    "a": [
+     "found"
+    ],
+    "x": "find — found — found.",
+    "id": "t-irregular-05"
+   },
+   {
+    "type": "gap",
+    "q": "Have you ___ (find) a hotel in Tbilisi yet?",
+    "a": [
+     "found"
+    ],
+    "x": "Третья форма та же.",
+    "id": "t-irregular-06"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (buy) the tickets online.",
+    "a": [
+     "bought"
+    ],
+    "x": "buy — bought — bought.",
+    "id": "t-irregular-07"
+   },
+   {
+    "type": "gap",
+    "q": "It ___ (take) me several weeks to fix the model.",
+    "a": [
+     "took"
+    ],
+    "x": "take — took — taken.",
+    "id": "t-irregular-08"
+   },
+   {
+    "type": "gap",
+    "q": "The photo was ___ (take) from the roof.",
+    "a": [
+     "taken"
+    ],
+    "x": "Пассив → третья форма.",
+    "id": "t-irregular-09"
+   },
+   {
+    "type": "gap",
+    "q": "She ___ (go) to Georgia last summer.",
+    "a": [
+     "went"
+    ],
+    "x": "go — went — gone.",
+    "id": "t-irregular-10"
+   },
+   {
+    "type": "gap",
+    "q": "He has ___ (go) to the site — he'll be back at 3.",
+    "a": [
+     "gone"
+    ],
+    "x": "has gone — ушёл и ещё там; has been — был и вернулся.",
+    "id": "t-irregular-11"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (see) the new drawings yesterday.",
+    "a": [
+     "saw"
+    ],
+    "x": "see — saw — seen.",
+    "id": "t-irregular-12"
+   },
+   {
+    "type": "gap",
+    "q": "Have you ever ___ (see) the Alps?",
+    "a": [
+     "seen"
+    ],
+    "x": "Present Perfect → seen.",
+    "id": "t-irregular-13"
+   },
+   {
+    "type": "gap",
+    "q": "The school was ___ (build) in 1975.",
+    "a": [
+     "built"
+    ],
+    "x": "build — built — built.",
+    "id": "t-irregular-14"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (draw) the first sketches by hand.",
+    "a": [
+     "drew"
+    ],
+    "x": "draw — drew — drawn.",
+    "id": "t-irregular-15"
+   },
+   {
+    "type": "gap",
+    "q": "The elevations were ___ (draw) in Revit.",
+    "a": [
+     "drawn"
+    ],
+    "x": "Пассив → drawn.",
+    "id": "t-irregular-16"
+   },
+   {
+    "type": "gap",
+    "q": "She ___ (lead) the team for three years.",
+    "a": [
+     "led"
+    ],
+    "x": "lead — led — led.",
+    "id": "t-irregular-17"
+   },
+   {
+    "type": "gap",
+    "q": "We have ___ (choose) a ventilated facade.",
+    "a": [
+     "chosen"
+    ],
+    "x": "choose — chose — chosen.",
+    "id": "t-irregular-18"
+   },
+   {
+    "type": "gap",
+    "q": "I have ___ (write) the design brief.",
+    "a": [
+     "written"
+    ],
+    "x": "write — wrote — written.",
+    "id": "t-irregular-19"
+   },
+   {
+    "type": "gap",
+    "q": "Last year I ___ (oversee) three projects.",
+    "a": [
+     "oversaw"
+    ],
+    "x": "oversee — oversaw — overseen.",
+    "id": "t-irregular-20"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (overcome) a lot of obstacles on that project.",
+    "a": [
+     "overcame"
+    ],
+    "x": "overcome — overcame — overcome.",
+    "id": "t-irregular-21"
+   },
+   {
+    "type": "choice",
+    "q": "Your jacket is too ___ — try a smaller size.",
+    "opts": [
+     "loose",
+     "lose",
+     "lost",
+     "loss"
+    ],
+    "a": "loose",
+    "x": "loose — свободный, мешковатый; lose — терять.",
+    "id": "t-irregular-22"
+   }
+  ]
+ },
+ {
+  "id": "lx-work",
+  "title": "Работа: роль, сочетания, фразовые",
+  "short": "Работа",
+  "group": "Лексика в контексте",
+  "level": "B2",
+  "intro": [
+   "Учим не отдельные слова, а **готовые блоки**: _meet a deadline, take on a project_. В скобках — подсказка по-русски.",
+   "Роль: **be in charge of · be responsible for + -ing · oversee · my role involves + -ing**.",
+   "Сочетания: **meet a deadline · take on a project · carry out a task · give a presentation · gain experience · make progress · take the lead on · set a goal**.",
+   "Фразовые: **take on · carry out · come up with · deal with · sort out · catch up on · set up**."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "As lead architect, I'm in ___ of the whole design team.",
+    "a": [
+     "charge"
+    ],
+    "x": "be in charge of — руководить.",
+    "id": "lx-work-01"
+   },
+   {
+    "type": "gap",
+    "q": "We managed to ___ the deadline despite the delays.",
+    "a": [
+     "meet"
+    ],
+    "x": "meet a deadline.",
+    "id": "lx-work-02"
+   },
+   {
+    "type": "gap",
+    "q": "My colleague ___ (придумал) a brilliant idea for the entrance.",
+    "a": [
+     "came up with"
+    ],
+    "x": "come up with — придумать.",
+    "id": "lx-work-03"
+   },
+   {
+    "type": "gap",
+    "q": "I had to ___ (взять на себя) extra responsibility when my boss left.",
+    "a": [
+     "take on"
+    ],
+    "x": "take on responsibility / a project.",
+    "id": "lx-work-04"
+   },
+   {
+    "type": "gap",
+    "q": "Could you ___ (уладить) this problem with the client?",
+    "a": [
+     "sort out"
+    ],
+    "x": "sort out — уладить, решить.",
+    "id": "lx-work-05"
+   },
+   {
+    "type": "gap",
+    "q": "The new intern is quickly ___ (набирается) experience.",
+    "a": [
+     "gaining"
+    ],
+    "x": "gain experience.",
+    "id": "lx-work-06"
+   },
+   {
+    "type": "gap",
+    "q": "After my holiday, I need to ___ (наверстать) all my emails.",
+    "a": [
+     "catch up on"
+    ],
+    "x": "catch up on — наверстать.",
+    "id": "lx-work-07"
+   },
+   {
+    "type": "gap",
+    "q": "As project lead, I ___ (курирую) the work of three teams.",
+    "a": [
+     "oversee"
+    ],
+    "x": "oversee — курировать.",
+    "id": "lx-work-08"
+   },
+   {
+    "type": "gap",
+    "q": "My role ___ (включает) coordinating the architects and engineers.",
+    "a": [
+     "involves"
+    ],
+    "x": "my role involves + -ing.",
+    "id": "lx-work-09"
+   },
+   {
+    "type": "gap",
+    "q": "I'm responsible ___ checking all the drawings.",
+    "a": [
+     "for"
+    ],
+    "x": "responsible for + -ing.",
+    "id": "lx-work-10"
+   },
+   {
+    "type": "gap",
+    "q": "Tomorrow I'm ___ (выступаю с) a presentation to the developer.",
+    "a": [
+     "giving"
+    ],
+    "x": "give a presentation.",
+    "id": "lx-work-11"
+   },
+   {
+    "type": "gap",
+    "q": "We're ___ good progress on the Monaco model.",
+    "a": [
+     "making"
+    ],
+    "x": "make progress, не do.",
+    "id": "lx-work-12"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (взял на себя) the lead on the facade design.",
+    "a": [
+     "took"
+    ],
+    "x": "take the lead on.",
+    "id": "lx-work-13"
+   },
+   {
+    "type": "gap",
+    "q": "At the start of the year, we ___ a goal to finish the concept by May.",
+    "a": [
+     "set"
+    ],
+    "x": "set a goal.",
+    "id": "lx-work-14"
+   },
+   {
+    "type": "gap",
+    "q": "The engineers ___ (провели) a soil survey last week.",
+    "a": [
+     "carried out"
+    ],
+    "x": "carry out a survey / a task.",
+    "id": "lx-work-15"
+   },
+   {
+    "type": "gap",
+    "q": "I have to ___ (разбираться с) a lot of changes from the client every week.",
+    "a": [
+     "deal with"
+    ],
+    "x": "deal with — справляться, разбираться.",
+    "id": "lx-work-16"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (наладили) a shared BIM model so the whole team can work in it.",
+    "a": [
+     "set up"
+    ],
+    "x": "set up — наладить, организовать.",
+    "id": "lx-work-17"
+   },
+   {
+    "type": "choice",
+    "q": "We ___ a decision to change the layout.",
+    "opts": [
+     "made",
+     "took",
+     "did",
+     "had"
+    ],
+    "a": "made",
+    "x": "make a decision.",
+    "id": "lx-work-18"
+   }
+  ]
+ },
+ {
+  "id": "lx-skills",
+  "title": "Навыки, достижения, трудности",
+  "short": "Навыки и достижения",
+  "group": "Лексика в контексте",
+  "level": "B2",
+  "intro": [
+   "Первые 8 заданий на уроке остались без ответа — сейчас самое время.",
+   "Сильные стороны: **One of my key strengths is… · a strong background in · proficient in · a knack for · detail-oriented, proactive, adaptable, reliable**.",
+   "Достижения: **accomplish a goal · be proud of + -ing · exceed expectations · deliver on time · land a contract · get promoted to**.",
+   "Трудности: **face a challenge · overcome an obstacle · a steep learning curve · work to a tight deadline · juggle · a setback · inherit a model**."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "One of my key ___ is staying calm under pressure.",
+    "a": [
+     "strengths"
+    ],
+    "x": "One of my key strengths is…",
+    "id": "lx-skills-01"
+   },
+   {
+    "type": "gap",
+    "q": "I have a strong ___ in structural design.",
+    "a": [
+     "background"
+    ],
+    "x": "a strong background in.",
+    "id": "lx-skills-02"
+   },
+   {
+    "type": "gap",
+    "q": "Last year I got ___ to senior architect.",
+    "a": [
+     "promoted"
+    ],
+    "x": "get promoted to.",
+    "id": "lx-skills-03"
+   },
+   {
+    "type": "gap",
+    "q": "Joining a new team was a steep learning ___.",
+    "a": [
+     "curve"
+    ],
+    "x": "a steep learning curve.",
+    "id": "lx-skills-04"
+   },
+   {
+    "type": "gap",
+    "q": "I'm really ___ of having delivered the project on time.",
+    "a": [
+     "proud"
+    ],
+    "x": "be proud of + -ing.",
+    "id": "lx-skills-05"
+   },
+   {
+    "type": "gap",
+    "q": "Our team managed to ___ (превзойти) the client's expectations.",
+    "a": [
+     "exceed"
+    ],
+    "x": "exceed / meet expectations.",
+    "id": "lx-skills-06"
+   },
+   {
+    "type": "gap",
+    "q": "As an architect, you often have to ___ several projects at once.",
+    "a": [
+     "juggle"
+    ],
+    "x": "juggle — жонглировать задачами.",
+    "id": "lx-skills-07"
+   },
+   {
+    "type": "gap",
+    "q": "Winning that international contract was a major ___.",
+    "a": [
+     "achievement"
+    ],
+    "x": "a major achievement.",
+    "id": "lx-skills-08"
+   },
+   {
+    "type": "gap",
+    "q": "I'm ___ (владею) in Revit and ArchiCAD.",
+    "a": [
+     "proficient"
+    ],
+    "x": "proficient in.",
+    "id": "lx-skills-09"
+   },
+   {
+    "type": "gap",
+    "q": "I have a ___ (чутьё) for spotting mistakes in drawings.",
+    "a": [
+     "knack"
+    ],
+    "x": "have a knack for.",
+    "id": "lx-skills-10"
+   },
+   {
+    "type": "choice",
+    "q": "She notices every small error — she's very ___.",
+    "opts": [
+     "detail-oriented",
+     "adaptable",
+     "proactive",
+     "reliable"
+    ],
+    "a": "detail-oriented",
+    "x": "detail-oriented — внимательный к деталям.",
+    "id": "lx-skills-11"
+   },
+   {
+    "type": "choice",
+    "q": "He doesn't wait for problems to appear — he's ___.",
+    "opts": [
+     "proactive",
+     "reliable",
+     "detail-oriented",
+     "adaptable"
+    ],
+    "a": "proactive",
+    "x": "proactive — действует на опережение.",
+    "id": "lx-skills-12"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (получили) a contract for a new school in Batumi.",
+    "a": [
+     "landed",
+     "won"
+    ],
+    "x": "land / win a contract.",
+    "id": "lx-skills-13"
+   },
+   {
+    "type": "gap",
+    "q": "It took me several weeks to ___ (преодолеть) an obstacle left by the previous team.",
+    "a": [
+     "overcome"
+    ],
+    "x": "overcome an obstacle.",
+    "id": "lx-skills-14"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (получил в наследство) a poor-quality BIM model from the previous team.",
+    "a": [
+     "inherited"
+    ],
+    "x": "inherit a project / a model.",
+    "id": "lx-skills-15"
+   },
+   {
+    "type": "gap",
+    "q": "We were working ___ a tight deadline.",
+    "a": [
+     "to"
+    ],
+    "x": "work to a tight deadline; также under pressure.",
+    "id": "lx-skills-16"
+   },
+   {
+    "type": "gap",
+    "q": "The delay with the permit was a serious ___ (неудача).",
+    "a": [
+     "setback"
+    ],
+    "x": "a setback.",
+    "id": "lx-skills-17"
+   },
+   {
+    "type": "gap",
+    "q": "At the start, we ___ (столкнулись с) a big challenge: the site was on a slope.",
+    "a": [
+     "faced"
+    ],
+    "x": "face a challenge.",
+    "id": "lx-skills-18"
+   }
+  ]
+ },
+ {
+  "id": "lx-travel",
+  "title": "Дорога и быт: фразовые глаголы",
+  "short": "Дорога и быт",
+  "group": "Лексика в контексте",
+  "level": "B2",
+  "intro": [
+   "Дорога: **set off · head for · stop over · check in / out · get around · show around · end up · come across**.",
+   "Быт: **look forward to + -ing · catch up with · hang out with · get away · figure out · pick up / drop off**.",
+   "Из разминки: **destination · must-see · off the beaten track · splurge on · along the way · highly recommend · locals**.",
+   "⚠ _set off_ ≠ _stop over_ ≠ _step over_ (перешагнуть)."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "We ___ (отправились) at dawn to avoid the traffic.",
+    "a": [
+     "set off"
+    ],
+    "x": "set off — отправиться в путь. На уроке ты ответил head off — это «двинуться в направлении».",
+    "id": "lx-travel-01"
+   },
+   {
+    "type": "gap",
+    "q": "On the way to Italy, we ___ (остановились) in Vienna for a night.",
+    "a": [
+     "stopped over"
+    ],
+    "x": "stop over. На уроке было step over — это «перешагнуть».",
+    "id": "lx-travel-02"
+   },
+   {
+    "type": "gap",
+    "q": "When we got to the hotel, we ___ (заселились) and dropped our bags.",
+    "a": [
+     "checked in"
+    ],
+    "x": "check in.",
+    "id": "lx-travel-03"
+   },
+   {
+    "type": "gap",
+    "q": "The old town is small, so it's easy to ___ (передвигаться) on foot.",
+    "a": [
+     "get around"
+    ],
+    "x": "get around.",
+    "id": "lx-travel-04"
+   },
+   {
+    "type": "gap",
+    "q": "A friendly local offered to show us ___ the old quarter.",
+    "a": [
+     "around"
+    ],
+    "x": "show sb around.",
+    "id": "lx-travel-05"
+   },
+   {
+    "type": "gap",
+    "q": "We took a wrong turn and ___ (оказались) in a tiny mountain village.",
+    "a": [
+     "ended up"
+    ],
+    "x": "end up.",
+    "id": "lx-travel-06"
+   },
+   {
+    "type": "gap",
+    "q": "While wandering the streets, I ___ (наткнулся на) a hidden rooftop bar.",
+    "a": [
+     "came across"
+    ],
+    "x": "come across.",
+    "id": "lx-travel-07"
+   },
+   {
+    "type": "gap",
+    "q": "I'm really ___ (жду с нетерпением) exploring Tbilisi this summer.",
+    "a": [
+     "looking forward to"
+    ],
+    "x": "look forward to + -ing.",
+    "id": "lx-travel-08"
+   },
+   {
+    "type": "gap",
+    "q": "After two days in Milan, we ___ for the Swiss border.",
+    "a": [
+     "headed"
+    ],
+    "x": "head for — направляться.",
+    "id": "lx-travel-09"
+   },
+   {
+    "type": "gap",
+    "q": "We have to ___ (выселиться) of the hotel by 11.",
+    "a": [
+     "check out"
+    ],
+    "x": "check out of the hotel.",
+    "id": "lx-travel-10"
+   },
+   {
+    "type": "gap",
+    "q": "Let's meet for coffee and ___ (пообщаться) — I haven't seen you for ages.",
+    "a": [
+     "catch up"
+    ],
+    "x": "catch up (with sb).",
+    "id": "lx-travel-11"
+   },
+   {
+    "type": "gap",
+    "q": "At weekends I usually ___ (провожу время) with friends in the city centre.",
+    "a": [
+     "hang out"
+    ],
+    "x": "hang out with.",
+    "id": "lx-travel-12"
+   },
+   {
+    "type": "gap",
+    "q": "We need a weekend ___ — somewhere quiet by the sea.",
+    "a": [
+     "getaway"
+    ],
+    "x": "a getaway — короткий отпуск.",
+    "id": "lx-travel-13"
+   },
+   {
+    "type": "gap",
+    "q": "I still can't ___ (разобраться) how the new software works.",
+    "a": [
+     "figure out"
+    ],
+    "x": "figure out.",
+    "id": "lx-travel-14"
+   },
+   {
+    "type": "gap",
+    "q": "Could you ___ me off at the airport?",
+    "a": [
+     "drop"
+    ],
+    "x": "drop sb off — подвезти и высадить.",
+    "id": "lx-travel-15"
+   },
+   {
+    "type": "gap",
+    "q": "Our final ___ was Switzerland.",
+    "a": [
+     "destination"
+    ],
+    "x": "destination — пункт назначения.",
+    "id": "lx-travel-16"
+   },
+   {
+    "type": "gap",
+    "q": "If you go to Rome, the Pantheon is a ___ (обязательно к посещению).",
+    "a": [
+     "must-see"
+    ],
+    "x": "a must-see.",
+    "id": "lx-travel-17"
+   },
+   {
+    "type": "gap",
+    "q": "We found a few quiet villages off the beaten ___.",
+    "a": [
+     "track"
+    ],
+    "x": "off the beaten track — идиома не меняется.",
+    "id": "lx-travel-18"
+   },
+   {
+    "type": "gap",
+    "q": "We didn't ___ (шиковать) on plane tickets — we went by car.",
+    "a": [
+     "splurge"
+    ],
+    "x": "splurge on.",
+    "id": "lx-travel-19"
+   },
+   {
+    "type": "gap",
+    "q": "We stopped at several villages ___ the way.",
+    "a": [
+     "along"
+    ],
+    "x": "along the way / en route.",
+    "id": "lx-travel-20"
+   },
+   {
+    "type": "gap",
+    "q": "I can ___ (горячо) recommend road trips in Italy.",
+    "a": [
+     "highly",
+     "wholeheartedly",
+     "warmly"
+    ],
+    "x": "highly recommend.",
+    "id": "lx-travel-21"
+   }
+  ]
+ },
+ {
+  "id": "lx-diag",
+  "title": "Сочетания из диагностики",
+  "short": "Из диагностики",
+  "group": "Лексика в контексте",
+  "level": "B2–C1",
+  "intro": [
+   "Слова и сочетания, на которых ты ошибся в тесте, — в новых предложениях.",
+   "**take** a photo, **make** a decision · **a wide range of** · **reach a compromise** · rules **come into effect** · an argument **doesn't hold water** · **put up with** · **put off** · **run out of** · **reluctant** = не хочет · **fiasco** = полный провал."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "Could you ___ a picture of the facade for me?",
+    "opts": [
+     "take",
+     "make",
+     "do",
+     "get"
+    ],
+    "a": "take",
+    "x": "take a photo / a picture.",
+    "id": "lx-diag-01"
+   },
+   {
+    "type": "choice",
+    "q": "The client has to ___ a decision by Friday.",
+    "opts": [
+     "make",
+     "take",
+     "do",
+     "have"
+    ],
+    "a": "make",
+    "x": "make a decision — норма (в UK встречается и take).",
+    "id": "lx-diag-02"
+   },
+   {
+    "type": "gap",
+    "q": "The studio offers a wide ___ of services.",
+    "a": [
+     "range"
+    ],
+    "x": "a wide range of.",
+    "id": "lx-diag-03"
+   },
+   {
+    "type": "gap",
+    "q": "After long talks, the developer and the city reached a ___.",
+    "a": [
+     "compromise"
+    ],
+    "x": "reach a compromise.",
+    "id": "lx-diag-04"
+   },
+   {
+    "type": "gap",
+    "q": "The new building codes will come ___ effect in January.",
+    "a": [
+     "into"
+    ],
+    "x": "come into effect.",
+    "id": "lx-diag-05"
+   },
+   {
+    "type": "gap",
+    "q": "His argument doesn't hold ___ — the numbers don't match.",
+    "a": [
+     "water"
+    ],
+    "x": "doesn't hold water — не выдерживает критики.",
+    "id": "lx-diag-06"
+   },
+   {
+    "type": "gap",
+    "q": "I can't put ___ with the noise from the construction site.",
+    "a": [
+     "up"
+    ],
+    "x": "put up with — терпеть.",
+    "id": "lx-diag-07"
+   },
+   {
+    "type": "gap",
+    "q": "The site visit was put ___ until next week.",
+    "a": [
+     "off"
+    ],
+    "x": "put off — отложить.",
+    "id": "lx-diag-08"
+   },
+   {
+    "type": "gap",
+    "q": "We've run ___ of printer paper again.",
+    "a": [
+     "out"
+    ],
+    "x": "run out of — закончиться.",
+    "id": "lx-diag-09"
+   },
+   {
+    "type": "choice",
+    "q": "He was ___ to sign the contract — he didn't like the terms.",
+    "opts": [
+     "reluctant",
+     "eager",
+     "forced",
+     "forgetful"
+    ],
+    "a": "reluctant",
+    "x": "reluctant — не хочет, делает неохотно. В тесте ты выбрал «вынужден» — это forced.",
+    "id": "lx-diag-10"
+   },
+   {
+    "type": "choice",
+    "q": "The opening ceremony was a complete ___ — nothing worked.",
+    "opts": [
+     "fiasco",
+     "success",
+     "triumph",
+     "highlight"
+    ],
+    "a": "fiasco",
+    "x": "fiasco — полный провал.",
+    "id": "lx-diag-11"
+   },
+   {
+    "type": "gap",
+    "q": "Fasten your seatbelt — the plane is about to take ___.",
+    "a": [
+     "off"
+    ],
+    "x": "take off — взлетать.",
+    "id": "lx-diag-12"
+   }
+  ]
+ },
+ {
+  "id": "ie-sp2",
+  "title": "Speaking Part 2: каркасы ответов",
+  "short": "Speaking Part 2",
+  "group": "IELTS",
+  "level": "B2",
+  "intro": [
+   "Part 2: минута на подготовку, до двух минут рассказа по карточке.",
+   "«Describe an achievement»: **The major achievement I remember most was… · It took me… to overcome… · I was already proficient in…, so… · …on time and meeting the deadline.**",
+   "«Describe a memorable trip»: **I clearly remember our road trip through… · We set off…, drove through… and stopped over in… · We ended up… / came across… · Our final destination was…**",
+   "На балл выше: **I'd definitely recommend… · What really stood out for me was… · The downside was… · Compared to X, … was far better.**",
+   "После тренировки надиктуй мне ответ в чат — разберу лексику и грамматику."
+  ],
+  "items": [
+   {
+    "type": "order",
+    "a": [
+     "The major achievement I remember most was a project in Tomsk."
+    ],
+    "x": "Каркас «Describe an achievement», шаг 1.",
+    "id": "ie-sp2-01"
+   },
+   {
+    "type": "order",
+    "a": [
+     "It took me several weeks to overcome the problems."
+    ],
+    "x": "Шаг 2: It took me + время + to…",
+    "id": "ie-sp2-02"
+   },
+   {
+    "type": "order",
+    "a": [
+     "I was already proficient in Revit, so nothing stopped me."
+    ],
+    "x": "Шаг 3: навык → результат через so.",
+    "id": "ie-sp2-03"
+   },
+   {
+    "type": "gap",
+    "q": "…so no setbacks stopped me from ___ the work on time.",
+    "a": [
+     "accomplishing",
+     "finishing",
+     "completing"
+    ],
+    "x": "stop sb from + -ing.",
+    "id": "ie-sp2-04"
+   },
+   {
+    "type": "order",
+    "a": [
+     "I clearly remember our road trip through Europe."
+    ],
+    "x": "Каркас «Describe a memorable trip», шаг 1.",
+    "id": "ie-sp2-05"
+   },
+   {
+    "type": "gap",
+    "q": "We set ___ early, drove through Italy and stopped over in San Marino.",
+    "a": [
+     "off"
+    ],
+    "x": "set off — отправиться в путь.",
+    "id": "ie-sp2-06"
+   },
+   {
+    "type": "gap",
+    "q": "What really stood ___ for me was the mountain scenery.",
+    "a": [
+     "out"
+    ],
+    "x": "What really stood out for me was… — сильная связка для Part 2.",
+    "id": "ie-sp2-07"
+   },
+   {
+    "type": "gap",
+    "q": "I'd definitely ___ a road trip across Italy.",
+    "a": [
+     "recommend"
+    ],
+    "x": "I'd definitely recommend…",
+    "id": "ie-sp2-08"
+   },
+   {
+    "type": "gap",
+    "q": "The ___ (минус) was the traffic around Milan.",
+    "a": [
+     "downside",
+     "drawback"
+    ],
+    "x": "The downside / drawback was…",
+    "id": "ie-sp2-09"
+   },
+   {
+    "type": "gap",
+    "q": "Compared to Abkhazia, the roads in Europe were ___ better maintained.",
+    "a": [
+     "far",
+     "much"
+    ],
+    "x": "far / much + сравнительная степень.",
+    "id": "ie-sp2-10"
+   },
+   {
+    "type": "order",
+    "a": [
+     "We took a wrong turn and ended up in a tiny village."
+    ],
+    "x": "ended up — хороший поворот сюжета в рассказе.",
+    "id": "ie-sp2-11"
+   }
+  ]
+ },
+ {
+  "id": "diag",
+  "title": "Диагностический тест",
+  "short": "Диагностика",
+  "group": "Замер прогресса",
+  "mode": "test",
+  "intro": [
+   "Тот же тест из 30 вопросов, что на первом уроке. Первый результат — **16 из 30** (B1, с проступающим B2).",
+   "Проходи раз в 3–4 недели, не чаще: иначе запомнишь ответы, и замер потеряет смысл.",
+   "Результаты сохраняются; в конце увидишь сравнение по разделам с прошлым разом.",
+   "Вопросы 6 и 30 (инверсии) — уровень C1, их мы ещё не проходили."
+  ],
+  "baseline": {
+   "label": "Первый тест, сентябрь",
+   "total": 16,
+   "sec": {
+    "Времена и условные": [
+     3,
+     9
+    ],
+    "Артикли": [
+     4,
+     4
+    ],
+    "Предлоги": [
+     4,
+     5
+    ],
+    "Лексика и сочетания": [
+     3,
+     8
+    ],
+    "Фразовые глаголы": [
+     2,
+     4
+    ]
+   }
+  },
+  "items": [
+   {
+    "type": "choice",
+    "q": "I ___ to London twice.",
+    "opts": [
+     "went",
+     "have been",
+     "was going",
+     "am going"
+    ],
+    "a": "have been",
+    "sec": "Времена и условные",
+    "was": false,
+    "x": "Опыт без даты, twice → Present Perfect.",
+    "id": "diag-01"
+   },
+   {
+    "type": "choice",
+    "q": "When I arrived at the station, the train ___.",
+    "opts": [
+     "already left",
+     "had already left",
+     "has already left",
+     "was already leaving"
+    ],
+    "a": "had already left",
+    "sec": "Времена и условные",
+    "was": false,
+    "x": "Раньше другого события в прошлом → Past Perfect.",
+    "id": "diag-02"
+   },
+   {
+    "type": "choice",
+    "q": "If I ___ more free time, I would travel more.",
+    "opts": [
+     "have",
+     "had",
+     "will have",
+     "would have"
+    ],
+    "a": "had",
+    "sec": "Времена и условные",
+    "was": true,
+    "x": "Второй тип условных: if + Past Simple, would + глагол.",
+    "id": "diag-03"
+   },
+   {
+    "type": "choice",
+    "q": "By next June, she ___ here for ten years.",
+    "opts": [
+     "will work",
+     "has worked",
+     "will have worked",
+     "works"
+    ],
+    "a": "will have worked",
+    "sec": "Времена и условные",
+    "was": true,
+    "x": "by + момент в будущем → Future Perfect.",
+    "id": "diag-04"
+   },
+   {
+    "type": "choice",
+    "q": "He told me he ___ the email the day before.",
+    "opts": [
+     "sent",
+     "has sent",
+     "had sent",
+     "sends"
+    ],
+    "a": "had sent",
+    "sec": "Времена и условные",
+    "was": false,
+    "x": "Косвенная речь: сдвиг назад → Past Perfect.",
+    "id": "diag-05"
+   },
+   {
+    "type": "choice",
+    "q": "___ had I sat down than the phone rang.",
+    "opts": [
+     "Hardly",
+     "No sooner",
+     "Scarcely",
+     "Barely"
+    ],
+    "a": "No sooner",
+    "sec": "Времена и условные",
+    "was": false,
+    "x": "Инверсия No sooner… than. С hardly / scarcely пара — when.",
+    "id": "diag-06"
+   },
+   {
+    "type": "choice",
+    "q": "I wish I ___ harder for last year's exam.",
+    "opts": [
+     "studied",
+     "would study",
+     "had studied",
+     "have studied"
+    ],
+    "a": "had studied",
+    "sec": "Времена и условные",
+    "was": false,
+    "x": "wish о прошлом → Past Perfect.",
+    "id": "diag-07"
+   },
+   {
+    "type": "choice",
+    "q": "If she had accepted the job, she ___ in Paris now.",
+    "opts": [
+     "would have lived",
+     "will live",
+     "would be living",
+     "lived"
+    ],
+    "a": "would be living",
+    "sec": "Времена и условные",
+    "was": true,
+    "x": "Смешанный тип: условие в прошлом, результат сейчас.",
+    "id": "diag-08"
+   },
+   {
+    "type": "choice",
+    "q": "She seems to be ___ honest person.",
+    "opts": [
+     "a",
+     "an",
+     "the",
+     "—"
+    ],
+    "a": "an",
+    "sec": "Артикли",
+    "was": true,
+    "x": "honest начинается с гласного звука → an.",
+    "id": "diag-09"
+   },
+   {
+    "type": "choice",
+    "q": "I really love ___ jazz music.",
+    "opts": [
+     "the",
+     "a",
+     "—",
+     "an"
+    ],
+    "a": "—",
+    "sec": "Артикли",
+    "was": true,
+    "x": "Музыка в целом → без артикля.",
+    "id": "diag-10"
+   },
+   {
+    "type": "choice",
+    "q": "___ Mount Everest is the highest peak on Earth.",
+    "opts": [
+     "The",
+     "A",
+     "An",
+     "—"
+    ],
+    "a": "—",
+    "sec": "Артикли",
+    "was": true,
+    "x": "Отдельные горы — без артикля.",
+    "id": "diag-11"
+   },
+   {
+    "type": "choice",
+    "q": "Did you enjoy ___ film I recommended last week?",
+    "opts": [
+     "a",
+     "the",
+     "an",
+     "—"
+    ],
+    "a": "the",
+    "sec": "Артикли",
+    "was": true,
+    "x": "Конкретный фильм → the.",
+    "id": "diag-12"
+   },
+   {
+    "type": "choice",
+    "q": "She's really good ___ solving problems.",
+    "opts": [
+     "in",
+     "on",
+     "at",
+     "with"
+    ],
+    "a": "at",
+    "sec": "Предлоги",
+    "was": true,
+    "x": "good at.",
+    "id": "diag-13"
+   },
+   {
+    "type": "choice",
+    "q": "My sister is married ___ an engineer.",
+    "opts": [
+     "with",
+     "to",
+     "by",
+     "on"
+    ],
+    "a": "to",
+    "sec": "Предлоги",
+    "was": true,
+    "x": "married to.",
+    "id": "diag-14"
+   },
+   {
+    "type": "choice",
+    "q": "We finally arrived ___ the airport just in time.",
+    "opts": [
+     "to",
+     "in",
+     "at",
+     "on"
+    ],
+    "a": "at",
+    "sec": "Предлоги",
+    "was": false,
+    "x": "arrive at + здание, аэропорт; arrive in + город.",
+    "id": "diag-15"
+   },
+   {
+    "type": "choice",
+    "q": "As team lead, he's responsible ___ the whole project.",
+    "opts": [
+     "of",
+     "to",
+     "for",
+     "with"
+    ],
+    "a": "for",
+    "sec": "Предлоги",
+    "was": true,
+    "x": "responsible for.",
+    "id": "diag-16"
+   },
+   {
+    "type": "choice",
+    "q": "Whether we go or not depends ___ the weather.",
+    "opts": [
+     "of",
+     "in",
+     "on",
+     "from"
+    ],
+    "a": "on",
+    "sec": "Предлоги",
+    "was": true,
+    "x": "depend on.",
+    "id": "diag-17"
+   },
+   {
+    "type": "choice",
+    "q": "Could you ___ a photo of us, please?",
+    "opts": [
+     "take",
+     "make",
+     "do",
+     "get"
+    ],
+    "a": "take",
+    "sec": "Лексика и сочетания",
+    "was": false,
+    "x": "take a photo.",
+    "id": "diag-18"
+   },
+   {
+    "type": "choice",
+    "q": "We need to ___ a final decision today.",
+    "opts": [
+     "take",
+     "make",
+     "do",
+     "have"
+    ],
+    "a": "make",
+    "sec": "Лексика и сочетания",
+    "was": true,
+    "x": "make a decision.",
+    "id": "diag-19"
+   },
+   {
+    "type": "choice",
+    "q": "The meeting was ___ off until next Friday.",
+    "opts": [
+     "put",
+     "taken",
+     "set",
+     "cut"
+    ],
+    "a": "put",
+    "sec": "Фразовые глаголы",
+    "was": false,
+    "x": "put off — отложить.",
+    "id": "diag-20"
+   },
+   {
+    "type": "choice",
+    "q": "She has a wide ___ of professional skills.",
+    "opts": [
+     "amount",
+     "range",
+     "number",
+     "level"
+    ],
+    "a": "range",
+    "sec": "Лексика и сочетания",
+    "was": true,
+    "x": "a wide range of.",
+    "id": "diag-21"
+   },
+   {
+    "type": "choice",
+    "q": "After hours of talks, they finally reached a ___.",
+    "opts": [
+     "promise",
+     "permission",
+     "compromise",
+     "commitment"
+    ],
+    "a": "compromise",
+    "sec": "Лексика и сочетания",
+    "was": false,
+    "x": "reach a compromise.",
+    "id": "diag-22"
+   },
+   {
+    "type": "choice",
+    "q": "The new regulations will come ___ effect next month.",
+    "opts": [
+     "in",
+     "into",
+     "to",
+     "on"
+    ],
+    "a": "into",
+    "sec": "Лексика и сочетания",
+    "was": false,
+    "x": "come into effect.",
+    "id": "diag-23"
+   },
+   {
+    "type": "choice",
+    "q": "Honestly, that explanation just doesn't hold ___.",
+    "opts": [
+     "air",
+     "weight",
+     "water",
+     "wind"
+    ],
+    "a": "water",
+    "sec": "Лексика и сочетания",
+    "was": false,
+    "x": "hold water — выдерживать критику.",
+    "id": "diag-24"
+   },
+   {
+    "type": "choice",
+    "q": "I really can't ___ with this constant noise.",
+    "opts": [
+     "put off",
+     "put up",
+     "put on",
+     "put down"
+    ],
+    "a": "put up",
+    "sec": "Фразовые глаголы",
+    "was": false,
+    "x": "put up with — терпеть.",
+    "id": "diag-25"
+   },
+   {
+    "type": "choice",
+    "q": "Oh no, we've ___ out of coffee again.",
+    "opts": [
+     "run",
+     "got",
+     "gone",
+     "taken"
+    ],
+    "a": "run",
+    "sec": "Фразовые глаголы",
+    "was": true,
+    "x": "run out of.",
+    "id": "diag-26"
+   },
+   {
+    "type": "choice",
+    "q": "Fasten your seatbelt — the plane is about to take ___.",
+    "opts": [
+     "out",
+     "up",
+     "off",
+     "over"
+    ],
+    "a": "off",
+    "sec": "Фразовые глаголы",
+    "was": true,
+    "x": "take off — взлетать.",
+    "id": "diag-27"
+   },
+   {
+    "type": "choice",
+    "q": "If a project is described as «a fiasco», it was a ___.",
+    "opts": [
+     "complete failure",
+     "huge success",
+     "minor delay",
+     "small risk"
+    ],
+    "a": "complete failure",
+    "sec": "Лексика и сочетания",
+    "was": true,
+    "x": "fiasco — полный провал.",
+    "id": "diag-28"
+   },
+   {
+    "type": "choice",
+    "q": "If someone is «reluctant» to do something, they ___ it.",
+    "opts": [
+     "are eager to do",
+     "don't want to do",
+     "forget to do",
+     "are forced to do"
+    ],
+    "a": "don't want to do",
+    "sec": "Лексика и сочетания",
+    "was": false,
+    "x": "reluctant — не хочет.",
+    "id": "diag-29"
+   },
+   {
+    "type": "choice",
+    "q": "___ I known about the traffic, I would have left earlier.",
+    "opts": [
+     "If",
+     "Have",
+     "Had",
+     "Would"
+    ],
+    "a": "Had",
+    "sec": "Времена и условные",
+    "was": false,
+    "x": "Инверсия в третьем типе: Had I known = If I had known.",
+    "id": "diag-30"
    }
   ]
  }

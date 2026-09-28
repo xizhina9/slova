@@ -60,6 +60,13 @@ p.lead{font-family:var(--serif);font-size:20px;line-height:1.45;margin:0 0 30px;
 .chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .chip .c{opacity:.6;margin-left:6px;font-variant-numeric:tabular-nums}
 .chip.lvl{font-variant-numeric:tabular-nums}
+.packs.sub{margin-top:-12px}
+.packs.sub .chip{padding:6px 12px;font-size:14px}
+.note{color:var(--muted);text-align:center;font-size:15px;line-height:1.45;margin:10px 0 0}
+.res{list-style:none;margin:18px 0 0;padding:0}
+.res li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
+.res li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.res .up{color:var(--good)} .res .down{color:var(--bad)}
 h2.sec{font-family:var(--serif);font-weight:600;font-size:22px;margin:30px 0 0}
 .sent{font-family:var(--serif);font-size:clamp(21px,5.6vw,26px);line-height:1.45;margin:0;text-align:center;overflow-wrap:anywhere}
 .sent .blank{display:inline-block;min-width:3em;border-bottom:2px solid var(--ink);height:1em;vertical-align:baseline}
@@ -199,12 +206,41 @@ function pattern(en, min){
   const parts = tokens(en,min).map(t => { const e=t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); return t.length>=5 ? '\\b'+e.slice(0,t.length-2)+'\\w*' : '\\b'+e+'\\b'; });
   return parts.length ? new RegExp(parts.join('|'),'gi') : null;
 }
-function hl(ex, en){ const p=pattern(en,3), s=esc(ex); return p ? s.replace(p, m=>`<em>${m}</em>`) : s; }
-function blank(ex, en){ const p=pattern(en,2), s=esc(ex); return p ? s.replace(p,'___') : s; }
+const reEsc = t => t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+// matches a multi-word entry inside an example, allowing inflection and an optional object for (sb)
+function phraseRe(variant){
+  let v = variant.replace(/…|\.\.\./g,' ').replace(/\+\s*-ing/g,' ')
+    .replace(/\((?:sb|sth|smb|someone|something)\)/gi,' SB ').replace(/\(.*?\)/g,' ').trim().replace(/^(be|to)\s+/i,'');
+  const ws = v.split(/\s+/).filter(Boolean);
+  while(ws.length && ws[ws.length-1]==='SB') ws.pop();
+  if(ws.filter(w=>w!=='SB').length<2) return null;
+  let src='\\b';
+  ws.forEach((w,i)=>{
+    const last = i===ws.length-1;
+    if(w==='SB'){ src+='(?:\\S+[\\s-]+)?'; return; }
+    src += (w.length>=4 ? reEsc(w[0])+'[\\w\']*' : reEsc(w)) + (last ? '\\b' : '[\\s-]+');
+  });
+  return new RegExp(src,'i');
+}
+function findPhrase(ex, en){
+  for(const v of en.split(/\s*[\/;]\s*/)){ const re=phraseRe(v); if(!re) continue; const m=ex.match(re); if(m) return m; }
+  return null;
+}
+function hl(ex, en){
+  const m=findPhrase(ex,en);
+  if(m) return esc(ex.slice(0,m.index))+`<em>${esc(m[0])}</em>`+esc(ex.slice(m.index+m[0].length));
+  const p=pattern(en,3), s=esc(ex); return p ? s.replace(p, x=>`<em>${x}</em>`) : s;
+}
+function blank(ex, en){
+  const m=findPhrase(ex,en);
+  if(m) return esc(ex.slice(0,m.index))+'___'+esc(ex.slice(m.index+m[0].length));
+  const multi = en.replace(/\(.*?\)/g,'').trim().split(/\s+/).length>1;
+  const p=pattern(en, multi?4:2), s=esc(ex); return p ? s.replace(p,'___') : s;
+}
 
 function norm(s){
   return s.toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9' -]/g,'').replace(/\s+/g,' ').trim()
-    .replace(/^to\s+/,'').replace(/^(a|an|the)\s+/,'').replace(/\b(sb|sth|smb|smth|someone|something|somebody)\b/g,'').replace(/\s+/g,' ').trim();
+    .replace(/^(to|be)\s+/,'').replace(/^(a|an|the)\s+/,'').replace(/\b(sb|sth|smb|smth|someone|something|somebody)\b/g,'').replace(/\s+/g,' ').trim();
 }
 function lev(a,b){ if(a===b) return 0; const m=a.length,n=b.length; if(!m) return n; if(!n) return m; let prev=Array.from({length:n+1},(_,i)=>i); for(let i=1;i<=m;i++){ const cur=[i]; for(let j=1;j<=n;j++){ cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1)); } prev=cur; } return prev[n]; }
 function grade(val, target){
@@ -216,9 +252,13 @@ function grade(val, target){
 }
 
 // ---------- packs (filters by topic or level) ----------
-function inPack(w){ const p=settings.pack||'all'; if(p==='all') return true; const [t,k]=p.split(':'); return t==='topic' ? w.topic===k : w.level===k; }
+const LESSON_TAG = 'уроки';
+function conds(p=settings.pack){ return (!p||p==='all') ? [] : p.split('|').map(c=>{ const i=c.indexOf(':'); return [c.slice(0,i), c.slice(i+1)]; }); }
+function matches(w, [t,k]){ return t==='topic' ? w.topic===k : t==='level' ? w.level===k : t==='tag' ? (w.tags||[]).includes(k) : true; }
+function inPack(w){ return conds().every(c=>matches(w,c)); }
 function pool(){ return words.filter(inPack); }
-function packLabel(){ const p=settings.pack||'all'; if(p==='all') return ''; const [t,k]=p.split(':'); return t==='topic' ? (TOPICS[k]||k) : k; }
+function condLabel([t,k]){ return t==='topic' ? (TOPICS[k]||k) : (t==='tag' && k===LESSON_TAG) ? 'Из уроков' : k; }
+function packLabel(){ return conds().map(condLabel).join(' · '); }
 function meta(w){ return [w.pos, w.level].filter(Boolean).join(', '); }
 
 // ---------- progress ----------
@@ -274,17 +314,27 @@ function home(){
   const lead = !words.length
     ? 'Список слов пока пуст. Пришли первые слова — и они появятся здесь.'
     : `${lbl ? `«${lbl}»` : 'Всего'} ${s.total} ${plural(s.total,'слово','слова','слов')}: ${s.fresh} ещё не открывал, ${s.due} ${plural(s.due,'ждёт','ждут','ждут')} повторения сегодня, ${s.done} выучено.`;
-  const tc={}, lc={};
-  for(const w of words){ if(w.topic) tc[w.topic]=(tc[w.topic]||0)+1; if(w.level) lc[w.level]=(lc[w.level]||0)+1; }
-  const chip=(v,l,n,cls='')=>`<button class="chip ${cls} ${settings.pack===v?'on':''}" data-p="${v}">${l}${n!=null?`<span class="c">${n}</span>`:''}</button>`;
-  const chips = [chip('all','Все слова',words.length)]
-    .concat(Object.keys(TOPICS).filter(k=>tc[k]).map(k=>chip('topic:'+k,TOPICS[k],tc[k])))
-    .concat(LEVELS.filter(l=>lc[l]).map(l=>chip('level:'+l,l,lc[l],'lvl')));
+  const tc={}, lc={}; let lessons=0;
+  for(const w of words){ if(w.topic) tc[w.topic]=(tc[w.topic]||0)+1; if(w.level) lc[w.level]=(lc[w.level]||0)+1; if((w.tags||[]).includes(LESSON_TAG)) lessons++; }
+  const cs=conds(), base = cs.length ? cs[0].join(':') : 'all';
+  const chip=(v,l,n,on,cls='')=>`<button class="chip ${cls} ${on?'on':''}" data-p="${esc(v)}">${esc(l)}${n!=null?`<span class="c">${n}</span>`:''}</button>`;
+  const chips = [chip('all','Все слова',words.length,base==='all')]
+    .concat(lessons ? [chip('tag:'+LESSON_TAG,'Из уроков',lessons,base==='tag:'+LESSON_TAG)] : [])
+    .concat(Object.keys(TOPICS).filter(k=>tc[k]).map(k=>chip('topic:'+k,TOPICS[k],tc[k],base==='topic:'+k)))
+    .concat(LEVELS.filter(l=>lc[l]).map(l=>chip('level:'+l,l,lc[l],base==='level:'+l,'lvl')));
+  let sub=[];
+  if(cs.length && cs[0][0]!=='level'){
+    const inBase = words.filter(w=>matches(w,cs[0])), cnt={};
+    for(const w of inBase) for(const t of (w.tags||[])) if(t!==LESSON_TAG && t!==cs[0][1]) cnt[t]=(cnt[t]||0)+1;
+    const tags=Object.keys(cnt);
+    if(tags.length>1) sub=[chip(base,'Все',inBase.length,cs.length===1)].concat(tags.map(t=>chip(base+'|tag:'+t,t,cnt[t],settings.pack===base+'|tag:'+t)));
+  }
   const row=(k,t,d,n,dis)=>`<button class="mode" data-m="${k}" ${dis?'disabled':''}><span><span class="t">${t}</span><br><span class="d">${d}</span></span>${n!=null?`<span class="n">${n}</span>`:''}</button>`;
   render(`
     <h1 class="brand">Слова</h1>
     <p class="lead">${lead}</p>
     ${words.length ? `<div class="packs">${chips.join('')}</div>` : ''}
+    ${sub.length ? `<div class="packs sub">${sub.join('')}</div>` : ''}
     <div class="modes">
       ${row('cards','Карточки','смотри слово, вспоминай перевод')}
       ${row('test','Выбор из четырёх','узнай перевод среди вариантов')}
@@ -302,7 +352,7 @@ function home(){
 
 const TITLES = {cards:'Карточки', test:'Выбор из четырёх', write:'Письмо'};
 function sessionOpts(){
-  const ex = session.kind==='ex';
+  const ex = session.kind==='ex' || session.kind==='test';
   return {title: ex ? (session.set.short||session.set.title) : TITLES[session.mode], back: ex ? ()=>openSet(session.set) : home, right:`${Math.min(session.i+1,session.queue.length)} / ${session.queue.length}`};
 }
 
@@ -324,10 +374,11 @@ function start(mode){
 function next(){
   if(session.i>=session.queue.length) return summary();
   const w=session.queue[session.i];
-  if(session.kind==='ex') return exScreen(w);
+  if(session.kind==='ex' || session.kind==='test') return exScreen(w);
   ({cards:cardScreen, test:testScreen, write:writeScreen})[session.mode](w);
 }
 function record(w, ok){
+  if(session.kind==='test'){ if(!(w.id in session.first)){ session.first[w.id]=ok; if(!ok) session.wrong.push(w); } return; }
   mark(w.id, ok);
   if(!(w.id in session.first)) session.first[w.id]=ok;
   if(!ok){
@@ -347,6 +398,7 @@ function cardScreen(w){
       <div id="back-side" hidden>
         <p class="ru">${esc(w.ru)}</p>
         ${w.ex?`<p class="ex">${hl(w.ex,w.en)}</p>`:''}
+        ${w.note?`<p class="note">${esc(w.note)}</p>`:''}
       </div>
       <p class="hint" id="hint">Нажми, чтобы увидеть перевод</p>
     </div>
@@ -392,7 +444,7 @@ function testScreen(w){
     if(!ok) b.classList.add('wrong');
     record(w, ok);
     if(dir==='ru-en') speak(w.en);
-    $('#after').innerHTML = w.ex ? `<p class="ex">${hl(w.ex,w.en)}</p>` : '';
+    $('#after').innerHTML = (w.ex ? `<p class="ex">${hl(w.ex,w.en)}</p>` : '') + (w.note ? `<p class="note">${esc(w.note)}</p>` : '');
     nextButton();
   });
 }
@@ -404,7 +456,7 @@ function writeScreen(w){
       <h2 class="word ruq">${esc(w.ru)}</h2>
       ${w.ex?`<p class="ex" style="margin-top:14px">${blank(w.ex,w.en)}</p>`:''}
       <input class="input" id="inp" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="по-английски" enterkeyhint="done">
-      <p class="verdict" id="verdict"></p>
+      <p class="verdict" id="verdict"></p><p class="note" id="wnote"></p>
     </div>
     <div class="actions" id="acts"><button class="btn primary" id="chk">Проверить</button></div>
   `, sessionOpts());
@@ -417,7 +469,7 @@ function writeScreen(w){
     if(res==='ok'){ v.textContent='Верно'; v.className='verdict ok'; }
     else if(res==='near'){ v.innerHTML=`Почти. Правильно: <b>${esc(w.en)}</b>`; v.className='verdict ok'; }
     else { v.innerHTML=`Правильно: <b>${esc(w.en)}</b>`; v.className='verdict no'; }
-    record(w, res!=='no'); speak(w.en);
+    record(w, res!=='no'); speak(w.en); if(w.note) $('#wnote').textContent=w.note;
     nextButton(); $('#nxt').focus();
   };
   $('#chk').onclick=check;
@@ -425,6 +477,7 @@ function writeScreen(w){
 }
 
 function summary(){
+  if(session.kind==='test') return testSummary();
   const ids=Object.keys(session.first), total=ids.length, ok=ids.filter(i=>session.first[i]).length;
   const wrong=session.wrong, mode=session.mode, kind=session.kind, set=session.set;
   const li = w => w.en
@@ -454,7 +507,7 @@ function list(){
   const draw=(q='')=>{
     q=q.trim().toLowerCase();
     const arr=pool().filter(w=>!q||w.en.toLowerCase().includes(q)||w.ru.toLowerCase().includes(q)).slice().reverse();
-    $('#wl').innerHTML = arr.map(w=>`<li><div class="e"><i class="dot ${status(w)}"></i>${esc(w.en)}${meta(w)?` <span class="small">${esc(meta(w))}</span>`:''}</div><div class="r">${esc(w.ru)}</div>${w.ex?`<div class="r x">${esc(w.ex)}</div>`:''}${w.topic&&!packLabel()?`<div class="r">${esc(TOPICS[w.topic]||w.topic)}</div>`:''}</li>`).join('')
+    $('#wl').innerHTML = arr.map(w=>`<li><div class="e"><i class="dot ${status(w)}"></i>${esc(w.en)}${meta(w)?` <span class="small">${esc(meta(w))}</span>`:''}</div><div class="r">${esc(w.ru)}</div>${w.ex?`<div class="r x">${esc(w.ex)}</div>`:''}${w.note?`<div class="r">${esc(w.note)}</div>`:''}${w.topic&&!packLabel()?`<div class="r">${esc(TOPICS[w.topic]||w.topic)}</div>`:''}</li>`).join('')
       || '<li class="small">Ничего не найдено</li>';
   };
   draw(); $('#q').oninput=e=>draw(e.target.value);
@@ -473,7 +526,7 @@ function settingsScreen(){
   $('#dir').onclick=e=>{ const b=e.target.closest('button'); if(!b) return; settings.dir=b.dataset.v; saveS(); settingsScreen(); };
   $('#size').onclick=e=>{ const b=e.target.closest('button'); if(!b) return; settings.size=+b.dataset.v; saveS(); settingsScreen(); };
   $('#exp').onclick=async()=>{
-    const data=JSON.stringify({progress, settings, exported:new Date().toISOString()});
+    const data=JSON.stringify({progress, settings, tests:loadTests(), exported:new Date().toISOString()});
     try{ await navigator.clipboard.writeText(data); toast('Копия в буфере обмена'); }
     catch(e){ $('#box').innerHTML=`<textarea readonly id="ta">${esc(data)}</textarea><p class="small">Скопируй текст вручную.</p>`; $('#ta').select(); }
   };
@@ -483,6 +536,7 @@ function settingsScreen(){
       const d=safeJSON($('#ta').value,null);
       if(!d||!d.progress){ toast('Не похоже на копию'); return; }
       progress=Object.assign(progress,d.progress); if(d.settings) settings=Object.assign(settings,d.settings);
+      if(d.tests){ const t=loadTests(); for(const k in d.tests){ const seen=new Set((t[k]||[]).map(r=>r.d)); t[k]=(t[k]||[]).concat(d.tests[k].filter(r=>!seen.has(r.d))); } store.set('ew_tests', JSON.stringify(t)); }
       saveP(); saveS(); toast('Прогресс восстановлен'); settingsScreen();
     };
   };
@@ -491,14 +545,15 @@ function settingsScreen(){
 
 // ---------- exercise engine: gap / choice / fix / order ----------
 const TYPE_LABEL = {gap:'Раскрой скобки', choice:'Выбери форму', fix:'Исправь ошибку', order:'Собери предложение'};
-function normAns(s){
-  return String(s||'').toLowerCase().replace(/[’‘`]/g,"'").replace(/n't\b/g,' not').replace(/'ll\b/g,' will').replace(/'ve\b/g,' have').replace(/'re\b/g,' are')
-    .replace(/[.,!?;:"]/g,'').replace(/\s+/g,' ').trim();
+function normAns(s, cs){
+  let t=String(s||''); if(!cs) t=t.toLowerCase();
+  return t.replace(/[’‘`]/g,"'").replace(/\b(can't|cannot)\b/gi,'can not').replace(/\bwon't\b/gi,'will not').replace(/n't\b/g,' not').replace(/'ll\b/g,' will').replace(/'ve\b/g,' have').replace(/'re\b/g,' are')
+    .replace(/[.,!?;:"«»]/g,'').replace(/\s+/g,' ').trim();
 }
 function firstA(it){ return Array.isArray(it.a) ? it.a[0] : it.a; }
 function isOk(it, val){
-  const acc = (Array.isArray(it.a) ? it.a : [it.a]).map(normAns);
-  const v = normAns(val);
+  const acc = (Array.isArray(it.a) ? it.a : [it.a]).map(x=>normAns(x,it.cs));
+  const v = normAns(val,it.cs);
   const cands = [v, v.replace(/'s\b/g,' has'), v.replace(/'s\b/g,' is'), v.replace(/'d\b/g,' had'), v.replace(/'d\b/g,' would')];
   return cands.some(c=>acc.includes(c));
 }
@@ -515,11 +570,14 @@ function setsHtml(){
   for(const st of sets){ (groups[st.group||'Упражнения'] ||= []).push(st); }
   return Object.entries(groups).map(([g, arr]) => `<h2 class="sec">${esc(g)}</h2><div class="modes">${arr.map(st=>{
     const s=stats(st.items), n=st.items.length;
+    if(st.mode==='test'){ const h=testHistory(st), last=h[h.length-1];
+      return `<button class="mode" data-set="${esc(st.id)}"><span><span class="t">${esc(st.title)}</span><br><span class="d">${n} вопросов · последний результат ${last.total}/${n}</span></span></button>`; }
     const sub = s.fresh===n ? `${n} ${plural(n,'задание','задания','заданий')}${st.level?', '+esc(st.level):''}` : `${s.due} к повторению, ${s.done} выучено из ${n}`;
     return `<button class="mode" data-set="${esc(st.id)}"><span><span class="t">${esc(st.title)}</span><br><span class="d">${sub}</span></span>${s.err?`<span class="n">${s.err} ${plural(s.err,'ошибка','ошибки','ошибок')}</span>`:''}</button>`;
   }).join('')}</div>`).join('');
 }
 function openSet(set){
+  if(set.mode==='test') return openTest(set);
   session=null;
   const s=stats(set.items), n=set.items.length;
   render(`
@@ -539,6 +597,41 @@ function startSet(set, errorsOnly){
   if(!queue.length){ toast('Нечего повторять'); return; }
   session={kind:'ex', set, queue, i:0, first:{}, wrong:[], retried:new Set()};
   next();
+}
+// ---------- test mode: fixed questions, no spaced repetition, results by section ----------
+function loadTests(){ return safeJSON(store.get('ew_tests'), {}); }
+function testHistory(set){ const b=set.baseline ? [{label:set.baseline.label, total:set.baseline.total, sec:set.baseline.sec}] : []; return b.concat(loadTests()[set.id]||[]); }
+function fmtDate(iso){ try { return new Date(iso).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'}); } catch(e){ return iso; } }
+function openTest(set){
+  session=null;
+  const h=testHistory(set), n=set.items.length;
+  render(`
+    <h1 class="brand" style="font-size:28px;margin-top:16px">${esc(set.title)}</h1>
+    <p class="small" style="margin:0">${n} вопросов, без таймера.</p>
+    <ul class="intro">${(set.intro||[]).map(l=>`<li>${fmt(l)}</li>`).join('')}</ul>
+    ${h.length?`<h2 class="sec" style="font-size:19px">Результаты</h2><ul class="res">${h.map(r=>`<li><span>${esc(r.label||fmtDate(r.d))}</span><span>${r.total} / ${n}</span></li>`).join('')}</ul>`:''}
+    <div class="actions" style="margin-top:24px"><button class="btn primary" id="go">Начать тест</button></div>
+  `, {title:set.group||'Тест', back:home});
+  $('#go').onclick=()=>{ session={kind:'test', set, queue:set.items.slice(), i:0, first:{}, wrong:[], retried:new Set()}; next(); };
+}
+function testSummary(){
+  const set=session.set, n=set.items.length, sec={};
+  for(const it of set.items){ const k=it.sec||'Всего'; sec[k] ||= [0,0]; sec[k][1]++; if(session.first[it.id]) sec[k][0]++; }
+  const total=Object.values(sec).reduce((a,[o])=>a+o,0);
+  const prev=testHistory(set).pop();
+  const all=loadTests(); (all[set.id] ||= []).push({d:new Date().toISOString(), total, sec}); store.set('ew_tests', JSON.stringify(all));
+  const delta=(now,was)=> was==null ? '' : now>was ? ` <span class="up">+${now-was}</span>` : now<was ? ` <span class="down">${now-was}</span>` : '';
+  const wrong=session.wrong;
+  render(`
+    <div class="summary">
+      <h2>${total} из ${n}</h2>
+      <p class="small" style="margin:0">${prev ? `В прошлый раз: ${prev.total} из ${n}.` : ''}</p>
+      <ul class="res">${Object.entries(sec).map(([k,[o,of]])=>`<li><span>${esc(k)}</span><span>${o} / ${of}${delta(o, prev&&prev.sec&&prev.sec[k]?prev.sec[k][0]:null)}</span></li>`).join('')}</ul>
+      ${wrong.length?`<h2 class="sec" style="font-size:19px">Ошибки</h2><ul class="wrongs">${wrong.map(w=>`<li><div class="e"><span>${sentHtml(w.q, firstA(w))}</span></div>${w.x?`<div class="r">${esc(w.x)}</div>`:''}</li>`).join('')}</ul>`:''}
+      <div class="actions" style="margin-top:28px"><button class="btn primary" id="hm">На главную</button></div>
+    </div>
+  `, {title:'Результат', back:home, right:''});
+  $('#hm').onclick=home;
 }
 function exScreen(it){ ({gap:gapScreen, choice:choiceScreen, fix:fixScreen, order:orderScreen})[it.type](it); }
 function finishEx(it, ok, correct){
@@ -587,7 +680,7 @@ function fixScreen(it){
   render(`
     <div class="stage">
       <p class="pos">${TYPE_LABEL.fix}</p>
-      <p class="task">В предложении одна ошибка. Исправь её прямо в тексте.</p>
+      <p class="task">${esc(it.t || session.set.fixTask || 'В предложении одна ошибка. Исправь её прямо в тексте.')}</p>
       <textarea class="input" id="inp" rows="3" autocorrect="off" autocapitalize="off" spellcheck="false">${esc(it.q)}</textarea>
       <p class="verdict" id="verdict"></p><p class="why" id="why"></p>
     </div>
