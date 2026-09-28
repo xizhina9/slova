@@ -549,7 +549,7 @@ function settingsScreen(){
 const TYPE_LABEL = {gap:'Раскрой скобки', choice:'Выбери форму', fix:'Исправь ошибку', order:'Собери предложение'};
 function normAns(s, cs){
   let t=String(s||''); if(!cs) t=t.toLowerCase();
-  return t.replace(/[’‘`]/g,"'").replace(/\b(can't|cannot)\b/gi,'can not').replace(/\bwon't\b/gi,'will not').replace(/n't\b/g,' not').replace(/'ll\b/g,' will').replace(/'ve\b/g,' have').replace(/'re\b/g,' are')
+  return t.replace(/[’‘`]/g,"'").replace(/\b(can't|cannot)\b/gi,'can not').replace(/\bwon't\b/gi,'will not').replace(/n't\b/g,' not').replace(/\bi'm\b/gi,'i am').replace(/'ll\b/g,' will').replace(/'ve\b/g,' have').replace(/'re\b/g,' are')
     .replace(/[.,!?;:"«»]/g,'').replace(/\s+/g,' ').trim();
 }
 function firstA(it){ return Array.isArray(it.a) ? it.a[0] : it.a; }

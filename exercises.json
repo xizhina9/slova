@@ -807,8 +807,445 @@
   ]
  },
  {
+  "id": "t-irregular",
+  "title": "1. Неправильные глаголы",
+  "short": "Неправильные глаголы",
+  "group": "Грамматика",
+  "level": "A2–B1",
+  "intro": [
+   "Из уроков: **lose — lost — lost, drive — drove — driven, find — found — found, buy — bought — bought, take — took — taken, go — went — gone, see — saw — seen**. _lose_ (терять) ≠ _loose_ (свободный).",
+   "Для архитектора добавил: **build — built — built, draw — drew — drawn, lead — led — led, choose — chose — chosen, write — wrote — written, oversee — oversaw — overseen, overcome — overcame — overcome**.",
+   "Вторая форма — Past Simple (_yesterday I **drove**_), третья — Perfect и пассив (_I have **driven**, it was **built**_)."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "Yesterday I ___ (lose) my keys.",
+    "a": [
+     "lost"
+    ],
+    "x": "lose — lost — lost.",
+    "id": "t-irregular-01"
+   },
+   {
+    "type": "gap",
+    "q": "I have ___ (lose) my passport.",
+    "a": [
+     "lost"
+    ],
+    "x": "Третья форма та же: lost.",
+    "id": "t-irregular-02"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (drive) through Italy last year.",
+    "a": [
+     "drove"
+    ],
+    "x": "drive — drove — driven.",
+    "id": "t-irregular-03"
+   },
+   {
+    "type": "gap",
+    "q": "I have ___ (drive) this route many times.",
+    "a": [
+     "driven"
+    ],
+    "x": "Present Perfect → третья форма.",
+    "id": "t-irregular-04"
+   },
+   {
+    "type": "gap",
+    "q": "I finally ___ (find) the mistake in the model.",
+    "a": [
+     "found"
+    ],
+    "x": "find — found — found.",
+    "id": "t-irregular-05"
+   },
+   {
+    "type": "gap",
+    "q": "Have you ___ (find) a hotel in Tbilisi yet?",
+    "a": [
+     "found"
+    ],
+    "x": "Третья форма та же.",
+    "id": "t-irregular-06"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (buy) the tickets online.",
+    "a": [
+     "bought"
+    ],
+    "x": "buy — bought — bought.",
+    "id": "t-irregular-07"
+   },
+   {
+    "type": "gap",
+    "q": "It ___ (take) me several weeks to fix the model.",
+    "a": [
+     "took"
+    ],
+    "x": "take — took — taken.",
+    "id": "t-irregular-08"
+   },
+   {
+    "type": "gap",
+    "q": "The photo was ___ (take) from the roof.",
+    "a": [
+     "taken"
+    ],
+    "x": "Пассив → третья форма.",
+    "id": "t-irregular-09"
+   },
+   {
+    "type": "gap",
+    "q": "She ___ (go) to Georgia last summer.",
+    "a": [
+     "went"
+    ],
+    "x": "go — went — gone.",
+    "id": "t-irregular-10"
+   },
+   {
+    "type": "gap",
+    "q": "He has ___ (go) to the site — he'll be back at 3.",
+    "a": [
+     "gone"
+    ],
+    "x": "has gone — ушёл и ещё там; has been — был и вернулся.",
+    "id": "t-irregular-11"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (see) the new drawings yesterday.",
+    "a": [
+     "saw"
+    ],
+    "x": "see — saw — seen.",
+    "id": "t-irregular-12"
+   },
+   {
+    "type": "gap",
+    "q": "Have you ever ___ (see) the Alps?",
+    "a": [
+     "seen"
+    ],
+    "x": "Present Perfect → seen.",
+    "id": "t-irregular-13"
+   },
+   {
+    "type": "gap",
+    "q": "The school was ___ (build) in 1975.",
+    "a": [
+     "built"
+    ],
+    "x": "build — built — built.",
+    "id": "t-irregular-14"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (draw) the first sketches by hand.",
+    "a": [
+     "drew"
+    ],
+    "x": "draw — drew — drawn.",
+    "id": "t-irregular-15"
+   },
+   {
+    "type": "gap",
+    "q": "The elevations were ___ (draw) in Revit.",
+    "a": [
+     "drawn"
+    ],
+    "x": "Пассив → drawn.",
+    "id": "t-irregular-16"
+   },
+   {
+    "type": "gap",
+    "q": "She ___ (lead) the team for three years.",
+    "a": [
+     "led"
+    ],
+    "x": "lead — led — led.",
+    "id": "t-irregular-17"
+   },
+   {
+    "type": "gap",
+    "q": "We have ___ (choose) a ventilated facade.",
+    "a": [
+     "chosen"
+    ],
+    "x": "choose — chose — chosen.",
+    "id": "t-irregular-18"
+   },
+   {
+    "type": "gap",
+    "q": "I have ___ (write) the design brief.",
+    "a": [
+     "written"
+    ],
+    "x": "write — wrote — written.",
+    "id": "t-irregular-19"
+   },
+   {
+    "type": "gap",
+    "q": "Last year I ___ (oversee) three projects.",
+    "a": [
+     "oversaw"
+    ],
+    "x": "oversee — oversaw — overseen.",
+    "id": "t-irregular-20"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (overcome) a lot of obstacles on that project.",
+    "a": [
+     "overcame"
+    ],
+    "x": "overcome — overcame — overcome.",
+    "id": "t-irregular-21"
+   },
+   {
+    "type": "choice",
+    "q": "Your jacket is too ___ — try a smaller size.",
+    "opts": [
+     "loose",
+     "lose",
+     "lost",
+     "loss"
+    ],
+    "a": "loose",
+    "x": "loose — свободный, мешковатый; lose — терять.",
+    "id": "t-irregular-22"
+   }
+  ]
+ },
+ {
+  "id": "t-present",
+  "title": "2. Present Simple и Present Continuous",
+  "short": "Present Simple / Continuous",
+  "group": "Грамматика",
+  "level": "B1",
+  "intro": [
+   "**Present Simple** — факты, привычки, расписание: _I work in Tbilisi. The office opens at 9._ Маркеры: _always, usually, often, every day_.",
+   "**Present Continuous** — происходит сейчас или в этот период: _I'm working on the Monaco project this month._ Маркеры: _now, at the moment, currently, these days_.",
+   "**Глаголы состояния** обычно не ставятся в -ing: _know, like, want, need, believe, understand, belong, seem_. _I know_, а не _I'm knowing_.",
+   "Вопросы и отрицания в Present Simple — с **do / does**: _Does she work here? He doesn't drive._ В 3-м лице ед. ч. — окончание **-s**."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "She usually ___ (start) work at 9.",
+    "a": [
+     "starts"
+    ],
+    "x": "Привычка, she → окончание -s.",
+    "id": "t-present-01"
+   },
+   {
+    "type": "gap",
+    "q": "Right now I ___ (set) out the grid axes on the plan.",
+    "a": [
+     "am setting"
+    ],
+    "x": "right now → Present Continuous.",
+    "id": "t-present-02"
+   },
+   {
+    "type": "choice",
+    "q": "Water ___ at 100 degrees Celsius.",
+    "opts": [
+     "boils",
+     "is boiling",
+     "boil",
+     "has boiled"
+    ],
+    "a": "boils",
+    "x": "Факт → Present Simple.",
+    "id": "t-present-03"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ what you mean.",
+    "opts": [
+     "understand",
+     "am understanding",
+     "understands",
+     "am understand"
+    ],
+    "a": "understand",
+    "x": "understand — глагол состояния, без -ing.",
+    "id": "t-present-04"
+   },
+   {
+    "type": "fix",
+    "q": "He don't like working at weekends.",
+    "a": [
+     "He doesn't like working at weekends."
+    ],
+    "x": "he / she / it → doesn't.",
+    "id": "t-present-05"
+   },
+   {
+    "type": "gap",
+    "q": "This month we ___ (work) on two projects at once.",
+    "a": [
+     "are working"
+    ],
+    "x": "Временный период → Continuous.",
+    "id": "t-present-06"
+   },
+   {
+    "type": "choice",
+    "q": "___ in the city centre?",
+    "opts": [
+     "Do you live",
+     "Are you live",
+     "You live",
+     "Does you live"
+    ],
+    "a": "Do you live",
+    "x": "Вопрос в Present Simple: do + подлежащее + глагол.",
+    "id": "t-present-07"
+   },
+   {
+    "type": "fix",
+    "q": "I am needing more time to finish the model.",
+    "a": [
+     "I need more time to finish the model."
+    ],
+    "x": "need — глагол состояния.",
+    "id": "t-present-08"
+   },
+   {
+    "type": "gap",
+    "q": "The train ___ (leave) at 7:15 every morning.",
+    "a": [
+     "leaves"
+    ],
+    "x": "Расписание → Present Simple.",
+    "id": "t-present-09"
+   },
+   {
+    "type": "choice",
+    "q": "Look! It ___.",
+    "opts": [
+     "snows",
+     "is snowing",
+     "snow",
+     "has snowed"
+    ],
+    "a": "is snowing",
+    "x": "Look! — происходит прямо сейчас.",
+    "id": "t-present-10"
+   },
+   {
+    "type": "gap",
+    "q": "My brother ___ (not / eat) meat.",
+    "a": [
+     "does not eat"
+    ],
+    "x": "Факт о человеке → doesn't + глагол без -s.",
+    "id": "t-present-11"
+   },
+   {
+    "type": "choice",
+    "q": "Currently, the team ___ a new residential complex.",
+    "opts": [
+     "designs",
+     "is designing",
+     "design",
+     "has design"
+    ],
+    "a": "is designing",
+    "x": "currently → Continuous.",
+    "id": "t-present-12"
+   },
+   {
+    "type": "fix",
+    "q": "She work in an open-plan office.",
+    "a": [
+     "She works in an open-plan office."
+    ],
+    "x": "she → -s.",
+    "id": "t-present-13"
+   },
+   {
+    "type": "order",
+    "a": [
+     "What are you working on at the moment?"
+    ],
+    "x": "Вопрос в Continuous: What + are + you + -ing.",
+    "id": "t-present-14"
+   },
+   {
+    "type": "choice",
+    "q": "This building ___ to the city.",
+    "opts": [
+     "belongs",
+     "is belonging",
+     "belong",
+     "belonging"
+    ],
+    "a": "belongs",
+    "x": "belong — глагол состояния.",
+    "id": "t-present-15"
+   },
+   {
+    "type": "gap",
+    "q": "I ___ (think) about changing jobs.",
+    "a": [
+     "am thinking"
+    ],
+    "x": "think = обдумываю → Continuous.",
+    "id": "t-present-16"
+   },
+   {
+    "type": "choice",
+    "q": "I ___ it's a good idea.",
+    "opts": [
+     "think",
+     "am thinking",
+     "thinks",
+     "am think"
+    ],
+    "a": "think",
+    "x": "think = считаю → Present Simple.",
+    "id": "t-present-17"
+   },
+   {
+    "type": "gap",
+    "q": "How often does he ___ (visit) the site?",
+    "a": [
+     "visit"
+    ],
+    "x": "После does — глагол без -s.",
+    "id": "t-present-18"
+   },
+   {
+    "type": "order",
+    "a": [
+     "The construction sector is growing fast this year."
+    ],
+    "x": "Меняющаяся ситуация → Continuous.",
+    "id": "t-present-19"
+   },
+   {
+    "type": "fix",
+    "q": "Every morning I am drinking half a litre of water.",
+    "a": [
+     "Every morning I drink half a litre of water."
+    ],
+    "x": "Привычка → Present Simple.",
+    "id": "t-present-20"
+   }
+  ]
+ },
+ {
   "id": "t-pp-ps",
-  "title": "Present Perfect vs Past Simple",
+  "title": "3. Present Perfect vs Past Simple",
   "short": "Perfect vs Simple",
   "group": "Грамматика",
   "level": "B1–B2",
@@ -1136,7 +1573,7 @@
  },
  {
   "id": "t-past",
-  "title": "Прошедшие времена в повествовании",
+  "title": "4. Прошедшие времена в повествовании",
   "short": "Прошедшие времена",
   "group": "Грамматика",
   "level": "B2",
@@ -1416,349 +1853,8 @@
   ]
  },
  {
-  "id": "t-reported",
-  "title": "Косвенная речь и wish",
-  "short": "Косвенная речь, wish",
-  "group": "Грамматика",
-  "level": "B2",
-  "intro": [
-   "**Косвенная речь**: после _said / told_ время сдвигается назад: Present Simple → Past Simple, Present Perfect и Past Simple → **Past Perfect**, will → **would**, can → **could**.",
-   "_«I sent it»_ → _He said he **had sent** it._ _«I'll call»_ → _She said she **would** call._",
-   "Слова времени тоже сдвигаются: _yesterday → the day before, last week → the previous week, tomorrow → the next day_.",
-   "**wish о прошлом** (жалею, что было или не было): _wish + Past Perfect_ — _I wish I **had studied** harder._",
-   "**wish о настоящем** (хочу, чтобы сейчас было иначе): _wish + Past Simple_ — _I wish I **had** more time. I wish I **were** taller._"
-  ],
-  "items": [
-   {
-    "type": "gap",
-    "q": "She told me she ___ (finish) the project the previous week.",
-    "a": [
-     "had finished"
-    ],
-    "x": "finished → had finished; last week → the previous week.",
-    "id": "t-reported-01"
-   },
-   {
-    "type": "gap",
-    "q": "I wish I ___ (not / spend) so much money on that trip.",
-    "a": [
-     "had not spent"
-    ],
-    "x": "Сожаление о прошлом → wish + Past Perfect.",
-    "id": "t-reported-02"
-   },
-   {
-    "type": "gap",
-    "q": "They said they ___ (never / be) to Georgia before.",
-    "a": [
-     "had never been"
-    ],
-    "x": "have never been → had never been.",
-    "id": "t-reported-03"
-   },
-   {
-    "type": "gap",
-    "q": "I wish I ___ (study) English earlier in my life.",
-    "a": [
-     "had studied"
-    ],
-    "x": "О прошлом → Past Perfect.",
-    "id": "t-reported-04"
-   },
-   {
-    "type": "gap",
-    "q": "The manager said the client ___ (approve) the concept.",
-    "a": [
-     "had approved"
-    ],
-    "x": "approved / has approved → had approved.",
-    "id": "t-reported-05"
-   },
-   {
-    "type": "gap",
-    "q": "«I'll send the drawings tomorrow.» → He said he ___ send the drawings the next day.",
-    "a": [
-     "would"
-    ],
-    "x": "will → would; tomorrow → the next day.",
-    "id": "t-reported-06"
-   },
-   {
-    "type": "gap",
-    "q": "«I can finish the model by Friday.» → She said she ___ finish the model by Friday.",
-    "a": [
-     "could"
-    ],
-    "x": "can → could.",
-    "id": "t-reported-07"
-   },
-   {
-    "type": "gap",
-    "q": "«I work in Tbilisi.» → He said he ___ (work) in Tbilisi.",
-    "a": [
-     "worked"
-    ],
-    "x": "Present Simple → Past Simple.",
-    "id": "t-reported-08"
-   },
-   {
-    "type": "gap",
-    "q": "«We are designing a new school.» → They said they ___ (design) a new school.",
-    "a": [
-     "were designing"
-    ],
-    "x": "Present Continuous → Past Continuous.",
-    "id": "t-reported-09"
-   },
-   {
-    "type": "choice",
-    "q": "She told us she ___ the contract the day before.",
-    "opts": [
-     "signed",
-     "has signed",
-     "had signed",
-     "signs"
-    ],
-    "a": "had signed",
-    "x": "the day before — событие раньше момента, когда она говорила → Past Perfect.",
-    "id": "t-reported-10"
-   },
-   {
-    "type": "choice",
-    "q": "I wish I ___ that job offer two years ago.",
-    "opts": [
-     "accepted",
-     "had accepted",
-     "have accepted",
-     "would accept"
-    ],
-    "a": "had accepted",
-    "x": "two years ago — о прошлом → wish + Past Perfect. have accepted — частая ошибка.",
-    "id": "t-reported-11"
-   },
-   {
-    "type": "choice",
-    "q": "I wish I ___ more free time these days.",
-    "opts": [
-     "have",
-     "had",
-     "had had",
-     "will have"
-    ],
-    "a": "had",
-    "x": "О настоящем → wish + Past Simple.",
-    "id": "t-reported-12"
-   },
-   {
-    "type": "choice",
-    "q": "I wish I ___ better at public speaking.",
-    "opts": [
-     "am",
-     "were",
-     "have been",
-     "will be"
-    ],
-    "a": "were",
-    "x": "wish о настоящем: were для всех лиц (в разговоре допустимо was).",
-    "id": "t-reported-13"
-   },
-   {
-    "type": "fix",
-    "q": "She said she will call me later.",
-    "a": [
-     "She said she would call me later."
-    ],
-    "x": "will → would.",
-    "id": "t-reported-14"
-   },
-   {
-    "type": "fix",
-    "q": "I wish I have left my previous job earlier.",
-    "a": [
-     "I wish I had left my previous job earlier."
-    ],
-    "x": "Твоя фраза из урока: wish о прошлом → had left.",
-    "id": "t-reported-15"
-   },
-   {
-    "type": "gap",
-    "q": "«I have never seen such a mess in a BIM model.» → He said he ___ (never / see) such a mess.",
-    "a": [
-     "had never seen"
-    ],
-    "x": "Present Perfect → Past Perfect.",
-    "id": "t-reported-16"
-   },
-   {
-    "type": "order",
-    "a": [
-     "She said she had already sent the report."
-    ],
-    "x": "said + she + had already sent.",
-    "id": "t-reported-17"
-   }
-  ]
- },
- {
-  "id": "t-passive",
-  "title": "Пассив и актив",
-  "short": "Пассив и актив",
-  "group": "Грамматика",
-  "level": "B1–B2",
-  "intro": [
-   "**Пассив → актив**: исполнитель из _by…_ становится подлежащим, **время сохраняется** как было.",
-   "_The report **had been finished** by me_ → _I **had finished** the report._",
-   "_we drove_ — вели сами; _we were driven_ — нас везли. Когда рассказываешь о себе, обычно нужен актив.",
-   "Зато в IELTS Writing Task 1 (описание процесса) пассив — основной: _The concrete **is poured** into the formwork._"
-  ],
-  "items": [
-   {
-    "type": "gap",
-    "q": "The design was created by our team. → Our team ___ the design.",
-    "a": [
-     "created"
-    ],
-    "x": "was created → created: время то же, Past Simple.",
-    "id": "t-passive-01"
-   },
-   {
-    "type": "gap",
-    "q": "The car was driven by my brother the whole way. → My brother ___ the car the whole way.",
-    "a": [
-     "drove"
-    ],
-    "x": "drive — drove — driven.",
-    "id": "t-passive-02"
-   },
-   {
-    "type": "gap",
-    "q": "The drawings had been checked before the deadline. → The engineer ___ the drawings before the deadline.",
-    "a": [
-     "had checked"
-    ],
-    "x": "had been checked → had checked.",
-    "id": "t-passive-03"
-   },
-   {
-    "type": "gap",
-    "q": "The walls are being built by the contractor. → The contractor ___ the walls.",
-    "a": [
-     "is building"
-    ],
-    "x": "Present Continuous сохраняется.",
-    "id": "t-passive-04"
-   },
-   {
-    "type": "gap",
-    "q": "The model has been updated by Anna. → Anna ___ the model.",
-    "a": [
-     "has updated"
-    ],
-    "x": "Present Perfect сохраняется.",
-    "id": "t-passive-05"
-   },
-   {
-    "type": "gap",
-    "q": "The facade will be approved by the city. → The city ___ the facade.",
-    "a": [
-     "will approve"
-    ],
-    "x": "Future Simple сохраняется.",
-    "id": "t-passive-06"
-   },
-   {
-    "type": "gap",
-    "q": "The site is cleaned by the workers every evening. → The workers ___ the site every evening.",
-    "a": [
-     "clean"
-    ],
-    "x": "Present Simple сохраняется.",
-    "id": "t-passive-07"
-   },
-   {
-    "type": "choice",
-    "q": "I didn't drive — my brother did. I ___ all the way to Switzerland.",
-    "opts": [
-     "drove",
-     "was driven",
-     "had driven",
-     "have driven"
-    ],
-    "a": "was driven",
-    "x": "Меня везли → пассив: was driven.",
-    "id": "t-passive-08"
-   },
-   {
-    "type": "gap",
-    "q": "Process: the concrete ___ (pour) into the formwork.",
-    "a": [
-     "is poured"
-    ],
-    "x": "Описание процесса в IELTS Task 1 — Present Simple Passive.",
-    "id": "t-passive-09"
-   },
-   {
-    "type": "gap",
-    "q": "Then the formwork ___ (remove) after seven days.",
-    "a": [
-     "is removed"
-    ],
-    "x": "is + V3.",
-    "id": "t-passive-10"
-   },
-   {
-    "type": "gap",
-    "q": "Bricks ___ (make) by hand until the 19th century.",
-    "a": [
-     "were made"
-    ],
-    "x": "Прошлое → was / were + V3.",
-    "id": "t-passive-11"
-   },
-   {
-    "type": "gap",
-    "q": "The Tomsk centre ___ (deliver) on time despite all the problems.",
-    "a": [
-     "was delivered"
-    ],
-    "x": "Past Simple Passive: was + V3.",
-    "id": "t-passive-12"
-   },
-   {
-    "type": "fix",
-    "q": "The new school was build in 2020.",
-    "a": [
-     "The new school was built in 2020."
-    ],
-    "x": "В пассиве нужна третья форма: build — built — built.",
-    "id": "t-passive-13"
-   },
-   {
-    "type": "order",
-    "a": [
-     "The drawings will be sent to the client tomorrow."
-    ],
-    "x": "Future Passive: will be + V3.",
-    "id": "t-passive-14"
-   },
-   {
-    "type": "choice",
-    "q": "When the inspectors arrived, the foundation ___.",
-    "opts": [
-     "had already been poured",
-     "had already poured",
-     "has already been poured",
-     "already poured"
-    ],
-    "a": "had already been poured",
-    "x": "Раньше их прихода + фундамент сам себя не заливает → Past Perfect Passive.",
-    "id": "t-passive-15"
-   }
-  ]
- },
- {
   "id": "t-future",
-  "title": "Способы говорить о будущем",
+  "title": "5. Способы говорить о будущем",
   "short": "Будущее",
   "group": "Грамматика",
   "level": "B1–B2",
@@ -1997,8 +2093,1680 @@
   ]
  },
  {
+  "id": "t-cond",
+  "title": "6. Условные предложения",
+  "short": "Условные",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "**Zero** — всегда так: _If you heat ice, it melts._ If + Present, Present.",
+   "**First** — реальное будущее: _If it rains, we'll cancel the site visit._ If + Present, will. После if — не will!",
+   "**Second** — нереально сейчас или маловероятно: _If I had more time, I would travel more._ If + Past, would. _If I were you…_",
+   "**Third** — нереальное прошлое: _If we had started earlier, we would have finished on time._ If + Past Perfect, would have + V3.",
+   "**Mixed** — условие в прошлом, результат сейчас: _If I had studied abroad, I would be working in London now._",
+   "**unless** = if not; **in case** — на случай, если; **as long as** — при условии, что."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "If you heat ice, it ___ (melt).",
+    "a": [
+     "melts"
+    ],
+    "x": "Zero: всегда так → Present.",
+    "id": "t-cond-01"
+   },
+   {
+    "type": "gap",
+    "q": "If it ___ (rain) tomorrow, we'll cancel the site visit.",
+    "a": [
+     "rains"
+    ],
+    "x": "First: после if — Present, не will.",
+    "id": "t-cond-02"
+   },
+   {
+    "type": "choice",
+    "q": "If I ___ more time, I would learn Spanish.",
+    "opts": [
+     "have",
+     "had",
+     "would have",
+     "will have"
+    ],
+    "a": "had",
+    "x": "Second: if + Past, would.",
+    "id": "t-cond-03"
+   },
+   {
+    "type": "gap",
+    "q": "If I ___ (be) you, I would accept the offer.",
+    "a": [
+     "were",
+     "was"
+    ],
+    "x": "If I were you — устойчивая фраза для совета; was допустимо в разговоре.",
+    "id": "t-cond-04"
+   },
+   {
+    "type": "gap",
+    "q": "If we had started earlier, we ___ (finish) on time.",
+    "a": [
+     "would have finished"
+    ],
+    "x": "Third: would have + V3.",
+    "id": "t-cond-05"
+   },
+   {
+    "type": "choice",
+    "q": "If she ___ the email, she would have replied.",
+    "opts": [
+     "read",
+     "had read",
+     "has read",
+     "would read"
+    ],
+    "a": "had read",
+    "x": "Third: if + Past Perfect.",
+    "id": "t-cond-06"
+   },
+   {
+    "type": "fix",
+    "q": "If it will be sunny, we will go to the beach.",
+    "a": [
+     "If it is sunny, we will go to the beach."
+    ],
+    "x": "После if — Present.",
+    "id": "t-cond-07"
+   },
+   {
+    "type": "gap",
+    "q": "We won't finish on time ___ we hire another architect.",
+    "a": [
+     "unless"
+    ],
+    "x": "unless = if not.",
+    "id": "t-cond-08"
+   },
+   {
+    "type": "choice",
+    "q": "Take an umbrella ___ it rains.",
+    "opts": [
+     "in case",
+     "unless",
+     "if not",
+     "as long as"
+    ],
+    "a": "in case",
+    "x": "in case — на случай, если.",
+    "id": "t-cond-09"
+   },
+   {
+    "type": "choice",
+    "q": "You can use my car ___ you drive carefully.",
+    "opts": [
+     "as long as",
+     "unless",
+     "in case",
+     "even"
+    ],
+    "a": "as long as",
+    "x": "as long as — при условии, что.",
+    "id": "t-cond-10"
+   },
+   {
+    "type": "gap",
+    "q": "If I had studied abroad, I ___ (work) in London now.",
+    "a": [
+     "would be working",
+     "would work"
+    ],
+    "x": "Mixed: условие в прошлом, результат сейчас.",
+    "id": "t-cond-11"
+   },
+   {
+    "type": "choice",
+    "q": "What would you do if you ___ the lottery?",
+    "opts": [
+     "win",
+     "won",
+     "had won",
+     "will win"
+    ],
+    "a": "won",
+    "x": "Second: маловероятная ситуация.",
+    "id": "t-cond-12"
+   },
+   {
+    "type": "fix",
+    "q": "If I would have known, I would have helped you.",
+    "a": [
+     "If I had known, I would have helped you."
+    ],
+    "x": "В if-части would не ставится: had known.",
+    "id": "t-cond-13"
+   },
+   {
+    "type": "gap",
+    "q": "If the client ___ (approve) the concept, we'll start the working drawings.",
+    "a": [
+     "approves"
+    ],
+    "x": "First: реальное будущее.",
+    "id": "t-cond-14"
+   },
+   {
+    "type": "choice",
+    "q": "If the contractor hadn't made that mistake, the wall ___ collapsed.",
+    "opts": [
+     "wouldn't have",
+     "won't have",
+     "didn't",
+     "hadn't"
+    ],
+    "a": "wouldn't have",
+    "x": "Third: would not have + V3.",
+    "id": "t-cond-15"
+   },
+   {
+    "type": "gap",
+    "q": "If people ___ (use) public transport more, cities would be less polluted.",
+    "a": [
+     "used"
+    ],
+    "x": "Second — удобно для эссе IELTS: гипотеза о настоящем.",
+    "id": "t-cond-16"
+   },
+   {
+    "type": "order",
+    "a": [
+     "If I were you, I would talk to the manager."
+    ],
+    "x": "Совет через Second: If I were you…",
+    "id": "t-cond-17"
+   },
+   {
+    "type": "fix",
+    "q": "Unless you don't hurry, you'll miss the train.",
+    "a": [
+     "Unless you hurry, you'll miss the train."
+    ],
+    "x": "unless уже содержит отрицание.",
+    "id": "t-cond-18"
+   },
+   {
+    "type": "choice",
+    "q": "If you mix blue and yellow, you ___ green.",
+    "opts": [
+     "get",
+     "will got",
+     "would get",
+     "got"
+    ],
+    "a": "get",
+    "x": "Zero: факт.",
+    "id": "t-cond-19"
+   },
+   {
+    "type": "gap",
+    "q": "Had I known about the traffic, I ___ (leave) earlier.",
+    "a": [
+     "would have left"
+    ],
+    "x": "Инверсия Had I known = If I had known (C1, из твоего теста).",
+    "id": "t-cond-20"
+   }
+  ]
+ },
+ {
+  "id": "t-modal",
+  "title": "7. Модальные глаголы",
+  "short": "Модальные",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "**Обязанность**: _must_ (правило, внутреннее), _have to_ (внешняя необходимость). **Не обязательно** — _don't have to_. **Запрещено** — _mustn't_.",
+   "**Совет**: _should, ought to_. **Возможность**: _can, could, may, might_.",
+   "**Вывод о настоящем**: _must_ — наверняка, _can't_ — точно нет, _might / may / could_ — возможно: _He must be at the site._",
+   "**Вывод о прошлом**: _must have / can't have / might have + V3_: _She must have left early._",
+   "**Упрёк, сожаление**: _should have + V3_ — следовало (но не сделали): _We should have checked the drawings._",
+   "После модального — глагол без to: _must go_, а не _must to go_. В прошлом must → **had to**; после другого глагола can → **be able to**."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "You ___ wear a helmet on the construction site — it's the rule.",
+    "opts": [
+     "must",
+     "might",
+     "don't have to",
+     "could"
+    ],
+    "a": "must",
+    "x": "Правило → must.",
+    "id": "t-modal-01"
+   },
+   {
+    "type": "choice",
+    "q": "You ___ come to the meeting if you're busy — it's optional.",
+    "opts": [
+     "don't have to",
+     "mustn't",
+     "can't",
+     "shouldn't"
+    ],
+    "a": "don't have to",
+    "x": "Не обязательно → don't have to. mustn't = запрещено.",
+    "id": "t-modal-02"
+   },
+   {
+    "type": "choice",
+    "q": "You ___ smoke inside the building.",
+    "opts": [
+     "mustn't",
+     "don't have to",
+     "needn't",
+     "might"
+    ],
+    "a": "mustn't",
+    "x": "Запрет → mustn't.",
+    "id": "t-modal-03"
+   },
+   {
+    "type": "fix",
+    "q": "You must to check the drawings before sending them.",
+    "a": [
+     "You must check the drawings before sending them."
+    ],
+    "x": "После must — без to.",
+    "id": "t-modal-04"
+   },
+   {
+    "type": "gap",
+    "q": "He's been working for 12 hours. He ___ (быть) exhausted.",
+    "a": [
+     "must be"
+    ],
+    "x": "Уверенный вывод о настоящем → must be.",
+    "id": "t-modal-05"
+   },
+   {
+    "type": "choice",
+    "q": "That ___ be Anna — she's on holiday in Spain.",
+    "opts": [
+     "can't",
+     "mustn't",
+     "shouldn't",
+     "might"
+    ],
+    "a": "can't",
+    "x": "Точно нет → can't.",
+    "id": "t-modal-06"
+   },
+   {
+    "type": "gap",
+    "q": "The lights are off. They ___ (leave) already.",
+    "a": [
+     "must have left"
+    ],
+    "x": "Вывод о прошлом → must have + V3.",
+    "id": "t-modal-07"
+   },
+   {
+    "type": "gap",
+    "q": "We ___ (check) the drawings more carefully — now we have to redo them.",
+    "a": [
+     "should have checked"
+    ],
+    "x": "Упрёк о прошлом → should have + V3.",
+    "id": "t-modal-08"
+   },
+   {
+    "type": "choice",
+    "q": "I'm not sure where he is. He ___ be in the canteen.",
+    "opts": [
+     "might",
+     "must",
+     "can't",
+     "has to"
+    ],
+    "a": "might",
+    "x": "Не уверен → might.",
+    "id": "t-modal-09"
+   },
+   {
+    "type": "choice",
+    "q": "You look tired. You ___ take a break.",
+    "opts": [
+     "should",
+     "must to",
+     "have",
+     "ought"
+    ],
+    "a": "should",
+    "x": "Совет → should (ought to тоже, но с to).",
+    "id": "t-modal-10"
+   },
+   {
+    "type": "choice",
+    "q": "When I was young, I ___ run 10 km easily.",
+    "opts": [
+     "could",
+     "can",
+     "might",
+     "must"
+    ],
+    "a": "could",
+    "x": "Способность в прошлом → could.",
+    "id": "t-modal-11"
+   },
+   {
+    "type": "gap",
+    "q": "In the future, I'd like to ___ (смочь) speak English fluently.",
+    "a": [
+     "be able to"
+    ],
+    "x": "После другого глагола can не ставится → be able to.",
+    "id": "t-modal-12"
+   },
+   {
+    "type": "fix",
+    "q": "She can't have finish the model yesterday — it's huge.",
+    "a": [
+     "She can't have finished the model yesterday — it's huge."
+    ],
+    "x": "can't have + V3.",
+    "id": "t-modal-13"
+   },
+   {
+    "type": "choice",
+    "q": "Yesterday I ___ stay late because of the deadline.",
+    "opts": [
+     "had to",
+     "must",
+     "have to",
+     "must have"
+    ],
+    "a": "had to",
+    "x": "must в прошлом → had to.",
+    "id": "t-modal-14"
+   },
+   {
+    "type": "gap",
+    "q": "___ I open the window?",
+    "a": [
+     "Can",
+     "Could",
+     "May"
+    ],
+    "x": "Просьба разрешения: Can / Could / May I…?",
+    "id": "t-modal-15"
+   },
+   {
+    "type": "order",
+    "a": [
+     "We might have to postpone the site visit."
+    ],
+    "x": "might + have to — возможно, придётся.",
+    "id": "t-modal-16"
+   },
+   {
+    "type": "choice",
+    "q": "He ___ have called — I didn't hear the phone.",
+    "opts": [
+     "might",
+     "must",
+     "can't",
+     "should"
+    ],
+    "a": "might",
+    "x": "Не уверен о прошлом → might have + V3.",
+    "id": "t-modal-17"
+   },
+   {
+    "type": "fix",
+    "q": "You don't have to leave your bags here — it's forbidden.",
+    "a": [
+     "You mustn't leave your bags here — it's forbidden."
+    ],
+    "x": "Запрет → mustn't.",
+    "id": "t-modal-18"
+   },
+   {
+    "type": "gap",
+    "q": "In my opinion, governments ___ invest more in public transport.",
+    "a": [
+     "should",
+     "ought to"
+    ],
+    "x": "Для эссе IELTS: мнение через should.",
+    "id": "t-modal-19"
+   },
+   {
+    "type": "choice",
+    "q": "The model ___ be finished by Friday.",
+    "opts": [
+     "has to",
+     "must to",
+     "have",
+     "musts"
+    ],
+    "a": "has to",
+    "x": "Внешний срок → has to.",
+    "id": "t-modal-20"
+   }
+  ]
+ },
+ {
+  "id": "t-passive",
+  "title": "8. Пассив и актив",
+  "short": "Пассив и актив",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "**Пассив → актив**: исполнитель из _by…_ становится подлежащим, **время сохраняется** как было.",
+   "_The report **had been finished** by me_ → _I **had finished** the report._",
+   "_we drove_ — вели сами; _we were driven_ — нас везли. Когда рассказываешь о себе, обычно нужен актив.",
+   "Зато в IELTS Writing Task 1 (описание процесса) пассив — основной: _The concrete **is poured** into the formwork._"
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "The design was created by our team. → Our team ___ the design.",
+    "a": [
+     "created"
+    ],
+    "x": "was created → created: время то же, Past Simple.",
+    "id": "t-passive-01"
+   },
+   {
+    "type": "gap",
+    "q": "The car was driven by my brother the whole way. → My brother ___ the car the whole way.",
+    "a": [
+     "drove"
+    ],
+    "x": "drive — drove — driven.",
+    "id": "t-passive-02"
+   },
+   {
+    "type": "gap",
+    "q": "The drawings had been checked before the deadline. → The engineer ___ the drawings before the deadline.",
+    "a": [
+     "had checked"
+    ],
+    "x": "had been checked → had checked.",
+    "id": "t-passive-03"
+   },
+   {
+    "type": "gap",
+    "q": "The walls are being built by the contractor. → The contractor ___ the walls.",
+    "a": [
+     "is building"
+    ],
+    "x": "Present Continuous сохраняется.",
+    "id": "t-passive-04"
+   },
+   {
+    "type": "gap",
+    "q": "The model has been updated by Anna. → Anna ___ the model.",
+    "a": [
+     "has updated"
+    ],
+    "x": "Present Perfect сохраняется.",
+    "id": "t-passive-05"
+   },
+   {
+    "type": "gap",
+    "q": "The facade will be approved by the city. → The city ___ the facade.",
+    "a": [
+     "will approve"
+    ],
+    "x": "Future Simple сохраняется.",
+    "id": "t-passive-06"
+   },
+   {
+    "type": "gap",
+    "q": "The site is cleaned by the workers every evening. → The workers ___ the site every evening.",
+    "a": [
+     "clean"
+    ],
+    "x": "Present Simple сохраняется.",
+    "id": "t-passive-07"
+   },
+   {
+    "type": "choice",
+    "q": "I didn't drive — my brother did. I ___ all the way to Switzerland.",
+    "opts": [
+     "drove",
+     "was driven",
+     "had driven",
+     "have driven"
+    ],
+    "a": "was driven",
+    "x": "Меня везли → пассив: was driven.",
+    "id": "t-passive-08"
+   },
+   {
+    "type": "gap",
+    "q": "Process: the concrete ___ (pour) into the formwork.",
+    "a": [
+     "is poured"
+    ],
+    "x": "Описание процесса в IELTS Task 1 — Present Simple Passive.",
+    "id": "t-passive-09"
+   },
+   {
+    "type": "gap",
+    "q": "Then the formwork ___ (remove) after seven days.",
+    "a": [
+     "is removed"
+    ],
+    "x": "is + V3.",
+    "id": "t-passive-10"
+   },
+   {
+    "type": "gap",
+    "q": "Bricks ___ (make) by hand until the 19th century.",
+    "a": [
+     "were made"
+    ],
+    "x": "Прошлое → was / were + V3.",
+    "id": "t-passive-11"
+   },
+   {
+    "type": "gap",
+    "q": "The Tomsk centre ___ (deliver) on time despite all the problems.",
+    "a": [
+     "was delivered"
+    ],
+    "x": "Past Simple Passive: was + V3.",
+    "id": "t-passive-12"
+   },
+   {
+    "type": "fix",
+    "q": "The new school was build in 2020.",
+    "a": [
+     "The new school was built in 2020."
+    ],
+    "x": "В пассиве нужна третья форма: build — built — built.",
+    "id": "t-passive-13"
+   },
+   {
+    "type": "order",
+    "a": [
+     "The drawings will be sent to the client tomorrow."
+    ],
+    "x": "Future Passive: will be + V3.",
+    "id": "t-passive-14"
+   },
+   {
+    "type": "choice",
+    "q": "When the inspectors arrived, the foundation ___.",
+    "opts": [
+     "had already been poured",
+     "had already poured",
+     "has already been poured",
+     "already poured"
+    ],
+    "a": "had already been poured",
+    "x": "Раньше их прихода + фундамент сам себя не заливает → Past Perfect Passive.",
+    "id": "t-passive-15"
+   }
+  ]
+ },
+ {
+  "id": "t-reported",
+  "title": "9. Косвенная речь и wish",
+  "short": "Косвенная речь, wish",
+  "group": "Грамматика",
+  "level": "B2",
+  "intro": [
+   "**Косвенная речь**: после _said / told_ время сдвигается назад: Present Simple → Past Simple, Present Perfect и Past Simple → **Past Perfect**, will → **would**, can → **could**.",
+   "_«I sent it»_ → _He said he **had sent** it._ _«I'll call»_ → _She said she **would** call._",
+   "Слова времени тоже сдвигаются: _yesterday → the day before, last week → the previous week, tomorrow → the next day_.",
+   "**wish о прошлом** (жалею, что было или не было): _wish + Past Perfect_ — _I wish I **had studied** harder._",
+   "**wish о настоящем** (хочу, чтобы сейчас было иначе): _wish + Past Simple_ — _I wish I **had** more time. I wish I **were** taller._"
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "She told me she ___ (finish) the project the previous week.",
+    "a": [
+     "had finished"
+    ],
+    "x": "finished → had finished; last week → the previous week.",
+    "id": "t-reported-01"
+   },
+   {
+    "type": "gap",
+    "q": "I wish I ___ (not / spend) so much money on that trip.",
+    "a": [
+     "had not spent"
+    ],
+    "x": "Сожаление о прошлом → wish + Past Perfect.",
+    "id": "t-reported-02"
+   },
+   {
+    "type": "gap",
+    "q": "They said they ___ (never / be) to Georgia before.",
+    "a": [
+     "had never been"
+    ],
+    "x": "have never been → had never been.",
+    "id": "t-reported-03"
+   },
+   {
+    "type": "gap",
+    "q": "I wish I ___ (study) English earlier in my life.",
+    "a": [
+     "had studied"
+    ],
+    "x": "О прошлом → Past Perfect.",
+    "id": "t-reported-04"
+   },
+   {
+    "type": "gap",
+    "q": "The manager said the client ___ (approve) the concept.",
+    "a": [
+     "had approved"
+    ],
+    "x": "approved / has approved → had approved.",
+    "id": "t-reported-05"
+   },
+   {
+    "type": "gap",
+    "q": "«I'll send the drawings tomorrow.» → He said he ___ send the drawings the next day.",
+    "a": [
+     "would"
+    ],
+    "x": "will → would; tomorrow → the next day.",
+    "id": "t-reported-06"
+   },
+   {
+    "type": "gap",
+    "q": "«I can finish the model by Friday.» → She said she ___ finish the model by Friday.",
+    "a": [
+     "could"
+    ],
+    "x": "can → could.",
+    "id": "t-reported-07"
+   },
+   {
+    "type": "gap",
+    "q": "«I work in Tbilisi.» → He said he ___ (work) in Tbilisi.",
+    "a": [
+     "worked"
+    ],
+    "x": "Present Simple → Past Simple.",
+    "id": "t-reported-08"
+   },
+   {
+    "type": "gap",
+    "q": "«We are designing a new school.» → They said they ___ (design) a new school.",
+    "a": [
+     "were designing"
+    ],
+    "x": "Present Continuous → Past Continuous.",
+    "id": "t-reported-09"
+   },
+   {
+    "type": "choice",
+    "q": "She told us she ___ the contract the day before.",
+    "opts": [
+     "signed",
+     "has signed",
+     "had signed",
+     "signs"
+    ],
+    "a": "had signed",
+    "x": "the day before — событие раньше момента, когда она говорила → Past Perfect.",
+    "id": "t-reported-10"
+   },
+   {
+    "type": "choice",
+    "q": "I wish I ___ that job offer two years ago.",
+    "opts": [
+     "accepted",
+     "had accepted",
+     "have accepted",
+     "would accept"
+    ],
+    "a": "had accepted",
+    "x": "two years ago — о прошлом → wish + Past Perfect. have accepted — частая ошибка.",
+    "id": "t-reported-11"
+   },
+   {
+    "type": "choice",
+    "q": "I wish I ___ more free time these days.",
+    "opts": [
+     "have",
+     "had",
+     "had had",
+     "will have"
+    ],
+    "a": "had",
+    "x": "О настоящем → wish + Past Simple.",
+    "id": "t-reported-12"
+   },
+   {
+    "type": "choice",
+    "q": "I wish I ___ better at public speaking.",
+    "opts": [
+     "am",
+     "were",
+     "have been",
+     "will be"
+    ],
+    "a": "were",
+    "x": "wish о настоящем: were для всех лиц (в разговоре допустимо was).",
+    "id": "t-reported-13"
+   },
+   {
+    "type": "fix",
+    "q": "She said she will call me later.",
+    "a": [
+     "She said she would call me later."
+    ],
+    "x": "will → would.",
+    "id": "t-reported-14"
+   },
+   {
+    "type": "fix",
+    "q": "I wish I have left my previous job earlier.",
+    "a": [
+     "I wish I had left my previous job earlier."
+    ],
+    "x": "Твоя фраза из урока: wish о прошлом → had left.",
+    "id": "t-reported-15"
+   },
+   {
+    "type": "gap",
+    "q": "«I have never seen such a mess in a BIM model.» → He said he ___ (never / see) such a mess.",
+    "a": [
+     "had never seen"
+    ],
+    "x": "Present Perfect → Past Perfect.",
+    "id": "t-reported-16"
+   },
+   {
+    "type": "order",
+    "a": [
+     "She said she had already sent the report."
+    ],
+    "x": "said + she + had already sent.",
+    "id": "t-reported-17"
+   }
+  ]
+ },
+ {
+  "id": "t-gerinf",
+  "title": "10. Герундий и инфинитив",
+  "short": "-ing или to",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "**-ing после**: _enjoy, avoid, finish, suggest, mind, consider, keep, practise, look forward to_ и после **предлогов**: _interested in designing, good at sketching_.",
+   "**to + глагол после**: _want, decide, plan, hope, manage, agree, refuse, promise, afford, need, would like_.",
+   "**Меняют смысл**: _stop doing_ — перестать, _stop to do_ — остановиться, чтобы сделать; _remember doing_ — помнить, как было, _remember to do_ — не забыть сделать; _try doing_ — попробовать как способ, _try to do_ — пытаться.",
+   "В роли подлежащего — **-ing**: _Learning English takes time._"
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "I enjoy ___ (sketch) by hand.",
+    "a": [
+     "sketching"
+    ],
+    "x": "enjoy + -ing.",
+    "id": "t-gerinf-01"
+   },
+   {
+    "type": "gap",
+    "q": "We decided ___ (change) the layout.",
+    "a": [
+     "to change"
+    ],
+    "x": "decide + to.",
+    "id": "t-gerinf-02"
+   },
+   {
+    "type": "choice",
+    "q": "She suggested ___ the meeting.",
+    "opts": [
+     "postponing",
+     "to postpone",
+     "postpone",
+     "postponed"
+    ],
+    "a": "postponing",
+    "x": "suggest + -ing.",
+    "id": "t-gerinf-03"
+   },
+   {
+    "type": "gap",
+    "q": "I'm interested in ___ (work) abroad.",
+    "a": [
+     "working"
+    ],
+    "x": "После предлога → -ing.",
+    "id": "t-gerinf-04"
+   },
+   {
+    "type": "choice",
+    "q": "We can't afford ___ another mistake.",
+    "opts": [
+     "to make",
+     "making",
+     "make",
+     "made"
+    ],
+    "a": "to make",
+    "x": "afford + to.",
+    "id": "t-gerinf-05"
+   },
+   {
+    "type": "fix",
+    "q": "I finished to draw the elevations.",
+    "a": [
+     "I finished drawing the elevations."
+    ],
+    "x": "finish + -ing.",
+    "id": "t-gerinf-06"
+   },
+   {
+    "type": "gap",
+    "q": "He managed ___ (finish) the model on time.",
+    "a": [
+     "to finish"
+    ],
+    "x": "manage + to.",
+    "id": "t-gerinf-07"
+   },
+   {
+    "type": "choice",
+    "q": "I stopped ___ coffee — now I drink only water.",
+    "opts": [
+     "drinking",
+     "to drink",
+     "drink",
+     "drank"
+    ],
+    "a": "drinking",
+    "x": "stop doing — перестать.",
+    "id": "t-gerinf-08"
+   },
+   {
+    "type": "choice",
+    "q": "On the way, we stopped ___ fuel.",
+    "opts": [
+     "to buy",
+     "buying",
+     "buy",
+     "bought"
+    ],
+    "a": "to buy",
+    "x": "stop to do — остановиться, чтобы…",
+    "id": "t-gerinf-09"
+   },
+   {
+    "type": "choice",
+    "q": "Remember ___ the door when you leave.",
+    "opts": [
+     "to lock",
+     "locking",
+     "lock",
+     "locked"
+    ],
+    "a": "to lock",
+    "x": "Не забудь сделать → remember to do.",
+    "id": "t-gerinf-10"
+   },
+   {
+    "type": "choice",
+    "q": "I remember ___ Tbilisi for the first time — it was amazing.",
+    "opts": [
+     "visiting",
+     "to visit",
+     "visit",
+     "visited"
+    ],
+    "a": "visiting",
+    "x": "Помню, как было → remember doing.",
+    "id": "t-gerinf-11"
+   },
+   {
+    "type": "gap",
+    "q": "___ (learn) a language takes time.",
+    "a": [
+     "Learning"
+    ],
+    "x": "Подлежащее → -ing.",
+    "id": "t-gerinf-12"
+   },
+   {
+    "type": "fix",
+    "q": "I'm looking forward to see you.",
+    "a": [
+     "I'm looking forward to seeing you."
+    ],
+    "x": "look forward to + -ing.",
+    "id": "t-gerinf-13"
+   },
+   {
+    "type": "choice",
+    "q": "Would you mind ___ the window?",
+    "opts": [
+     "closing",
+     "to close",
+     "close",
+     "closed"
+    ],
+    "a": "closing",
+    "x": "mind + -ing.",
+    "id": "t-gerinf-14"
+   },
+   {
+    "type": "gap",
+    "q": "We agreed ___ (meet) on Monday.",
+    "a": [
+     "to meet"
+    ],
+    "x": "agree + to.",
+    "id": "t-gerinf-15"
+   },
+   {
+    "type": "gap",
+    "q": "I avoid ___ (drive) in the rush hour.",
+    "a": [
+     "driving"
+    ],
+    "x": "avoid + -ing.",
+    "id": "t-gerinf-16"
+   },
+   {
+    "type": "choice",
+    "q": "Try ___ the program — maybe that will fix the error.",
+    "opts": [
+     "restarting",
+     "to restart",
+     "restart",
+     "restarted"
+    ],
+    "a": "restarting",
+    "x": "try doing — попробовать как способ.",
+    "id": "t-gerinf-17"
+   },
+   {
+    "type": "order",
+    "a": [
+     "I'm considering moving to another country."
+    ],
+    "x": "consider + -ing.",
+    "id": "t-gerinf-18"
+   },
+   {
+    "type": "fix",
+    "q": "She refused signing the contract.",
+    "a": [
+     "She refused to sign the contract."
+    ],
+    "x": "refuse + to.",
+    "id": "t-gerinf-19"
+   },
+   {
+    "type": "choice",
+    "q": "He keeps ___ the same mistake.",
+    "opts": [
+     "making",
+     "to make",
+     "make",
+     "made"
+    ],
+    "a": "making",
+    "x": "keep + -ing — постоянно делать.",
+    "id": "t-gerinf-20"
+   }
+  ]
+ },
+ {
+  "id": "t-rel",
+  "title": "11. Придаточные: who, which, that, whose, where",
+  "short": "who / which / that",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "**who** — о людях, **which** — о вещах, **that** — о людях и вещах (в уточняющих), **whose** — чей, **where** — где, **when** — когда, **what** — то, что.",
+   "**Уточняющее** (без запятых) — без него непонятно, о ком речь: _The architect who designed it is Italian._ Если слово — дополнение, его можно опустить: _The house (that) we built_.",
+   "**Дополнительное** (с запятыми) — просто добавляет информацию: _Tbilisi, which is the capital of Georgia, is growing fast._ Здесь **нельзя** that и нельзя опустить слово."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "The engineer ___ checked the drawings is on holiday.",
+    "opts": [
+     "who",
+     "which",
+     "whose",
+     "where"
+    ],
+    "a": "who",
+    "x": "О человеке → who.",
+    "id": "t-rel-01"
+   },
+   {
+    "type": "choice",
+    "q": "This is the building ___ won the award.",
+    "opts": [
+     "which",
+     "who",
+     "whose",
+     "where"
+    ],
+    "a": "which",
+    "x": "О вещи → which (или that).",
+    "id": "t-rel-02"
+   },
+   {
+    "type": "choice",
+    "q": "That's the client ___ company owns the site.",
+    "opts": [
+     "whose",
+     "who's",
+     "who",
+     "which"
+    ],
+    "a": "whose",
+    "x": "Чья компания → whose.",
+    "id": "t-rel-03"
+   },
+   {
+    "type": "gap",
+    "q": "That's the café ___ we usually have lunch.",
+    "a": [
+     "where"
+    ],
+    "x": "Место → where.",
+    "id": "t-rel-04"
+   },
+   {
+    "type": "fix",
+    "q": "Tbilisi, that is the capital of Georgia, is growing fast.",
+    "a": [
+     "Tbilisi, which is the capital of Georgia, is growing fast."
+    ],
+    "x": "С запятыми — which, не that.",
+    "id": "t-rel-05"
+   },
+   {
+    "type": "choice",
+    "q": "The project ___ I'm working on is in Tbilisi.",
+    "opts": [
+     "that",
+     "what",
+     "who",
+     "where"
+    ],
+    "a": "that",
+    "x": "Можно which или вообще опустить: The project I'm working on…",
+    "id": "t-rel-06"
+   },
+   {
+    "type": "gap",
+    "q": "I remember the day ___ we won the contract.",
+    "a": [
+     "when",
+     "that"
+    ],
+    "x": "Время → when.",
+    "id": "t-rel-07"
+   },
+   {
+    "type": "fix",
+    "q": "The man which lives next door is an engineer.",
+    "a": [
+     "The man who lives next door is an engineer."
+    ],
+    "x": "О человеке → who.",
+    "id": "t-rel-08"
+   },
+   {
+    "type": "choice",
+    "q": "My sister, ___ lives in Berlin, is a designer.",
+    "opts": [
+     "who",
+     "that",
+     "which",
+     "whose"
+    ],
+    "a": "who",
+    "x": "С запятыми о человеке → who.",
+    "id": "t-rel-09"
+   },
+   {
+    "type": "order",
+    "a": [
+     "The drawings you sent me yesterday are wrong."
+    ],
+    "x": "Дополнение можно опустить: the drawings (that) you sent.",
+    "id": "t-rel-10"
+   },
+   {
+    "type": "fix",
+    "q": "This is the house where I was born in.",
+    "a": [
+     "This is the house where I was born.",
+     "This is the house that I was born in."
+    ],
+    "x": "where уже содержит in.",
+    "id": "t-rel-11"
+   },
+   {
+    "type": "choice",
+    "q": "The site, ___ is next to the river, floods every spring.",
+    "opts": [
+     "which",
+     "that",
+     "where",
+     "who"
+    ],
+    "a": "which",
+    "x": "С запятыми о вещи → which.",
+    "id": "t-rel-12"
+   },
+   {
+    "type": "gap",
+    "q": "The city ___ I grew up has changed a lot.",
+    "a": [
+     "where"
+    ],
+    "x": "Место → where.",
+    "id": "t-rel-13"
+   },
+   {
+    "type": "choice",
+    "q": "Is this the report ___ you were talking about?",
+    "opts": [
+     "that",
+     "what",
+     "who",
+     "where"
+    ],
+    "a": "that",
+    "x": "О вещи в уточняющем → that / which.",
+    "id": "t-rel-14"
+   },
+   {
+    "type": "fix",
+    "q": "I like people which are honest.",
+    "a": [
+     "I like people who are honest."
+    ],
+    "x": "О людях → who.",
+    "id": "t-rel-15"
+   },
+   {
+    "type": "choice",
+    "q": "He showed me the model, ___ was very impressive.",
+    "opts": [
+     "which",
+     "that",
+     "what",
+     "who"
+    ],
+    "a": "which",
+    "x": "С запятыми → which.",
+    "id": "t-rel-16"
+   },
+   {
+    "type": "gap",
+    "q": "That's the woman ___ car was damaged.",
+    "a": [
+     "whose"
+    ],
+    "x": "Чья машина → whose.",
+    "id": "t-rel-17"
+   },
+   {
+    "type": "choice",
+    "q": "___ I need is a good night's sleep.",
+    "opts": [
+     "What",
+     "That",
+     "Which",
+     "Who"
+    ],
+    "a": "What",
+    "x": "what = то, что.",
+    "id": "t-rel-18"
+   }
+  ]
+ },
+ {
+  "id": "t-comp",
+  "title": "12. Сравнение: степени и конструкции",
+  "short": "Сравнение",
+  "group": "Грамматика",
+  "level": "B1–B2",
+  "intro": [
+   "Короткие прилагательные: **-er / the -est**: _cheaper, the cheapest_. Длинные: **more / the most**: _more expensive, the most expensive_.",
+   "Исключения: _good — better — the best, bad — worse — the worst, far — further — the furthest_.",
+   "**as … as** — такой же, как: _as tall as_; **not as … as** — не такой, как.",
+   "Усиление: **much / far / a lot** + сравнительная степень: _far better_ (не _very better_). «Чем больше…, тем…» — _the more…, the more…_",
+   "Для IELTS Task 1: _twice as high as, slightly higher, significantly lower_."
+  ],
+  "items": [
+   {
+    "type": "gap",
+    "q": "The new office is ___ (big) than the old one.",
+    "a": [
+     "bigger"
+    ],
+    "x": "big → bigger (удвоение согласной).",
+    "id": "t-comp-01"
+   },
+   {
+    "type": "gap",
+    "q": "This is the ___ (expensive) flat in the building.",
+    "a": [
+     "most expensive"
+    ],
+    "x": "Длинное слово → the most.",
+    "id": "t-comp-02"
+   },
+   {
+    "type": "choice",
+    "q": "The roads in Europe were ___ than in Abkhazia.",
+    "opts": [
+     "better",
+     "more good",
+     "gooder",
+     "best"
+    ],
+    "a": "better",
+    "x": "good — better — the best.",
+    "id": "t-comp-03"
+   },
+   {
+    "type": "fix",
+    "q": "This option is more cheaper than the first one.",
+    "a": [
+     "This option is cheaper than the first one."
+    ],
+    "x": "Либо -er, либо more — не вместе.",
+    "id": "t-comp-04"
+   },
+   {
+    "type": "gap",
+    "q": "Our office is not as ___ (modern) as theirs.",
+    "a": [
+     "modern"
+    ],
+    "x": "not as + прилагательное + as.",
+    "id": "t-comp-05"
+   },
+   {
+    "type": "choice",
+    "q": "The second design is ___ better than the first.",
+    "opts": [
+     "much",
+     "very",
+     "more",
+     "most"
+    ],
+    "a": "much",
+    "x": "Усиление сравнительной — much / far / a lot, не very.",
+    "id": "t-comp-06"
+   },
+   {
+    "type": "choice",
+    "q": "This is the ___ day of my life!",
+    "opts": [
+     "best",
+     "better",
+     "goodest",
+     "most good"
+    ],
+    "a": "best",
+    "x": "Превосходная от good → the best.",
+    "id": "t-comp-07"
+   },
+   {
+    "type": "fix",
+    "q": "Traffic today is worse then yesterday.",
+    "a": [
+     "Traffic today is worse than yesterday."
+    ],
+    "x": "than — чем; then — тогда.",
+    "id": "t-comp-08"
+   },
+   {
+    "type": "gap",
+    "q": "The ___ (early) we start, the sooner we finish.",
+    "a": [
+     "earlier"
+    ],
+    "x": "The + сравнительная, the + сравнительная.",
+    "id": "t-comp-09"
+   },
+   {
+    "type": "choice",
+    "q": "Sales in 2020 were twice as ___ as in 2010.",
+    "opts": [
+     "high",
+     "higher",
+     "highest",
+     "highly"
+    ],
+    "a": "high",
+    "x": "twice as + прилагательное + as.",
+    "id": "t-comp-10"
+   },
+   {
+    "type": "gap",
+    "q": "Tbilisi is ___ (warm) than Moscow in winter.",
+    "a": [
+     "warmer"
+    ],
+    "x": "Короткое → -er.",
+    "id": "t-comp-11"
+   },
+   {
+    "type": "choice",
+    "q": "Which is the ___ city you've ever visited?",
+    "opts": [
+     "most beautiful",
+     "beautifullest",
+     "more beautiful",
+     "beautiful"
+    ],
+    "a": "most beautiful",
+    "x": "Длинное → the most.",
+    "id": "t-comp-12"
+   },
+   {
+    "type": "fix",
+    "q": "He is more taller than his brother.",
+    "a": [
+     "He is taller than his brother."
+    ],
+    "x": "Либо -er, либо more.",
+    "id": "t-comp-13"
+   },
+   {
+    "type": "choice",
+    "q": "The figure rose ___ from 10% to 12%.",
+    "opts": [
+     "slightly",
+     "slight",
+     "slighter",
+     "slightest"
+    ],
+    "a": "slightly",
+    "x": "Для Task 1: после глагола — наречие.",
+    "id": "t-comp-14"
+   },
+   {
+    "type": "gap",
+    "q": "This is the ___ (bad) model I've ever seen.",
+    "a": [
+     "worst"
+    ],
+    "x": "bad — worse — the worst.",
+    "id": "t-comp-15"
+   },
+   {
+    "type": "order",
+    "a": [
+     "The new layout is far more efficient than the old one."
+    ],
+    "x": "far + more + прилагательное.",
+    "id": "t-comp-16"
+   },
+   {
+    "type": "choice",
+    "q": "My flat is ___ small as yours.",
+    "opts": [
+     "as",
+     "so",
+     "than",
+     "more"
+    ],
+    "a": "as",
+    "x": "as … as.",
+    "id": "t-comp-17"
+   },
+   {
+    "type": "gap",
+    "q": "Could you explain it ___ (simply)?",
+    "a": [
+     "more simply"
+    ],
+    "x": "Наречие на -ly → more + наречие.",
+    "id": "t-comp-18"
+   }
+  ]
+ },
+ {
+  "id": "t-quant",
+  "title": "13. Количество: much, many, few, little, some, any",
+  "short": "much / many / few",
+  "group": "Грамматика",
+  "level": "B1",
+  "intro": [
+   "**many / few / a few** — с исчисляемыми (_people, drawings_); **much / little / a little** — с неисчисляемыми (_time, money, information_).",
+   "**a few / a little** — немного, достаточно; **few / little** — мало, почти нет.",
+   "**a lot of / lots of** — с любыми; в утверждениях естественнее, чем much / many.",
+   "**some** — в утверждениях и просьбах, **any** — в вопросах и отрицаниях.",
+   "⚠ Неисчисляемые, которые хочется посчитать: _information, advice, equipment, furniture, news, research, feedback, accommodation, traffic_ — без -s и без a."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "How ___ time do we have?",
+    "opts": [
+     "much",
+     "many",
+     "few",
+     "a few"
+    ],
+    "a": "much",
+    "x": "time — неисчисляемое.",
+    "id": "t-quant-01"
+   },
+   {
+    "type": "choice",
+    "q": "How ___ drawings are left?",
+    "opts": [
+     "many",
+     "much",
+     "little",
+     "a little"
+    ],
+    "a": "many",
+    "x": "drawings — исчисляемое.",
+    "id": "t-quant-02"
+   },
+   {
+    "type": "fix",
+    "q": "Can you give me an advice?",
+    "a": [
+     "Can you give me some advice?",
+     "Can you give me a piece of advice?"
+    ],
+    "x": "advice — неисчисляемое.",
+    "id": "t-quant-03"
+   },
+   {
+    "type": "choice",
+    "q": "I have ___ friends in Tbilisi, so I'm not lonely.",
+    "opts": [
+     "a few",
+     "few",
+     "a little",
+     "little"
+    ],
+    "a": "a few",
+    "x": "a few — несколько, достаточно.",
+    "id": "t-quant-04"
+   },
+   {
+    "type": "choice",
+    "q": "There's ___ hope of finishing today — it's too late.",
+    "opts": [
+     "little",
+     "a little",
+     "few",
+     "a few"
+    ],
+    "a": "little",
+    "x": "little — почти нет.",
+    "id": "t-quant-05"
+   },
+   {
+    "type": "fix",
+    "q": "We need more informations about the site.",
+    "a": [
+     "We need more information about the site."
+    ],
+    "x": "information — неисчисляемое.",
+    "id": "t-quant-06"
+   },
+   {
+    "type": "gap",
+    "q": "Is there ___ milk left?",
+    "a": [
+     "any"
+    ],
+    "x": "Вопрос → any.",
+    "id": "t-quant-07"
+   },
+   {
+    "type": "gap",
+    "q": "Could I have ___ water, please?",
+    "a": [
+     "some"
+    ],
+    "x": "Просьба → some.",
+    "id": "t-quant-08"
+   },
+   {
+    "type": "choice",
+    "q": "We don't have ___ money for a new car.",
+    "opts": [
+     "much",
+     "many",
+     "few",
+     "a few"
+    ],
+    "a": "much",
+    "x": "money — неисчисляемое.",
+    "id": "t-quant-09"
+   },
+   {
+    "type": "fix",
+    "q": "The furnitures in the office are new.",
+    "a": [
+     "The furniture in the office is new."
+    ],
+    "x": "furniture — неисчисляемое, глагол в ед. ч.",
+    "id": "t-quant-10"
+   },
+   {
+    "type": "choice",
+    "q": "There were ___ people at the presentation.",
+    "opts": [
+     "a lot of",
+     "much",
+     "a little",
+     "little"
+    ],
+    "a": "a lot of",
+    "x": "a lot of — с любыми.",
+    "id": "t-quant-11"
+   },
+   {
+    "type": "choice",
+    "q": "Can I ask you ___ questions?",
+    "opts": [
+     "a few",
+     "a little",
+     "much",
+     "little"
+    ],
+    "a": "a few",
+    "x": "questions — исчисляемое.",
+    "id": "t-quant-12"
+   },
+   {
+    "type": "fix",
+    "q": "The client gave us many feedbacks.",
+    "a": [
+     "The client gave us a lot of feedback.",
+     "The client gave us lots of feedback."
+    ],
+    "x": "feedback — неисчисляемое.",
+    "id": "t-quant-13"
+   },
+   {
+    "type": "gap",
+    "q": "The traffic ___ (be) terrible this morning.",
+    "a": [
+     "was"
+    ],
+    "x": "traffic — неисчисляемое → was.",
+    "id": "t-quant-14"
+   },
+   {
+    "type": "choice",
+    "q": "I speak ___ Spanish — enough to order food.",
+    "opts": [
+     "a little",
+     "little",
+     "a few",
+     "few"
+    ],
+    "a": "a little",
+    "x": "a little — немного, достаточно.",
+    "id": "t-quant-15"
+   },
+   {
+    "type": "fix",
+    "q": "I have a news for you.",
+    "a": [
+     "I have some news for you."
+    ],
+    "x": "news — неисчисляемое, хоть и с -s.",
+    "id": "t-quant-16"
+   },
+   {
+    "type": "choice",
+    "q": "Too ___ cars are parked on the pavement.",
+    "opts": [
+     "many",
+     "much",
+     "little",
+     "a little"
+    ],
+    "a": "many",
+    "x": "cars — исчисляемое.",
+    "id": "t-quant-17"
+   },
+   {
+    "type": "gap",
+    "q": "There isn't ___ space for a second bathroom.",
+    "a": [
+     "much",
+     "any",
+     "enough"
+    ],
+    "x": "space — неисчисляемое.",
+    "id": "t-quant-18"
+   }
+  ]
+ },
+ {
   "id": "t-details",
-  "title": "Мелкие правила: предлоги, артикли, формы",
+  "title": "14. Мелкие правила: предлоги, артикли, формы",
   "short": "Мелкие правила",
   "group": "Грамматика",
   "level": "B1–B2",
@@ -2260,222 +4028,6 @@
     "a": "The",
     "x": "Конкретный, известный проект → the.",
     "id": "t-details-21"
-   }
-  ]
- },
- {
-  "id": "t-irregular",
-  "title": "Неправильные глаголы",
-  "short": "Неправильные глаголы",
-  "group": "Грамматика",
-  "level": "A2–B1",
-  "intro": [
-   "Из уроков: **lose — lost — lost, drive — drove — driven, find — found — found, buy — bought — bought, take — took — taken, go — went — gone, see — saw — seen**. _lose_ (терять) ≠ _loose_ (свободный).",
-   "Для архитектора добавил: **build — built — built, draw — drew — drawn, lead — led — led, choose — chose — chosen, write — wrote — written, oversee — oversaw — overseen, overcome — overcame — overcome**.",
-   "Вторая форма — Past Simple (_yesterday I **drove**_), третья — Perfect и пассив (_I have **driven**, it was **built**_)."
-  ],
-  "items": [
-   {
-    "type": "gap",
-    "q": "Yesterday I ___ (lose) my keys.",
-    "a": [
-     "lost"
-    ],
-    "x": "lose — lost — lost.",
-    "id": "t-irregular-01"
-   },
-   {
-    "type": "gap",
-    "q": "I have ___ (lose) my passport.",
-    "a": [
-     "lost"
-    ],
-    "x": "Третья форма та же: lost.",
-    "id": "t-irregular-02"
-   },
-   {
-    "type": "gap",
-    "q": "We ___ (drive) through Italy last year.",
-    "a": [
-     "drove"
-    ],
-    "x": "drive — drove — driven.",
-    "id": "t-irregular-03"
-   },
-   {
-    "type": "gap",
-    "q": "I have ___ (drive) this route many times.",
-    "a": [
-     "driven"
-    ],
-    "x": "Present Perfect → третья форма.",
-    "id": "t-irregular-04"
-   },
-   {
-    "type": "gap",
-    "q": "I finally ___ (find) the mistake in the model.",
-    "a": [
-     "found"
-    ],
-    "x": "find — found — found.",
-    "id": "t-irregular-05"
-   },
-   {
-    "type": "gap",
-    "q": "Have you ___ (find) a hotel in Tbilisi yet?",
-    "a": [
-     "found"
-    ],
-    "x": "Третья форма та же.",
-    "id": "t-irregular-06"
-   },
-   {
-    "type": "gap",
-    "q": "We ___ (buy) the tickets online.",
-    "a": [
-     "bought"
-    ],
-    "x": "buy — bought — bought.",
-    "id": "t-irregular-07"
-   },
-   {
-    "type": "gap",
-    "q": "It ___ (take) me several weeks to fix the model.",
-    "a": [
-     "took"
-    ],
-    "x": "take — took — taken.",
-    "id": "t-irregular-08"
-   },
-   {
-    "type": "gap",
-    "q": "The photo was ___ (take) from the roof.",
-    "a": [
-     "taken"
-    ],
-    "x": "Пассив → третья форма.",
-    "id": "t-irregular-09"
-   },
-   {
-    "type": "gap",
-    "q": "She ___ (go) to Georgia last summer.",
-    "a": [
-     "went"
-    ],
-    "x": "go — went — gone.",
-    "id": "t-irregular-10"
-   },
-   {
-    "type": "gap",
-    "q": "He has ___ (go) to the site — he'll be back at 3.",
-    "a": [
-     "gone"
-    ],
-    "x": "has gone — ушёл и ещё там; has been — был и вернулся.",
-    "id": "t-irregular-11"
-   },
-   {
-    "type": "gap",
-    "q": "I ___ (see) the new drawings yesterday.",
-    "a": [
-     "saw"
-    ],
-    "x": "see — saw — seen.",
-    "id": "t-irregular-12"
-   },
-   {
-    "type": "gap",
-    "q": "Have you ever ___ (see) the Alps?",
-    "a": [
-     "seen"
-    ],
-    "x": "Present Perfect → seen.",
-    "id": "t-irregular-13"
-   },
-   {
-    "type": "gap",
-    "q": "The school was ___ (build) in 1975.",
-    "a": [
-     "built"
-    ],
-    "x": "build — built — built.",
-    "id": "t-irregular-14"
-   },
-   {
-    "type": "gap",
-    "q": "I ___ (draw) the first sketches by hand.",
-    "a": [
-     "drew"
-    ],
-    "x": "draw — drew — drawn.",
-    "id": "t-irregular-15"
-   },
-   {
-    "type": "gap",
-    "q": "The elevations were ___ (draw) in Revit.",
-    "a": [
-     "drawn"
-    ],
-    "x": "Пассив → drawn.",
-    "id": "t-irregular-16"
-   },
-   {
-    "type": "gap",
-    "q": "She ___ (lead) the team for three years.",
-    "a": [
-     "led"
-    ],
-    "x": "lead — led — led.",
-    "id": "t-irregular-17"
-   },
-   {
-    "type": "gap",
-    "q": "We have ___ (choose) a ventilated facade.",
-    "a": [
-     "chosen"
-    ],
-    "x": "choose — chose — chosen.",
-    "id": "t-irregular-18"
-   },
-   {
-    "type": "gap",
-    "q": "I have ___ (write) the design brief.",
-    "a": [
-     "written"
-    ],
-    "x": "write — wrote — written.",
-    "id": "t-irregular-19"
-   },
-   {
-    "type": "gap",
-    "q": "Last year I ___ (oversee) three projects.",
-    "a": [
-     "oversaw"
-    ],
-    "x": "oversee — oversaw — overseen.",
-    "id": "t-irregular-20"
-   },
-   {
-    "type": "gap",
-    "q": "We ___ (overcome) a lot of obstacles on that project.",
-    "a": [
-     "overcame"
-    ],
-    "x": "overcome — overcame — overcome.",
-    "id": "t-irregular-21"
-   },
-   {
-    "type": "choice",
-    "q": "Your jacket is too ___ — try a smaller size.",
-    "opts": [
-     "loose",
-     "lose",
-     "lost",
-     "loss"
-    ],
-    "a": "loose",
-    "x": "loose — свободный, мешковатый; lose — терять.",
-    "id": "t-irregular-22"
    }
   ]
  },
@@ -3186,6 +4738,228 @@
     ],
     "x": "take off — взлетать.",
     "id": "lx-diag-12"
+   }
+  ]
+ },
+ {
+  "id": "ie-link",
+  "title": "Связки для Writing",
+  "short": "Связки",
+  "group": "IELTS",
+  "level": "B2",
+  "intro": [
+   "**Добавить**: _Furthermore, Moreover, In addition, Not only… but also_.",
+   "**Противопоставить**: _However, Nevertheless, On the other hand, whereas, although, despite_.",
+   "**Причина и следствие**: _because of, due to, As a result, Therefore, Consequently_.",
+   "**Пример**: _For example, For instance, such as_. **Итог**: _In conclusion, Overall, To sum up_. **Мнение**: _In my opinion, I strongly believe that, It could be argued that_.",
+   "⚠ _Although_ + предложение (_Although it was expensive_); _despite_ + существительное или -ing (_despite the cost_). Although и but вместе не ставятся."
+  ],
+  "items": [
+   {
+    "type": "choice",
+    "q": "The flat is small. ___, it's in a great location.",
+    "opts": [
+     "However",
+     "Although",
+     "Despite",
+     "Because"
+    ],
+    "a": "However",
+    "x": "However + запятая — в начале нового предложения.",
+    "id": "ie-link-01"
+   },
+   {
+    "type": "choice",
+    "q": "___ it was expensive, the client approved the design.",
+    "opts": [
+     "Although",
+     "Despite",
+     "However",
+     "In spite"
+    ],
+    "a": "Although",
+    "x": "Although + предложение.",
+    "id": "ie-link-02"
+   },
+   {
+    "type": "choice",
+    "q": "___ the high cost, the project was a success.",
+    "opts": [
+     "Despite",
+     "Although",
+     "However",
+     "Whereas"
+    ],
+    "a": "Despite",
+    "x": "Despite + существительное.",
+    "id": "ie-link-03"
+   },
+   {
+    "type": "fix",
+    "q": "Despite it was raining, we went to the site.",
+    "a": [
+     "Although it was raining, we went to the site.",
+     "Despite the rain, we went to the site."
+    ],
+    "x": "Despite + существительное, although + предложение.",
+    "id": "ie-link-04"
+   },
+   {
+    "type": "choice",
+    "q": "Cars pollute the air. ___, they cause traffic jams.",
+    "opts": [
+     "Furthermore",
+     "However",
+     "Therefore",
+     "Whereas"
+    ],
+    "a": "Furthermore",
+    "x": "Добавляем довод → Furthermore.",
+    "id": "ie-link-05"
+   },
+   {
+    "type": "choice",
+    "q": "The budget was cut. ___, we had to simplify the design.",
+    "opts": [
+     "As a result",
+     "However",
+     "Moreover",
+     "Although"
+    ],
+    "a": "As a result",
+    "x": "Следствие → As a result.",
+    "id": "ie-link-06"
+   },
+   {
+    "type": "choice",
+    "q": "Some people prefer cities, ___ others prefer the countryside.",
+    "opts": [
+     "whereas",
+     "however",
+     "despite",
+     "therefore"
+    ],
+    "a": "whereas",
+    "x": "Сравнение двух сторон внутри предложения → whereas.",
+    "id": "ie-link-07"
+   },
+   {
+    "type": "gap",
+    "q": "Many cities, ___ as Paris and London, have congestion charges.",
+    "a": [
+     "such"
+    ],
+    "x": "such as — например, такие как.",
+    "id": "ie-link-08"
+   },
+   {
+    "type": "choice",
+    "q": "The delay was ___ bad weather.",
+    "opts": [
+     "due to",
+     "because",
+     "although",
+     "despite of"
+    ],
+    "a": "due to",
+    "x": "due to / because of + существительное; because + предложение.",
+    "id": "ie-link-09"
+   },
+   {
+    "type": "fix",
+    "q": "In spite of the delay, but we finished on time.",
+    "a": [
+     "In spite of the delay, we finished on time."
+    ],
+    "x": "Одна связка на противопоставление — but лишний.",
+    "id": "ie-link-10"
+   },
+   {
+    "type": "gap",
+    "q": "___ conclusion, public transport has more benefits than drawbacks.",
+    "a": [
+     "In"
+    ],
+    "x": "In conclusion — вывод в эссе.",
+    "id": "ie-link-11"
+   },
+   {
+    "type": "choice",
+    "q": "___ only is it cheaper, but it is also faster.",
+    "opts": [
+     "Not",
+     "No",
+     "Neither",
+     "Nor"
+    ],
+    "a": "Not",
+    "x": "Not only is it… — с инверсией (C1).",
+    "id": "ie-link-12"
+   },
+   {
+    "type": "choice",
+    "q": "It could be ___ that remote work reduces productivity.",
+    "opts": [
+     "argued",
+     "argue",
+     "arguing",
+     "argument"
+    ],
+    "a": "argued",
+    "x": "It could be argued that — хорошее начало контраргумента.",
+    "id": "ie-link-13"
+   },
+   {
+    "type": "gap",
+    "q": "On the other ___, public transport is not always convenient.",
+    "a": [
+     "hand"
+    ],
+    "x": "On the other hand.",
+    "id": "ie-link-14"
+   },
+   {
+    "type": "choice",
+    "q": "Traffic has increased. ___, air quality has worsened.",
+    "opts": [
+     "Consequently",
+     "Although",
+     "Whereas",
+     "Despite"
+    ],
+    "a": "Consequently",
+    "x": "Следствие → Consequently.",
+    "id": "ie-link-15"
+   },
+   {
+    "type": "order",
+    "a": [
+     "In my opinion, the benefits outweigh the drawbacks."
+    ],
+    "x": "outweigh — перевешивать; частая фраза для Task 2.",
+    "id": "ie-link-16"
+   },
+   {
+    "type": "fix",
+    "q": "Although the plan was good, but it was too expensive.",
+    "a": [
+     "Although the plan was good, it was too expensive."
+    ],
+    "x": "although и but вместе не ставятся.",
+    "id": "ie-link-17"
+   },
+   {
+    "type": "choice",
+    "q": "___, the benefits of the scheme are clear.",
+    "opts": [
+     "Overall",
+     "Whereas",
+     "Despite",
+     "Because"
+    ],
+    "a": "Overall",
+    "x": "Overall — в целом (итог).",
+    "id": "ie-link-18"
    }
   ]
  },
