@@ -503,6 +503,97 @@
     ],
     "x": "that's = that is — с апострофом. Ещё проще: so.",
     "id": "err-stop-48"
+   },
+   {
+    "type": "fix",
+    "q": "I stopped on this gas station to fill up.",
+    "a": [
+     "I stopped at this gas station to fill up."
+    ],
+    "x": "at a gas station — at с конкретным местом.",
+    "id": "err-stop-49"
+   },
+   {
+    "type": "fix",
+    "q": "After breakfast, I go my desk.",
+    "a": [
+     "After breakfast, I go to my desk."
+    ],
+    "x": "go to + место.",
+    "id": "err-stop-50"
+   },
+   {
+    "type": "fix",
+    "q": "First, I grab a half of a litre of water.",
+    "a": [
+     "First, I grab half a litre of water."
+    ],
+    "x": "half a litre — без артикля перед half и без of.",
+    "id": "err-stop-51"
+   },
+   {
+    "type": "fix",
+    "q": "We discussed about the project.",
+    "a": [
+     "We discussed the project."
+    ],
+    "x": "discuss sth — без about.",
+    "id": "err-stop-52"
+   },
+   {
+    "type": "fix",
+    "q": "I first played poker with mates from my class.",
+    "a": [
+     "I first played poker with my classmates.",
+     "I first played poker with classmates."
+    ],
+    "x": "Одно слово: classmates.",
+    "id": "err-stop-53"
+   },
+   {
+    "type": "fix",
+    "q": "I decided to all-in with ace-king.",
+    "a": [
+     "I decided to go all-in with ace-king."
+    ],
+    "x": "all-in — не глагол: go all-in.",
+    "id": "err-stop-54"
+   },
+   {
+    "type": "fix",
+    "q": "Players play a wide amount of hands.",
+    "a": [
+     "Players play a wide range of hands."
+    ],
+    "x": "a wide range of — широкий спектр; amount — для неисчисляемых.",
+    "id": "err-stop-55"
+   },
+   {
+    "type": "fix",
+    "q": "I don't like the early bird time of a tournament.",
+    "a": [
+     "I don't like the early levels of a tournament."
+    ],
+    "x": "early bird — «ранняя пташка» или скидка за раннюю покупку.",
+    "id": "err-stop-56"
+   },
+   {
+    "type": "fix",
+    "q": "You need to count the chances before you call.",
+    "a": [
+     "You need to calculate the odds before you call."
+    ],
+    "x": "calculate the odds — считать шансы.",
+    "id": "err-stop-57"
+   },
+   {
+    "type": "fix",
+    "q": "As we find out yesterday, it was a drone.",
+    "a": [
+     "As we found out yesterday, it was a drone."
+    ],
+    "x": "Выяснили в прошлом → found: find — found — found.",
+    "id": "err-stop-58"
    }
   ]
  },
