@@ -116,6 +116,12 @@ svg{ display:block; }
 .terms{ display:flex; flex-wrap:wrap; gap:6px; min-width:0; }
 .term{ border:1.5px solid var(--line); background:none; border-radius:999px; padding:5px 11px; font-size:15.5px; line-height:1.2; cursor:pointer; text-align:left; }
 .term.on{ background:var(--ink); color:var(--bg); border-color:var(--ink); }
+.term.gl{ font:500 19px/1.3 var(--serif); padding:7px 14px; border-radius:14px; }
+.gl-top{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; color:var(--muted); font:italic 400 15px/1.3 var(--serif); }
+.chip{ display:inline-flex; align-items:center; height:22px; padding:0 8px; border-radius:7px; background:var(--panel); color:var(--muted); font:600 12px/1 var(--sans); font-style:normal; letter-spacing:.02em; white-space:nowrap; }
+.chip.good{ background:var(--good-bg); color:var(--good); }
+.lk-note{ padding:10px 12px; border-radius:12px; background:var(--panel); font-size:15px; line-height:1.4; }
+.lk-label{ font:600 12px/1.3 var(--sans); letter-spacing:.1em; text-transform:uppercase; color:var(--faint); margin-bottom:-4px; }
 .lk-def{ color:var(--muted); font-size:15px; line-height:1.45; }
 .lk-def b{ font-weight:600; color:var(--ink); }
 .lk-phr{ padding:12px 14px; border-radius:14px; background:var(--panel); display:flex; flex-direction:column; gap:8px; }
@@ -698,6 +704,7 @@ const idb = (() => {
 const BUNDLED = [{
   id: 'gutenberg-1268', title: 'The Mysterious Island', author: 'Jules Verne',
   sub: 'Английский перевод 1875 года · общественное достояние', url: 'books/mysterious-island.json',
+  gloss: 'books/mysterious-island.gloss.json',
 }];
 const SIZES = [15, 16, 17, 18, 19.5, 21, 23, 25];
 const S = {
@@ -778,6 +785,7 @@ async function openBook(id) {
   LS.set('last', id);
   el.tBook.textContent = b.title;
   el.read.lang = b.lang || 'en';
+  loadGloss(b);
   const pos = posOf(id) || { ch: 0, p: 0, o: 0 };
   goTo(Math.min(Math.max(pos.ch | 0, 0), b.chapters.length - 1), pos.p | 0, +pos.o || 0);
 }
@@ -1089,6 +1097,111 @@ function phrasalOf(tgt) {
   return null;
 }
 
+/* ================= prepared notes for difficult words (books/*.gloss.json) =================
+   Per chapter: [forms, lemma, pos, ru, level, mark, note]; mark "+" worth learning,
+   "-" can be skipped, "*" meaning holds only in that chapter. */
+const POS_FULL = { n: 'noun', v: 'verb', adj: 'adjective', adv: 'adverb', prep: 'preposition', pv: 'phrasal verb', id: 'idiom', ph: 'phrase' };
+const G = { book: null, idx: null };
+const norm = s => s.toLowerCase().replace(/[’‘]/g, "'");
+function buildGloss(j) {
+  const idx = { ch: new Map(), any: new Map(), phrases: [] };
+  const addAny = (k, e) => { if (!idx.any.has(k)) idx.any.set(k, []); idx.any.get(k).push(e); };
+  for (const [k, rows] of Object.entries((j && j.ch) || {})) {
+    const ci = +k, words = new Map(), phrases = [];
+    for (const r of rows) {
+      const forms = String(r[0] || '').split('/').filter(Boolean);
+      if (!forms.length || !r[3]) continue;
+      const e = { forms, lemma: r[1] || forms[0], pos: r[2] || '', ru: r[3], lvl: r[4] || '', mark: r[5] || '', note: r[6] || '', ci };
+      const local = e.mark.includes('*');
+      for (const f of forms) {
+        if (f.includes(' ')) { phrases.push({ f, e }); if (!local) idx.phrases.push({ f, e }); }
+        else { if (!words.has(f)) words.set(f, e); if (!local) addAny(f, e); }
+      }
+      const L = norm(e.lemma);
+      if (!L.includes(' ')) { if (!words.has(L)) words.set(L, e); if (!local && !forms.includes(L)) addAny(L, e); }
+    }
+    phrases.sort((x, y) => y.f.length - x.f.length);
+    idx.ch.set(ci, { words, phrases });
+  }
+  idx.phrases.sort((x, y) => y.f.length - x.f.length);
+  return idx;
+}
+async function loadGloss(b) {
+  const meta = BUNDLED.find(x => x.id === b.id);
+  if (G.book === b.id && G.idx) return;
+  G.book = null; G.idx = null;
+  if (!meta || !meta.gloss) return;
+  try {
+    const r = await fetch(meta.gloss);
+    if (!r.ok) return;
+    G.idx = buildGloss(await r.json());
+    G.book = b.id;
+  } catch (e) {}
+}
+function stems(w) {
+  const out = [w];
+  const add = x => { if (x && x.length > 2 && !out.includes(x)) out.push(x); };
+  if (/'s$/.test(w)) add(w.slice(0, -2));
+  if (/ie[sd]$/.test(w)) add(w.slice(0, -3) + 'y');
+  if (/es$/.test(w)) add(w.slice(0, -2));
+  if (/[^s]s$/.test(w)) add(w.slice(0, -1));
+  for (const suf of ['ed', 'ing']) {
+    if (!w.endsWith(suf)) continue;
+    const b = w.slice(0, -suf.length);
+    add(b); add(b + 'e');
+    if (/([b-df-hj-np-tv-z])\1$/.test(b)) add(b.slice(0, -1));
+  }
+  if (/ily$/.test(w)) add(w.slice(0, -3) + 'y');
+  if (/ly$/.test(w)) add(w.slice(0, -2));
+  return out;
+}
+function nearestEntry(list) { return list.slice().sort((x, y) => Math.abs(x.ci - S.ch) - Math.abs(y.ci - S.ch))[0]; }
+function glossFor(tgt) {
+  const idx = G.idx;
+  if (!idx || !S.book || G.book !== S.book.id) return null;
+  const here = idx.ch.get(S.ch);
+  if (tgt.mode !== 'word') {
+    const sel = norm(tgt.text).replace(/\s+/g, ' ').trim();
+    const p = here && here.phrases.find(p => p.f === sel);
+    if (p) return { e: p.e };
+    const e = here && here.words.get(sel);
+    if (e) return { e };
+    const list = idx.any.get(sel) || (idx.phrases.find(p => p.f === sel) ? [idx.phrases.find(p => p.f === sel).e] : null);
+    return list ? { e: nearestEntry(list) } : null;
+  }
+  const text = norm(tgt.para.textContent);
+  const edge = c => /[a-z0-9'-]/.test(c || '');
+  const phraseHit = list => {
+    for (const p of list) {
+      let from = Math.max(0, tgt.a - p.f.length), pos;
+      while ((pos = text.indexOf(p.f, from)) >= 0 && pos < tgt.b) {
+        const end = pos + p.f.length;
+        if (pos <= tgt.a && end >= tgt.b && !edge(text[pos - 1]) && !edge(text[end])) return { e: p.e, a: pos, b: end };
+        from = pos + 1;
+      }
+    }
+    return null;
+  };
+  const hit = (here && phraseHit(here.phrases)) || phraseHit(idx.phrases);
+  if (hit) return hit;
+  const cands = stems(norm(tgt.text));
+  if (here) for (const c of cands) { const e = here.words.get(c); if (e) return { e }; }
+  for (const c of cands) { const list = idx.any.get(c); if (list && list.length) return { e: nearestEntry(list) }; }
+  return null;
+}
+function rangeFor(para, a, b) {
+  const w = document.createTreeWalker(para, NodeFilter.SHOW_TEXT);
+  const r = document.createRange();
+  let n, pos = 0, started = false;
+  while ((n = w.nextNode())) {
+    const len = n.data.length;
+    if (!started && a <= pos + len) { r.setStart(n, a - pos); started = true; }
+    if (started && b <= pos + len) { r.setEnd(n, b - pos); return r; }
+    pos += len;
+  }
+  return null;
+}
+
 /* ================= translation sheet ================= */
 const LK = { seq: 0, tgt: null, res: null, pick: null, ph: null, sentence: '', sctl: null };
 function setHL(range) { try { if (window.CSS && CSS.highlights && window.Highlight) CSS.highlights.set('lk', new Highlight(range)); } catch (e) {} }
@@ -1163,31 +1276,54 @@ function headwordOf(tgt, pickPos) {
   return base || lower;
 }
 function renderEntry() {
-  const tgt = LK.tgt, res = LK.res;
+  const tgt = LK.tgt, res = LK.res, gl = LK.gloss;
   el.lk.textContent = '';
   const word = tgt.mode === 'word';
-  const shown = word ? headwordOf(tgt, LK.pick && LK.pick.pos) : tgt.text;
+  const shown = gl ? gl.lemma : word ? headwordOf(tgt, LK.pick && LK.pick.pos) : tgt.text;
   el.lk.append(headRow(shown));
   const meta = h('div', { class: 'lk-meta', id: 'lk-meta' });
-  if (word && shown.toLowerCase() !== tgt.text.toLowerCase()) meta.append(h('span', { text: 'в тексте: ' + tgt.text }));
-  if (LK.ph && LK.ph.ipa) meta.prepend(h('span', { class: 'ipa', text: LK.ph.ipa }));
+  if (LK.ph && LK.ph.ipa && !/\s/.test(shown)) meta.append(h('span', { class: 'ipa', text: LK.ph.ipa }));
+  if (word && norm(shown) !== norm(tgt.text) && !/\s/.test(shown)) meta.append(h('span', { text: 'в тексте: ' + tgt.text }));
   el.lk.append(meta);
-  if (!word || !res.groups.length) el.lk.append(h('div', { class: 'lk-main', text: res.trans || '—' }));
-  if (res.groups.length) {
-    const box = h('div', { class: 'groups' });
-    res.groups.slice(0, 4).forEach((g, gi) => {
-      const terms = h('div', { class: 'terms' });
-      for (const t of g.terms.slice(0, gi ? 3 : 5)) {
-        const on = LK.pick && LK.pick.term === t && LK.pick.pos === g.pos;
-        terms.append(h('button', { class: 'term' + (on ? ' on' : ''), type: 'button', 'aria-pressed': on ? 'true' : 'false', text: t, onclick: () => { LK.pick = { term: t, pos: g.pos, base: g.base }; renderEntry(); } }));
-      }
-      box.append(h('div', { class: 'group' + (g.pos ? '' : ' solo') }, g.pos ? h('div', { class: 'group-pos', title: g.pos, text: POS_SHORT[g.pos] || g.pos }) : null, terms));
-    });
-    el.lk.append(box);
+  const pick = pickOrDefault();
+  if (gl) {
+    // the note prepared for this book comes first: meaning in this place, level, worth learning or not
+    const tags = [];
+    if (POS_FULL[gl.pos]) tags.push(h('span', { text: POS_FULL[gl.pos] }));
+    if (gl.lvl) tags.push(h('span', { class: 'chip', text: gl.lvl }));
+    if (gl.mark.includes('+')) tags.push(h('span', { class: 'chip good', text: 'стоит выучить' }));
+    if (gl.mark.includes('-')) tags.push(h('span', { class: 'chip', text: 'можно не учить' }));
+    if (tags.length) el.lk.append(h('div', { class: 'gl-top' }, tags));
+    const on = !!pick.gloss;
+    el.lk.append(h('div', null, h('button', { class: 'term gl' + (on ? ' on' : ''), type: 'button', 'aria-pressed': on ? 'true' : 'false', text: gl.ru, onclick: () => { LK.pick = null; renderEntry(); } })));
+    if (gl.note) el.lk.append(h('div', { class: 'lk-note', text: gl.note }));
+    if (gl.ci !== S.ch) el.lk.append(h('div', { class: 'lk-def', text: 'Значение из главы «' + chapterLabel(gl.ci) + '».' }));
   }
-  const def = (res.defs[0] && res.defs[0].gloss) || (LK.ph && LK.ph.def) || '';
-  if (def && (word || tgt.text.split(/\s+/).length <= 3)) el.lk.append(h('div', { class: 'lk-def' }, h('b', { text: 'EN: ' }), def));
-  if (LK.phr) {
+  if (res) {
+    if (gl) el.lk.append(h('div', { class: 'lk-label', text: 'Словарь' }));
+    if (!word || !res.groups.length) {
+      if (!gl) el.lk.append(h('div', { class: 'lk-main', text: res.trans || '—' }));
+      else if (res.trans && !res.groups.length) {
+        const on = !pick.gloss && pick.term === res.trans;
+        el.lk.append(h('div', { class: 'terms' }, h('button', { class: 'term' + (on ? ' on' : ''), type: 'button', text: res.trans, onclick: () => { LK.pick = { term: res.trans, pos: word ? '' : 'phrase', base: '' }; renderEntry(); } })));
+      }
+    }
+    if (res.groups.length) {
+      const box = h('div', { class: 'groups' });
+      res.groups.slice(0, 4).forEach((g, gi) => {
+        const terms = h('div', { class: 'terms' });
+        for (const t of g.terms.slice(0, gi ? 3 : 5)) {
+          const on = LK.pick && LK.pick.term === t && LK.pick.pos === g.pos;
+          terms.append(h('button', { class: 'term' + (on ? ' on' : ''), type: 'button', 'aria-pressed': on ? 'true' : 'false', text: t, onclick: () => { LK.pick = { term: t, pos: g.pos, base: g.base }; renderEntry(); } }));
+        }
+        box.append(h('div', { class: 'group' + (g.pos ? '' : ' solo') }, g.pos ? h('div', { class: 'group-pos', title: g.pos, text: POS_SHORT[g.pos] || g.pos }) : null, terms));
+      });
+      el.lk.append(box);
+    }
+    const def = (res.defs[0] && res.defs[0].gloss) || (LK.ph && LK.ph.def) || '';
+    if (def && (word || tgt.text.split(/\s+/).length <= 3)) el.lk.append(h('div', { class: 'lk-def' }, h('b', { text: 'EN: ' }), def));
+  }
+  if (!gl && LK.phr) {
     const pr = LK.phr;
     el.lk.append(h('div', { class: 'lk-phr' },
       h('div', { class: 't', text: 'Возможно, это фразовый глагол' }),
@@ -1199,7 +1335,8 @@ function renderEntry() {
   }
   const saveBtn = h('button', { class: 'btn', type: 'button', id: 'lk-save', onclick: toggleSave });
   const sentBtn = h('button', { class: 'btn', type: 'button', id: 'lk-sent-btn', onclick: () => translateSentence(sentBtn) }, h('span', { svg: I.sent }), 'Перевод предложения');
-  el.lk.append(h('div', { class: 'lk-actions' }, saveBtn, LK.sentence && LK.sentence.length > tgt.text.length + 3 ? sentBtn : null));
+  const moreBtn = gl && !res ? h('button', { class: 'btn ghost', type: 'button', disabled: LK.loading || LK.moreErr, onclick: loadMore, text: LK.loading ? 'Загружаю словарь…' : LK.moreErr ? 'Словарь сейчас недоступен' : 'Другие значения' }) : null;
+  el.lk.append(h('div', { class: 'lk-actions' }, saveBtn, LK.sentence && LK.sentence.length > tgt.text.length + 3 ? sentBtn : null, moreBtn));
   el.lk.append(h('div', { class: 'lk-pick', id: 'lk-pick' }));
   el.lk.append(h('div', { class: 'lk-sent', id: 'lk-sent', hidden: true }));
   el.lk.append(linksRow(word ? shown : tgt.text, LK.sentence));
@@ -1208,22 +1345,48 @@ function renderEntry() {
 }
 function pickOrDefault() {
   if (LK.pick) return LK.pick;
-  const res = LK.res;
+  const gl = LK.gloss, res = LK.res;
+  if (gl) return { term: gl.ru, pos: POS_FULL[gl.pos] || '', base: gl.lemma, lvl: gl.lvl, tip: gl.note, gloss: true };
   if (LK.tgt.mode === 'word' && res.groups.length) { const g = res.groups[0]; return { term: g.terms[0], pos: g.pos, base: g.base }; }
   return { term: res.trans, pos: LK.tgt.mode === 'word' ? '' : 'phrase', base: '' };
 }
+async function loadMore() {
+  const seq = LK.seq, tgt = LK.tgt;
+  const q = tgt.mode === 'word' ? tgt.text.toLowerCase() : tgt.text;
+  LK.loading = true;
+  renderEntry();
+  try { const res = await translate(q, q.split(/\s+/).length <= 3); if (seq !== LK.seq) return; LK.res = res; }
+  catch (e) { if (seq !== LK.seq) return; LK.moreErr = true; }
+  LK.loading = false;
+  renderEntry();
+}
 async function lookup(tgt) {
   const seq = ++LK.seq;
-  Object.assign(LK, { tgt, res: null, pick: null, ph: null, phr: null, sentRu: '' });
+  Object.assign(LK, { tgt, res: null, pick: null, ph: null, phr: null, sentRu: '', gloss: null, loading: false, moreErr: false });
   if (LK.sctl) LK.sctl.abort();
   hidePill();
+  const gl = glossFor(tgt);
+  if (gl && gl.a != null) { const r = rangeFor(tgt.para, gl.a, gl.b); if (r) tgt.range = r; }
   setHL(tgt.range);
   openSheet();
   LK.sentence = sentenceAt(tgt.para.textContent, tgt.a, tgt.b);
-  sheetLoading(tgt);
-  keepVisible(tgt.range);
   const word = tgt.mode === 'word';
   const q = word ? tgt.text.toLowerCase() : tgt.text;
+  if (gl) {
+    // prepared note: shown at once, no network; only the transcription is fetched
+    LK.gloss = gl.e;
+    renderEntry();
+    keepVisible(tgt.range);
+    if (!/\s/.test(gl.e.lemma)) {
+      const lem = norm(gl.e.lemma);
+      let ph = await phonetics(lem).catch(() => null);
+      if ((!ph || !ph.ipa) && lem !== q) ph = await phonetics(q).catch(() => null);
+      if (seq === LK.seq && ph && ph.ipa) { LK.ph = ph; renderEntry(); }
+    }
+    return;
+  }
+  sheetLoading(tgt);
+  keepVisible(tgt.range);
   const short = q.split(/\s+/).length <= 3;
   const phr = word ? phrasalOf(tgt) : null;
   const pPh = word ? phonetics(q).catch(() => null) : Promise.resolve(null);
@@ -1370,11 +1533,11 @@ function refreshWords() {
 function currentWord() {
   const p = pickOrDefault();
   const en = (p.base || headwordOf(LK.tgt, p.pos) || LK.tgt.text).trim();
-  return { id: slug(en), en, pos: p.pos || '', ru: String(p.term || '').trim() };
+  return { id: slug(en), en, pos: p.pos || '', ru: String(p.term || '').trim(), lvl: p.lvl || '', tip: p.tip || '' };
 }
 function paintSave() {
   const b = $('#lk-save');
-  if (!b || !LK.res) return;
+  if (!b || (!LK.res && !LK.gloss)) return;
   const cw = currentWord();
   const on = W.has(cw.id);
   b.className = 'btn' + (on ? ' saved' : ' primary');
@@ -1384,17 +1547,19 @@ function paintSave() {
   const note = $('#lk-pick');
   if (note) {
     const saved = on ? W.all()[cw.id] : null;
+    const choices = (LK.res ? LK.res.groups.reduce((n, g) => n + g.terms.length, 0) : 0) + (LK.gloss ? 1 : 0);
     note.textContent = on ? 'Сохранено: ' + cw.en + ' — ' + (saved && saved.ru || cw.ru)
-      : cw.ru ? 'Сохранится: ' + cw.en + ' — ' + cw.ru + (!LK.pick && (LK.res.groups.length > 1 || (LK.res.groups[0] && LK.res.groups[0].terms.length > 1)) ? '. Если здесь другой смысл, нажми на него выше.' : '') : '';
+      : cw.ru ? 'Сохранится: ' + cw.en + ' — ' + cw.ru + (!LK.pick && choices > 1 ? '. Если здесь другой смысл, нажми на него выше.' : '') : '';
   }
 }
 function toggleSave() {
-  if (!LK.res) return;
+  if (!LK.res && !LK.gloss) return;
   const cw = currentWord();
   if (W.has(cw.id)) { W.remove(cw.id); return; }
   if (!cw.ru) { toast('Нет перевода, который можно сохранить.'); return; }
   W.put(cw.id, {
     en: cw.en, pos: cw.pos, ru: cw.ru, ex: clip(LK.sentence || '', 400), ipa: LK.ph && LK.ph.ipa || '',
+    level: /^[ABC][12]$/.test(cw.lvl) ? cw.lvl : '', tip: cw.tip,
     book: S.book.title, ch: chapterLabel(S.ch), added: new Date().toISOString().slice(0, 10),
   });
 }
@@ -1447,7 +1612,7 @@ function renderToc() {
     list.append(h('li', null, h('button', {
       type: 'button', class: i === S.ch ? 'cur' : i < S.ch ? 'read' : '', 'aria-current': i === S.ch ? 'true' : null,
       onclick: () => { closePanel(); goTo(i, 0); },
-    }, h('span', { class: 't', text: c.t }), h('span', { class: 'n', text: '≈ ' + mins + ' мин' }))));
+    }, h('span', { class: 't', text: c.t }), h('span', { class: 'n', text: '≈ ' + mins + ' мин' + (G.idx && G.book === b.id && G.idx.ch.has(i) ? ' · разбор' : '') }))));
   });
 }
 

@@ -1,0 +1,106 @@
+# Part 1, Chapter 3
+given way/giving way|give way|pv|не выдержать, порваться; поддаться (отчаянию)|B2|+|
+carried off|carry off|pv|унести|B2||
+voluntarily||adv|добровольно|B2|+|
+leaped|leap|v|прыгнуть|B2||
+shed bitter tears|shed tears|id|проливать горькие слёзы|C1||
+despair||n|отчаяние; отчаиваться|B2|+|
+i trust||ph|надеюсь|C1|*|
+surf||n|прибой|B2||
+proceeded|proceed|v|направиться, двигаться дальше|C1|+|
+riddled with||ph|изрытый, весь в (дырах)|C2||
+clumsy||adj|неуклюжий|B2||
+flocks|flock|n|стаи|B2||
+gulls|gull|n|чайки|B2|-|
+cormorants|cormorant|n|бакланы|C2|-|
+shrill||adj|пронзительный|C2||
+arose|arise|v|подняться, возникнуть|B2|+|
+hollow||n|впадина, углубление|C1||
+brought to a standstill|bring to a standstill|id|остановить|C1||
+foaming|foam|v|пенящийся|C1||
+extremity||n|край, оконечность|C2||
+promontory||n|мыс|C2|-|
+retrace our steps|retrace one's steps|id|вернуться тем же путём|C1||
+mainland||n|материк|B2||
+lull||n|затишье|C2||
+rugged||adj|неровный, скалистый|C1||
+looming|loom|v|неясно вырисовываться|C1||
+indistinctly/indistinct|indistinct|adv|неясно; неясный|C2||
+tumultuous||adj|бурный|C2||
+breakers|breaker|n|буруны|C2|-|
+trudging|trudge|v|брести с трудом|C1||
+slippery||adj|скользкий|B2||
+islet||n|островок|C2|-|
+surveyed|survey|v|осмотреть, обследовать|B2|*|
+breadth||n|ширина|C1||
+barren||adj|бесплодный, голый|C1|+|
+refuge||n|убежище|C1|+|
+strewn|strew|v|усеянный|C2||
+archipelago||n|архипелаг|C1||
+reconnoiter||v|разведать, осмотреть|C2|-|брит. reconnoitre
+piece||v|в тексте опечатка: pierce — пронзать (взглядом)||-*|
+gloom||n|мрак|C1||
+confused||adj|неясный, смутный|B2|*|здесь не «растерянный»
+put off||pv|отложить|B2|+|
+alas||id|увы|C1|-|
+fainted|faint|v|потерять сознание|B2||
+directly||adv|сразу же|B2|*|здесь = сразу, тут же
+brambles|bramble|n|колючий кустарник|C2|-|
+grief||n|горе|B2||
+intense||adj|сильный (о холоде)|B2|+|
+sterile||adj|бесплодный|C1|*|здесь о земле; также: стерильный
+subside||v|стихать|C2||
+deceive||v|обмануть|B2|+|
+hemisphere||n|полушарие|C1||
+constellations|constellation|n|созвездия|C1||
+glittered|glitter|v|сверкать|C1||
+at length||ph|наконец|C1||также: подробно
+eagerly|eager|adv|нетерпеливо, жадно|B2|+|
+not long in||ph|не заставил себя долго ждать|C1||
+bounded|bound|v|ограниченный|C1|*|
+abrupt||adj|крутой, обрывистый|C1|*|обычно: внезапный, резкий
+precipitous||adj|отвесный|C2||
+provisionally||adv|временно|C2||
+insured|insure|v|обеспечить|C1|*|здесь = ensured; обычно insure = страховать
+channel||n|пролив|B2|*|
+current||n|течение|B2|*|здесь существительное
+impulse||n|порыв|C1||
+in haste||ph|в спешке|C1||
+venture into/ventured into|venture into|pv|рискнуть войти|C1||
+ebbing/ebb|ebb|v|убывать (об отливе); отлив|C2|-|
+tide||n|прилив и отлив; low tide — отлив|B2||
+fordable|ford|adj|проходимый вброд|C2|-|
+than we can help||ph|без крайней необходимости|C2||
+emerging|emerge|v|появляться (из воды)|C1|+|
+made way|make way|ph|продвигаться|C1||
+projected|project|v|выступать (вперёд)|C1|*|
+wretched||adj|жалкий, скверный|C1||
+repast||n|трапеза|C2|-|устар.
+terminating/terminated|terminate|v|заканчиваться|C1||
+aspect||n|вид, облик|C1|*|обычно: аспект
+abutted on|abut on|pv|примыкать к|C2|-|
+trending|trend|v|тянуться (в направлении)|C1|*|
+slender||adj|тонкий, узкий|C1||
+cape||n|мыс|B2||
+carcass||n|туша|C2||
+retreating|retreat|v|отступающий|C1||
+perpendicular||adj|отвесный|C2||
+cliff||n|утёс, скала|B2||
+precipice||n|обрыв, пропасть|C2||
+jagged||adj|зубчатый, неровный|C2||
+tableland||n|плоскогорье|C2|-|
+verdure||n|зелень|C2|-|книжн.
+wearied|weary|v|утомлённый|C2||
+ranges|range|n|гряды|B2|*|
+capped with||ph|покрытый сверху|C1||
+beholding|behold|v|увидеть, созерцать|C2|-|книжн.
+convulsed/convulsions|convulse|adj|искорёженный; потрясения (недр)|C2||
+heaped up|heap up|pv|нагромождённый|C1||
+unquestionably||adv|несомненно|C1|+|
+subterranean||adj|подземный|C2||
+scrape||n|переделка, передряга|C2||разг.
+anticipations|anticipation|n|ожидания, предположения|C1|+|
+stripped themselves of|strip|v|раздеться|C1||
+bundles|bundle|n|узлы, свёртки|B2||
+capitally||adv|превосходно|C2|-|устар.
+take counsel||id|посовещаться|C2|-|

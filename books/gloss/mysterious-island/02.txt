@@ -1,0 +1,173 @@
+# Part 1, Chapter 2
+aeronauts|aeronaut|n|воздухоплаватели|C2|-|
+boldness|bold|n|смелость, дерзость|B2||
+induced|induce|v|побудить|C1|+|
+reserved|reserve|v|уготовить, приберечь|C1|*|обычно: бронировать
+destiny||n|судьба|B2|+|
+besieged/besieging/besiegers|besiege|v|осаждать; осаждённые; осаждающие|C1||
+siege||n|осада|C1||
+stronghold||n|оплот, крепость|C1||
+war of secession||ph|Гражданская война в США (1861–1865)||-|
+secessionists/secessionist|secessionist|n|южане-конфедераты (сторонники отделения)|C2|-|
+as follows||ph|следующие, таковы|B2|+|
+coups de main||ph|внезапная атака (франц.)|C2|-|
+in vain||ph|напрасно|B2|+|
+possess himself of||ph|завладеть|C2|-|
+detained|detain|v|задержать, держать под стражей|C1||
+distinguished||adj|выдающийся, видный|C1|+|
+confided|confide|v|доверить, поручить|C1||
+bony||adj|костлявый|C1||
+lean||adj|худой, поджарый|C1|*|
+physiognomy||n|черты лица|C2|-|
+pickaxe||n|кирка|C2|-|
+dexterity||n|ловкость|C2||
+tenacity||n|упорство|C2||
+vigorous||adj|энергичный, бодрый|C1|+|
+sanguine||adj|жизнерадостный|C2|-|
+learned||adj|учёный, образованный|C1|*|здесь прилагательное, произносится /ˈlɜːnɪd/
+clear-headed||adj|здравомыслящий|C1||
+emergencies|emergency|n|чрезвычайные ситуации|B2|+|
+insure||v|обеспечить|C1|*|здесь = ensure; обычно insure = страховать
+motto||n|девиз|B2||
+undertake||v|предпринять, браться за|C1|+|
+persevere||v|упорствовать, не сдаваться|C1|+|
+personified|personify|v|олицетворение (чего-л.)|C2||
+valiantly||adv|доблестно|C2|-|
+worthy of||ph|достойный (чего-л.)|C1|+|
+spared himself|spare oneself|id|щадить себя|B2||
+personage||n|важная особа|C2|-|
+no other than||ph|не кто иной, как|C1||
+indomitable||adj|неукротимый|C2||
+chroniclers|chronicler|n|летописцы (здесь: журналисты)|C2|-|
+stop at nothing||id|ни перед чем не останавливаться|C1|+|
+transmit||v|передавать|C1|+|
+genuine||adj|настоящий, подлинный|B2|+|
+to be reckoned with||id|с которыми приходится считаться|C1|+|
+ranked among|rank among|v|входить в число|C1|+|
+merit||n|достоинство, заслуга|C1|+|
+prompt||adj|быстрый, расторопный|C1|*|здесь прилагательное
+resolute||adj|решительный|C1||
+fatigue||n|усталость; утомлять|C1||
+in pursuit of||ph|в погоне за|C1|+|
+treasury||n|сокровищница|C1|*|также: казначейство
+intrepid||adj|бесстрашный|C2|-|
+grape-shot||n|картечь|C2|-|
+incessant||adj|непрерывный|C2||
+not wanting in||ph|не лишённый (чего-л.)|C1||
+wicket||n|окошко (телеграфа)|C2|-*|
+intelligence||n|сведения, новости|B2|*|здесь не «интеллект»; ср. intelligence service
+whiskers|whisker|n|бакенбарды|C1||
+bordering on|border on|pv|граничить с, приближаться к|C1|+|
+take in at a glance||id|охватить одним взглядом|C1||
+inured to||ph|привычный к, закалённый|C2|-|
+skilful||adj|умелый|B2|+|амер. skillful
+sketch||n|набросок|B2|+|
+rifleman||n|стрелок|C2|-|
+taken aim at|take aim at|ph|прицелиться в|B2||
+without a scratch||id|без единой царапины|B2||
+convalescence||n|выздоровление|C2|-|
+made acquaintance with|make acquaintance with|ph|познакомиться с|C1||
+appreciate||v|ценить, оценить по достоинству|B2|+|
+rejoining/rejoined|rejoin|v|вернуться, присоединиться снова|C1||
+seize/seized|seize|v|схватить; seize a chance — воспользоваться случаем|B2|+|
+at liberty||ph|на свободе, свободно|C1||
+in the meanwhile||ph|тем временем|B2||
+devoted to||ph|преданный (кому-л.)|B2|+|
+estate||n|поместье|B2||
+abolitionist||n|аболиционист (противник рабства)|C2|-|
+conviction||n|убеждение|C1|+*|также: осуждение (в суде)
+obliging||adj|услужливый, любезный|C2||
+answered to|answer to|pv|откликаться на (имя)|B2||
+by dint of||ph|благодаря, посредством|C2|-|
+stratagem||n|уловка, хитрость|C2|-|
+shrewdness|shrewd|n|проницательность, хитрость|C2||
+penetrate||v|проникнуть|C1|+|
+make his way into|make one's way into|ph|пробраться в|B2||
+dearly bought||ph|дорого обошедшийся|C1||
+speedy||adj|скорый|C1||
+deliverance||n|избавление|C2|-|
+tedious||adj|скучный, утомительный|C1|+|
+captivity||n|плен|C1||
+stand it no longer||id|больше не мог терпеть|B2||
+sole||adj|единственный|C1|+|
+insurmountable||adj|непреодолимый|C2|+|
+anxious to||ph|очень хотеть, стремиться|B2|+|здесь не «тревожный»
+invested|invest|v|осадить, окружить (город)|C2|-*|здесь не «инвестировать»
+hasten||v|ускорить|C1||
+relief||n|помощь (снятие осады)|B2|*|обычно: облегчение
+accordingly||adv|соответственно, поэтому|C1|+|
+conceived|conceive|v|задумать|C1|+|
+authorized|authorize|v|разрешить|C1|+|
+at the disposal of||ph|в распоряжение|C1|+|
+furnished with|furnish with|ph|снабдить|C1||
+alighted|alight|v|приземлиться, сойти|C2|-|
+in the event of||ph|в случае|C1|+|
+effected|effect|v|осуществить|C2|*|здесь глагол; не путать с affect
+deferred|defer|v|отложить|C2||
+inflated|inflate|v|надуть|C1||
+abatement|abate|n|ослабление (ветра)|C2|-|
+alteration||n|изменение|C1||
+squalls|squall|n|шквалы|C2|-|
+redoubled|redouble|adj|удвоенный|C2||
+accosted/accost|accost|v|подойти и заговорить (с незнакомцем)|C2|-|
+sunburnt||adj|загорелый|B2||
+needless to say||ph|само собой, излишне говорить|B2|+|
+dashing||adj|лихой|C1|*|здесь прилагательное
+shut up||pv|запертый|B1|*|здесь: заперт в городе; разг. shut up! = замолчи!
+disgust||n|досада, отвращение|B2||
+succumb to||pv|поддаться, уступить|C2||
+by some means or other||ph|так или иначе|C1||
+chafed under|chafe under|pv|тяготиться|C2|-|
+restraint||n|неволя, ограничение|C1|*|также: сдержанность
+circumlocution||n|околичности|C2|-|
+fixedly||adv|пристально|C2||
+uttered|utter|v|произнести|C1||
+on purpose||ph|нарочно|B2|+|
+dragged|drag|v|тащить|B2||
+execution||n|исполнение|C1|*|также: казнь
+acquainted with||ph|знакомый с|C1||
+set out||pv|отправиться в путь|B2|+|
+brave||v|не бояться, бросать вызов|C1|*|здесь глагол: brave the storm
+fiercest|fierce|adj|свирепый, яростный|B2|+|
+hindered|hinder|v|помешать|C1|+|
+on account of||ph|из-за|C1|+|
+feasible||adj|осуществимый|C1|+|
+it must be confessed||ph|надо признаться|C1||
+in the extreme||ph|крайне|C1||
+draw back||pv|отступить|C1||
+unreservedly||adv|безоговорочно|C2||
+occurred to|occur to|pv|прийти в голову|B2|+|
+heaven grant||ph|дай бог|C1|-|
+took leave of|take leave of|ph|попрощаться с|C1||
+lodging||n|жильё, квартира|C1||
+abandon themselves to|abandon oneself to|ph|отдаться на волю|C1||
+tempestuous||adj|бурный|C2|-|
+confronting|confront|v|встретить лицом к лицу|C1|+|
+frail||adj|хрупкий|C1||
+shreds|shred|n|клочья|C1||
+roamed|roam|v|бродить|C1||
+surveying|survey|v|осматривать|B2|*|также: проводить опрос
+dreading|dread|v|страшиться|C1||
+truce||n|перемирие|C1||
+detonations|detonation|n|взрывы, раскаты|C2||
+hazardous||adj|опасный, рискованный|C1|+|
+contemplated|contemplate|v|замышлять, обдумывать|C1|+|
+termination||n|завершение|C1||
+pshaw||id|вздор, фу (междометие)||-|устар.
+all the same||ph|всё равно|B2|+|
+glided|glide|v|проскользнуть|C1||
+extinguished|extinguish|v|погасить|C1||
+independently of||ph|помимо, кроме|C1|*|
+obscurity||n|мгла, темнота|C2|-*|
+detached|detach|v|отцепить|C1||
+successively||adv|один за другим|C2||
+impede||v|затруднить, помешать|C2||
+ascent||n|подъём|C1||
+oblique||adj|косой, наклонный|C2|-|
+glimpse||n|мельком увиденное|B2|+|catch a glimpse — мельком увидеть
+intercepted|intercept|v|перехватить; закрыть (вид)|C1||
+gale||n|шторм, сильный ветер|C1||
+befell|befall|v|случиться (с кем-л.)|C2|-|
+rendering him assistance|render assistance|ph|оказать ему помощь|C2||
+recovered their feet|recover one's feet|id|встать на ноги|C1||
+leading spirit||ph|вдохновитель, душа (группы)|C1||

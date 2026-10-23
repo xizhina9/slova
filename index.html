@@ -294,7 +294,7 @@ async function loadWords(){
   for(const [k, w] of Object.entries(rd)){
     if(!w || !w.en || !w.ru || known.has(String(w.en).toLowerCase())) continue;
     known.add(String(w.en).toLowerCase());
-    extra.push({id:'r-'+k, en:String(w.en), pos:w.pos||'', ru:String(w.ru), ex:w.ex||'', note:w.ipa||'', topic:'read', src:'книга'+(w.book?': '+w.book:''), added:w.added||''});
+    extra.push({id:'r-'+k, en:String(w.en), pos:w.pos||'', ru:String(w.ru), ex:w.ex||'', note:[w.ipa, w.tip].filter(Boolean).join(' · '), level:w.level||'', topic:'read', src:'книга'+(w.book?': '+w.book:''), added:w.added||''});
   }
   if(extra.length) words = words.concat(extra);
   if(settings.pack!=='all' && (!pool().length || conds().some(([t])=>t==='tag' && settings.pack.indexOf('|')<0))){ settings.pack='all'; saveS(); }
