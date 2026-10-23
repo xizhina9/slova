@@ -180,7 +180,7 @@ const store = {
 };
 const DAY = 86400000;
 const INTERVALS = [0, 1, 3, 7, 14, 30]; // days until next review, by box
-const TOPICS = {build:'Архитектура и строительство', acad:'Академическая лексика', sci:'Наука и технологии', edu:'Образование', soc:'Общество и культура', eco:'Экология', health:'Здоровье', work:'Работа и бизнес', city:'Города и жильё', travel:'Путешествия', home:'Дом, еда и быт', nature:'Природа и животные', leisure:'Хобби, спорт и досуг', talk:'Разговорное'};
+const TOPICS = {build:'Архитектура и строительство', acad:'Академическая лексика', sci:'Наука и технологии', edu:'Образование', soc:'Общество и культура', eco:'Экология', health:'Здоровье', work:'Работа и бизнес', city:'Города и жильё', travel:'Путешествия', home:'Дом, еда и быт', nature:'Природа и животные', leisure:'Хобби, спорт и досуг', talk:'Разговорное', read:'Из книг'};
 const LEVELS = ['B1','B2','C1'];
 
 let words = [], source = '', sets = [];
@@ -289,6 +289,14 @@ async function loadWords(){
     words = j; source = 'words.json';
   } catch(e){ words = WORDS_FALLBACK; source = 'встроенный список (words.json не найден)'; }
   words.forEach((w,i)=>{ if(!w.id) w.id='w'+i; });
+  // words saved in the reader (reader.html in this same app) become the «Из книг» pack
+  const rd = safeJSON(store.get('rdr.words'), {}), known = new Set(words.map(w=>String(w.en||'').toLowerCase())), extra = [];
+  for(const [k, w] of Object.entries(rd)){
+    if(!w || !w.en || !w.ru || known.has(String(w.en).toLowerCase())) continue;
+    known.add(String(w.en).toLowerCase());
+    extra.push({id:'r-'+k, en:String(w.en), pos:w.pos||'', ru:String(w.ru), ex:w.ex||'', note:w.ipa||'', topic:'read', src:'книга'+(w.book?': '+w.book:''), added:w.added||''});
+  }
+  if(extra.length) words = words.concat(extra);
   if(settings.pack!=='all' && (!pool().length || conds().some(([t])=>t==='tag' && settings.pack.indexOf('|')<0))){ settings.pack='all'; saveS(); }
   try{
     const r = await fetch('exercises.json?v='+Date.now(), {cache:'no-store'});
@@ -343,6 +351,7 @@ function home(){
       ${row('write','Письмо','напиши слово по переводу')}
       ${row('errors','Ошибки','только слова, где ошибался', s.err, !s.err)}
     </div>
+    ${readingHtml()}
     ${setsHtml()}
     <div class="links"><button id="lnk-list">Все слова</button><button id="lnk-set">Настройки</button></div>
   `, {header:false});
@@ -350,6 +359,13 @@ function home(){
   document.querySelectorAll('.mode[data-m]').forEach(b=>b.onclick=()=>start(b.dataset.m));
   document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{ settings.pack=b.dataset.p; saveS(); home(); });
   $('#lnk-list').onclick=list; $('#lnk-set').onclick=settingsScreen;
+  $('#go-read').onclick=()=>{ location.href='reader.html'; };
+}
+
+function readingHtml(){
+  const now = safeJSON(store.get('rdr.now'), null), has = !!(now && now.title);
+  const d = has ? `${esc(now.title)} · прочитано ${Math.max(0, now.pct|0)} %` : 'книги на английском с переводом по касанию';
+  return `<h2 class="sec">Чтение</h2><div class="modes"><button class="mode" id="go-read"><span><span class="t">${has?'Продолжить чтение':'Открыть читалку'}</span><br><span class="d">${d}</span></span></button></div>`;
 }
 
 const TITLES = {cards:'Карточки', test:'Выбор из четырёх', write:'Письмо'};
@@ -528,7 +544,7 @@ function settingsScreen(){
   $('#dir').onclick=e=>{ const b=e.target.closest('button'); if(!b) return; settings.dir=b.dataset.v; saveS(); settingsScreen(); };
   $('#size').onclick=e=>{ const b=e.target.closest('button'); if(!b) return; settings.size=+b.dataset.v; saveS(); settingsScreen(); };
   $('#exp').onclick=async()=>{
-    const data=JSON.stringify({progress, settings, tests:loadTests(), exported:new Date().toISOString()});
+    const data=JSON.stringify({progress, settings, tests:loadTests(), reading:safeJSON(store.get('rdr.words'),{}), exported:new Date().toISOString()});
     try{ await navigator.clipboard.writeText(data); toast('Копия в буфере обмена'); }
     catch(e){ $('#box').innerHTML=`<textarea readonly id="ta">${esc(data)}</textarea><p class="small">Скопируй текст вручную.</p>`; $('#ta').select(); }
   };
@@ -538,6 +554,7 @@ function settingsScreen(){
       const d=safeJSON($('#ta').value,null);
       if(!d||!d.progress){ toast('Не похоже на копию'); return; }
       progress=Object.assign(progress,d.progress); if(d.settings) settings=Object.assign(settings,d.settings);
+      if(d.reading && typeof d.reading==='object') store.set('rdr.words', JSON.stringify(Object.assign(safeJSON(store.get('rdr.words'),{}), d.reading)));
       if(d.tests){ const t=loadTests(); for(const k in d.tests){ const seen=new Set((t[k]||[]).map(r=>r.d)); t[k]=(t[k]||[]).concat(d.tests[k].filter(r=>!seen.has(r.d))); } store.set('ew_tests', JSON.stringify(t)); }
       saveP(); saveS(); toast('Прогресс восстановлен'); settingsScreen();
     };
