@@ -94,6 +94,7 @@ textarea.input{resize:none;text-align:left;font-size:19px;line-height:1.4;paddin
 .speak{display:block;margin:18px auto 0;background:var(--panel);border:0;border-radius:999px;width:46px;height:46px;font-size:20px;cursor:pointer}
 .ru{font-family:var(--serif);font-size:24px;line-height:1.35;text-align:center;margin:30px 0 12px}
 .ex{color:var(--muted);text-align:center;font-size:17px;line-height:1.5;margin:0}
+.ex.exru{margin-top:6px;font-size:16px;font-style:italic}
 .ex em{font-style:normal;background:var(--hl);color:var(--ink);padding:0 .12em;border-radius:2px}
 .hint{color:var(--muted);text-align:center;margin:38px 0 0;font-size:15px}
 .actions{display:flex;gap:12px;margin-top:18px}
@@ -416,6 +417,7 @@ function cardScreen(w){
       <div id="back-side" hidden>
         <p class="ru">${esc(w.ru)}</p>
         ${w.ex?`<p class="ex">${hl(w.ex,w.en)}</p>`:''}
+        ${w.exRu?`<p class="ex exru">${esc(w.exRu)}</p>`:''}
         ${w.note?`<p class="note">${esc(w.note)}</p>`:''}
       </div>
       <p class="hint" id="hint">Нажми, чтобы увидеть перевод</p>
@@ -462,7 +464,7 @@ function testScreen(w){
     if(!ok) b.classList.add('wrong');
     record(w, ok);
     if(dir==='ru-en') speak(w.en);
-    $('#after').innerHTML = (w.ex ? `<p class="ex">${hl(w.ex,w.en)}</p>` : '') + (w.note ? `<p class="note">${esc(w.note)}</p>` : '');
+    $('#after').innerHTML = (w.ex ? `<p class="ex">${hl(w.ex,w.en)}</p>` : '') + (w.exRu ? `<p class="ex exru">${esc(w.exRu)}</p>` : '') + (w.note ? `<p class="note">${esc(w.note)}</p>` : '');
     nextButton();
   });
 }
@@ -487,7 +489,7 @@ function writeScreen(w){
     if(res==='ok'){ v.textContent='Верно'; v.className='verdict ok'; }
     else if(res==='near'){ v.innerHTML=`Почти. Правильно: <b>${esc(w.en)}</b>`; v.className='verdict ok'; }
     else { v.innerHTML=`Правильно: <b>${esc(w.en)}</b>`; v.className='verdict no'; }
-    record(w, res!=='no'); speak(w.en); if(w.note) $('#wnote').textContent=w.note;
+    record(w, res!=='no'); speak(w.en); $('#wnote').textContent=[w.exRu, w.note].filter(Boolean).join(' · ');
     nextButton(); $('#nxt').focus();
   };
   $('#chk').onclick=check;
@@ -525,7 +527,7 @@ function list(){
   const draw=(q='')=>{
     q=q.trim().toLowerCase();
     const arr=pool().filter(w=>!q||w.en.toLowerCase().includes(q)||w.ru.toLowerCase().includes(q)).slice().reverse();
-    $('#wl').innerHTML = arr.map(w=>`<li><div class="e"><i class="dot ${status(w)}"></i>${esc(w.en)}${meta(w)?` <span class="small">${esc(meta(w))}</span>`:''}</div><div class="r">${esc(w.ru)}</div>${w.ex?`<div class="r x">${esc(w.ex)}</div>`:''}${w.note?`<div class="r">${esc(w.note)}</div>`:''}${w.topic&&!packLabel()?`<div class="r">${esc(TOPICS[w.topic]||w.topic)}</div>`:''}</li>`).join('')
+    $('#wl').innerHTML = arr.map(w=>`<li><div class="e"><i class="dot ${status(w)}"></i>${esc(w.en)}${meta(w)?` <span class="small">${esc(meta(w))}</span>`:''}</div><div class="r">${esc(w.ru)}</div>${w.ex?`<div class="r x">${esc(w.ex)}</div>`:''}${w.exRu?`<div class="r">${esc(w.exRu)}</div>`:''}${w.note?`<div class="r">${esc(w.note)}</div>`:''}${w.topic&&!packLabel()?`<div class="r">${esc(TOPICS[w.topic]||w.topic)}</div>`:''}</li>`).join('')
       || '<li class="small">Ничего не найдено</li>';
   };
   draw(); $('#q').oninput=e=>draw(e.target.value);
