@@ -335,7 +335,7 @@ function home(){
   if(cs.length && cs[0][0]!=='level'){
     const inBase = words.filter(w=>matches(w,cs[0])), cnt={};
     for(const w of inBase) for(const t of (w.tags||[])) if(t!==cs[0][1]) cnt[t]=(cnt[t]||0)+1;
-    const ORDER=['АР','ГП','Конструктив','Материалы','ОВ','ВК','Электрика','Организация'];
+    const ORDER=['АР','ГП','Конструктив','Материалы','ОВ','ВК','Организация'];
     const rank=t=>{ const i=ORDER.indexOf(t); return i<0?99:i; };
     const tags=Object.keys(cnt).sort((a,b)=>rank(a)-rank(b));
     if(tags.length>1) sub=[chip(base,'Все',inBase.length,cs.length===1)].concat(tags.map(t=>chip(base+'|tag:'+t,t,cnt[t],settings.pack===base+'|tag:'+t)));
