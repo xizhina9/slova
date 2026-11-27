@@ -354,7 +354,7 @@ function home(){
       ${row('cards','Карточки','смотри слово, вспоминай перевод')}
       ${row('test','Выбор из четырёх','узнай перевод среди вариантов')}
       ${row('write','Письмо','напиши слово по переводу')}
-      ${row('errors','Ошибки','только слова, где ошибался', s.err, !s.err)}
+      ${row('errors','Ошибки','пиши по-английски слова, где ошибался', s.err, !s.err)}
     </div>
     ${readingHtml()}
     ${setsHtml()}
@@ -376,14 +376,14 @@ function readingHtml(){
 const TITLES = {cards:'Карточки', test:'Выбор из четырёх', write:'Письмо'};
 function sessionOpts(){
   const ex = session.kind==='ex' || session.kind==='test';
-  return {title: ex ? (session.set.short||session.set.title) : TITLES[session.mode], back: ex ? ()=>openSet(session.set) : home, right:`${Math.min(session.i+1,session.queue.length)} / ${session.queue.length}`};
+  return {title: ex ? (session.set.short||session.set.title) : (session.errorsOnly?'Ошибки':TITLES[session.mode]), back: ex ? ()=>openSet(session.set) : home, right:`${Math.min(session.i+1,session.queue.length)} / ${session.queue.length}`};
 }
 
 function start(mode){
   const P=pool();
   if(!P.length){ toast('Слов пока нет'); return; }
   let list_, errorsOnly=false;
-  if(mode==='errors'){ list_=shuffle(P.filter(isError)); mode='test'; errorsOnly=true; if(!list_.length){ toast('Ошибок пока нет'); return; } }
+  if(mode==='errors'){ list_=shuffle(P.filter(isError)); mode='write'; errorsOnly=true; if(!list_.length){ toast('Ошибок пока нет'); return; } }
   else {
     const due=shuffle(P.filter(isDue));
     const fresh=shuffle(P.filter(w=>status(w)==='new'));
@@ -391,7 +391,7 @@ function start(mode){
     list_=[...due,...fresh,...rest];
   }
   const queue=shuffle(list_.slice(0, errorsOnly ? list_.length : settings.size));
-  session={kind:'words', mode, queue, i:0, first:{}, wrong:[], retried:new Set()};
+  session={kind:'words', mode, errorsOnly, queue, i:0, first:{}, wrong:[], retried:new Set()};
   next();
 }
 function next(){
